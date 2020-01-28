@@ -1,7 +1,7 @@
-const tasks = require("../controllers/tasks")
+const user = require("../controllers/user.controller")
 
 module.exports = function(app){
-    app.get('/', (req, res) => {
-
+    app.post('/new/user', (req, res) => {
+        user.createUser(req, res);
     })
 }
