@@ -1,59 +1,55 @@
+  
 <html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Login and Registration Page</title>
-<link rel="stylesheet" type="text/css" href="css/loginRegistration.css">
-<link href="https://fonts.googleapis.com/css?family=El+Messiri|Tangerine&display=swap" rel="stylesheet">
-</head>
-<body>
-	<h1 id="title">The Traveling Bard</h1>
-    
-    <p id="missionStatement">For all those with a wandering eye to the distant horizon, a insatiable wanderlust, 
-    or even just the curiosity to try something different, you have found yourself in the right direction. 
-    As the purpose of this site is to help make all your camping experiences just a little easier. 
-    Based on the story of a traveling bard and her journey with her companions, 
-    this website is designed to help you create task lists, 
-    plan trips, and make headway into starting your own adventure.</p>
-    
-    <div id="register">
-    <h2>Register</h2>
-    <form (submit)="register()">
-    	<p>
-    		<label>Name: </label>
-    		<input id="name" type="text"/>
-    	</p>
-    
-        <p>
-            <label>Email: </label>
-            <input type="email" id="email2" path="email"/>
-        </p>
-        <p>
-            <label>Password: </label>
-            <input type="password" name="password" id="password2">
-        </p>
-        <p>
-            <label>Confirm Password: </label>
-            <input type="password" name="confirmPassword">
-        </p>
-        <input type="submit" value="Register!" class ="submitButton"/>
-    </form>
-    </div>
-    
-       
-    <div id="login">
-    <h2>Login</h2>
-    <form (submit)="Login()">
-        <p>
-            <label>Email: </label>
-            <input type="email" class="email" name="email"/>
-        </p>
-        <p>
-            <label>Password: </label>
-            <input type="password" class="password" name="password"/>
-        </p>
-        <input type="submit" value="Login!" class ="submitButton"/>
-    </form>
-    </div>
-    
-</body>
-</html>
+    <head>
+    <meta charset="ISO-8859-1">
+    <title>Login and Registration Page</title>
+    <link href="https://fonts.googleapis.com/css?family=El+Messiri|Tangerine&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <h1 id="title">The Traveling Bard</h1>
+        
+        <p id="missionStatement">For all those with a wandering eye to the distant horizon, a insatiable wanderlust, 
+        or even just the curiosity to try something different, you have found yourself in the right direction. 
+        As the purpose of this site is to help make all your camping experiences just a little easier. 
+        Based on the story of a traveling bard and her journey with her companions, 
+        this website is designed to help you create task lists, 
+        plan trips, and make headway into starting your own adventure.</p>
+        
+        <div id="register">
+        <h2>Register</h2>
+        <form (submit)="register()">
+            <p>
+                <label>Name: </label>
+                <input id="name" type="text" [(ngModel)]="newUser.name"/>
+            </p>
+            <p>
+                <label>Email: </label>
+                <input type="email" id="email2" [(ngModel)]="newUser.email"/>
+            </p>
+            <p>
+                <label>Password: </label>
+                <input type="password" name="password" id="password2" [(ngModel)]="newUser.password">
+            </p>
+            <input type="submit" value="Register!" class ="submitButton"/>
+        </form>
+        </div>
+        
+           
+        <div id="login">
+        <h2>Login</h2>
+        <form (submit)="login()">
+            <p>
+                <label>Email: </label>
+                <input type="email" class="email" name="email" [(ngModel)]="returnUser.email"/>
+            </p>
+            <p>
+                <label>Password: </label>
+                <input type="password" class="password" name="password" [(ngModel)]="returnUser.password"/>
+            </p>
+            <input type="submit" value="Login!" class ="submitButton" />
+        </form>
+        </div>
+        
+    </body>
+    </html>
+
