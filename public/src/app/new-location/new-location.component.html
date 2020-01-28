@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Home Page</title>
+	
+	
+</head>
+<body>
+<button [routerLink] = "['/home']" class="button">Back to HomePage</button>
+<button [routerLink] = "['/logout']" class="button">Logout</button>
+	<h1>What Location would you like to make a page for?</h1>
+	
+	<div id="new_location">
+	<form (submit)="clickCreateLocation()">
+		<div id="locationName">
+		<label>Location name: </label>
+		<input type="text" [(ngModel)]="newLocation.name" >
+		</div>
+		
+		<div id="address">
+		<label>Address (The entrance of the area is best, make sure it is correct!): </label>
+		<input type="text" [(ngModel)]="newLocation.address"/>
+		</div>
+		
+		<div id="description">
+		<label>Description: </label><br>
+		<textarea rows="8" cols="30" [(ngModel)]="newLocation.description"></textarea>
+		</div>
+		
+		<div id="picture">
+		<label>Add a picture link(Make sure your source is valid!): </label>
+		<input type="text" [(ngModel)]="newLocation.url" >
+		</div>
+		
+		<input class="button" type="submit" value="Create Location!" >
+	</form>
+	</div>
+</body>
+</html>

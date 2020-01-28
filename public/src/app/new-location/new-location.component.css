@@ -1,0 +1,30 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+body {
+	width: 99%;
+}
+
+input {
+	border-radius: 8px;
+	padding: 5px;
+}
+
+.button {
+	border: none;
+	border-radius: 8px;
+	padding: 5px;
+	margin: 10px;
+}
+
+#new_location {
+	margin-left: 15px;
+	padding: 5px;
+	margin-top: 5px;
+}
+
+textarea {
+	border-radius: 8px;
+}
