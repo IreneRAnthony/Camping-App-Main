@@ -5,11 +5,33 @@ const User = mongoose.model('User');
 module.exports = {
     createUser: function(req, res){
         console.log("Creating user...");
-        User.create(req.body)
+        bcrypt.hash(req.body.password)
+        .then(hashedPassword => {
+            req.body.password = hashedPassword;
+            User.create(req.body);
+        })
         .then(newUser => {
             console.log(newUser);
             res.json(newUser);
         })
         .catch(err => res.json(err));
+    },
+
+    login: function(req, res){
+        console.log('Logging in User...', req.body);
+        User.findOne({ email:req.body.email }, (err, user) => {
+            return bcrypt.compare(req.body.password, user.password)
+        })
+        .then((result) => {
+            if(result){
+                // req.session.user_id = user._id;
+                // req.session.email = user.email;
+                return true;
+            } if (err){
+                return false; 
+            } else {
+                return false;
+            }
+        })
     }
 }
