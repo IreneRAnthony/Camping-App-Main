@@ -1,0 +1,111 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+	color: black;
+	font-family: 'Ubuntu', sans-serif;
+	margin: 10px;
+	background-color: #E1D1BA;
+}
+
+img {
+	border: white solid 2px;
+	margin: 15px;
+	display: inline-block;
+}
+
+input {
+	border-radius: 8px;
+	padding: 5px;
+	border: none;
+	margin: 5px;
+}
+
+h1 {
+	margin-top: 20px;
+	text-align: center;
+	font-size: 45px;
+}
+
+#picture {
+	display: inline-block;
+}
+
+#mainHeader {
+	display: inline-block;
+	vertical-align: top;
+}
+
+#information {
+	display: inline-block;
+	width: 500px;
+	vertical-align: top;
+	font-size: 25px;
+	margin-left: 15px;
+	margin-top: 40px;
+	background-color: #943F2C;
+	border: solid 2px #D87743;
+	border-radius: 8px;
+	padding: 20px;
+	letter-spacing: 1px;
+	word-spacing: 10px;
+}
+
+#desc {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+#address {
+	margin: 5px;
+}
+
+#reviews, #advice{
+	display: inline-block;
+	width: 450px;
+	vertical-align: top;
+}
+
+#advice {
+	margin-left: 120px;
+}
+
+#submit_review p{
+	text-align: center;
+}
+
+#reviewsAndAdvice {
+	margin-left: 85px;
+}
+
+#all_reviews, #all_advice {
+	background-color: #D87743;
+	border: solid 1px #943F2C;
+	border-radius: 8px;
+	margin: 10px;
+	padding: 8px;
+	display: inline-block;
+	width: 450px;
+}
+
+#wishlist {
+	border-radius: 8px;
+	background-color: #D87743;
+	border: solid 1px #943F2C;
+	padding: 8px;
+	width: 205px;
+	margin: 20px;
+	text-align: center;
+}
+
+.button {
+	border-radius: 8px;
+	padding: 5px;
+	border: none;
+}
+
+textarea {
+	border-radius: 8px;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link href="https://fonts.googleapis.com/css?family=Courgette|Ubuntu&display=swap" rel="stylesheet">
+</head>
+<body>
+	<div id = "picture">
+	<img src="" height="400" width="630">
+	</div>
+	
+	<div id="mainHeader">
+	<h1 id = "locationName">{{currentLocation.locationName}}</h1>
+
+	<div id="information">
+	<h3 id="address">Address</h3>
+	<p>{currentLocation.address}</p>
+	<h3 id="desc">Description</h3>
+	<p>{currentLocation.description}</p>
+	</div>
+	</div>
+
+	<div id="reviewsAndAdvice">
+	<div id="reviews">
+	<h3>All Reviews so Far</h3>
+	<div id="all_reviews" *ngFor="">
+		<p>{review.rating}/10 - {review.reviewText}</p>
+		<p>{review.reviewAuthor}</p>
+	</div>
+	
+	<div id="submit_review">
+	<h3>Been here before? Want to give your own review?</h3>
+	<form (submit)="onClickSubmitReview()">
+	<p>
+		<label>How would you rate this place? (Between 1 and 10)</label>
+		<input path="rating" type="number" min="1" max="10"/>
+	</p>
+	<p>
+		<label>How would you describe your experience?</label>
+		<textarea rows="7" cols="30" path="reviewText"></textarea>
+	</p>
+		<input type="submit" value = "Submit Review!" />
+	</form>
+	</div>
+	</div>
+
+	<div id="advice">
+	<h3>All Given Tips</h3>
+	<div id="all_advice">
+	<ul ngFor="">
+		<li>{allAdvice.tip}</li>
+	</ul>
+	</div>
+	
+	<div id="submit_advice">
+	<h3>Give Advice!</h3>
+	<form (submit)= "onClickSubmitAdvice">
+		<textarea rows="7" cols="30" path="tip"></textarea><br>
+		<input type="submit" value="Submit Advice!"/>
+	</form>
+	</div>
+	</div>
+	</div>
+	
+	<div id="wishlist">
+	<button (click)="onClickAddToWishlist">Add to Wishlist</button>
+	</div>
+	
+	<button [routerLink]="['/logout']" class="button">Logout</button>
+	<button [routerLink]="['/home']" class="button">Back to HomePage</button>
+	
+</body>
+</html>
