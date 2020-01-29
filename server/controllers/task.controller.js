@@ -31,7 +31,7 @@ module.exports = {
     searchTasks: function(req, res){
         console.log("Searching for task...");
         Task.findById({
-            _id: req.params.taskId
+            _id: req.params.id
         })
         .then(foundTask => {
             res.json(foundTask);
@@ -41,7 +41,7 @@ module.exports = {
 
     updateTask: function(req, res){
         Task.findByIdAndUpdate({
-            _id: req.params.taskId
+            _id: req.params.id
         })
         .then(updatedTask => {
             res.json(updatedTask);
@@ -51,7 +51,7 @@ module.exports = {
 
     deleteTask: function(req, res){
         Task.findByIdAndDelete({
-            _id: req.params.taskId
+            _id: req.params.id
         })
         .then(deletedTask => {
             res.send()
