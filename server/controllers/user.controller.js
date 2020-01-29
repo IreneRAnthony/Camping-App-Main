@@ -33,5 +33,37 @@ module.exports = {
                 return false;
             }
         })
+    },
+
+    logout: function(req, res){
+
+    },
+    // socket controller 
+    socketConnect: function (socket) {
+        console.log("Connected!");
+    
+        socket.on("new_user", function (data) {
+            users[socket.id] = {
+                name: data.name
+            };
+            console.log(users[socket.id]);
+            socket.emit('existing_messages', messages);
+            io.emit("display_new_user", {
+                name: data.name
+            })
+    }),
+    // socket controller 
+    socket.on("new_message", function (data) {
+        messages[id] = {
+            name: data.name,
+            message: data.message
+        };
+        io.emit("update_messages", messages[id]);
+        id++;
+    }),
+    // socket controller 
+    socket.on("disconnect", function () {
+        io.emit("user_disconnect", users[socket.id])
+    })
     }
 }

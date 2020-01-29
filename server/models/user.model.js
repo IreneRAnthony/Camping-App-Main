@@ -5,7 +5,14 @@ const UserSchema = new mongoose.Schema({
     password: {type: String, required: true},
     email: {type: String, required: true},
     created_at: { type: Date, default: Date.now },
-    updated_at: { type: Date, default: Date.now }
+    updated_at: { type: Date, default: Date.now },
+    // messages db 
+    messages:[
+        {
+            authorName: {type: String , required: true},
+            message: {type: String , required:true, minlength:3}
+        }
+    ]
 }, {timestamp: true})
 mongoose.model('User', UserSchema);
 
