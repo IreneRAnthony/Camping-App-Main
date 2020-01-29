@@ -25,7 +25,7 @@ module.exports = {
     searchLocation: function(req, res){
         console.log("Searching for location...");
         Location.findById({
-            _id: req.params.locationId
+            _id: req.params.id
         })
         .then(location => {
             res.json(location);
@@ -36,7 +36,7 @@ module.exports = {
     updateLocation: function(req, res){
         console.log("Updating Location...")
         Location.findByIdAndUpdate({
-            _id: req.params.locationId
+            _id: req.params.id
         })
         .then(updatedLocation => {
             res.json(updatedLocation);
@@ -47,7 +47,7 @@ module.exports = {
     deleteLocation: function(req, res){
         console.log("Deleting location...")
         Location.findByIdAndDelete({
-            _id: req.params.locationId
+            _id: req.params.id
         })
         .then(deletedLocation => {
             res.send();
