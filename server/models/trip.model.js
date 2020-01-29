@@ -6,6 +6,7 @@ const TripSchema = new mongoose.Schema({
     start_date: {type: Date},
     end_date: {type: Date},
     going: {type: Array},
+    creator: {type: String},
     supply_list: {type: Array},
     created_at: { type: Date, default: Date.now },
     updated_at: { type: Date, default: Date.now }
