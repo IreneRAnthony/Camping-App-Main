@@ -76,7 +76,7 @@ module.exports = {
 
     updateUser: function(req, res){
         User.findByIdAndUpdate({
-            _id: req.params.userId
+            _id: req.params.iId
         }, {
             $set: req.body
         })
@@ -88,7 +88,7 @@ module.exports = {
 
     deleteUser: function(req, res){
         User.findByIdAndDelete({
-            _id: req.params.userId
+            _id: req.params.id
         })
         .then(deletedUser => {
             res.send();
