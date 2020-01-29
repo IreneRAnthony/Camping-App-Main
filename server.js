@@ -10,6 +10,14 @@ app.use(express.urlencoded({
     extended: true
 }));
 
+const session = require('express-session');
+app.use(session({
+  secret: 'keyboardkitteh',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge: 60000 }
+}));
+
 require("./server/config/mongoose")
 
 const server = app.listen(8000, () => console.log("Listening on port 8000"));
