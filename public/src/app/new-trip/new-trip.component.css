@@ -1,0 +1,9 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+#new_trip, #trip_form {
+    text-align: center;
+    margin: auto;
+}
