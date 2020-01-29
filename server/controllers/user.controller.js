@@ -13,6 +13,8 @@ module.exports = {
         .then(newUser => {
             console.log(newUser);
             res.json(newUser);
+            req.session.user_id = user._id;
+            req.session.email = user.email;
         })
         .catch(err => res.json(err));
     },
@@ -24,8 +26,8 @@ module.exports = {
         })
         .then((result) => {
             if(result){
-                // req.session.user_id = user._id;
-                // req.session.email = user.email;
+                req.session.user_id = user._id;
+                req.session.email = user.email;
                 return true;
             } if (err){
                 return false; 
@@ -36,6 +38,7 @@ module.exports = {
     },
 
     logout: function(req, res){
+<<<<<<< HEAD
 
     },
     // socket controller 
@@ -65,5 +68,33 @@ module.exports = {
     socket.on("disconnect", function () {
         io.emit("user_disconnect", users[socket.id])
     })
+=======
+        req.session.destroy(function (err) {
+            res.send();
+        })
+    },
+
+    updateUser: function(req, res){
+        User.findByIdAndUpdate({
+            _id: req.params.userId
+        }, {
+            $set: req.body
+        })
+        .then(updatedUser => {
+            res.json(updatedUser);
+        })
+        .catch(err => res.json(err));
+    },
+
+    deleteUser: function(req, res){
+        User.findByIdAndDelete({
+            _id: req.params.userId
+        })
+        .then(deletedUser => {
+            res.send();
+        })
+        .catch(err => res.json(err));
+>>>>>>> 43df4024f9284d2f944e85d8cca28643def70327
     }
+
 }

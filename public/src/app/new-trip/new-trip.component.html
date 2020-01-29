@@ -1,0 +1,28 @@
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Start up a new Trip!</title>
+</head>
+<body>
+	<div id= "new_trip">
+	<h1>Are you ready to plan a trip?</h1>
+	<div id="trip_form">
+	<form (submit)="clickCreateTrip()">
+		<label>Name of Trip: </label>
+		<form type="text" [(ngModel)]="newTrip.name">
+		
+		<label>Where are you going?</label>
+		<input type="text" [(ngModel)]="newTrip.destination"/>
+		
+		<label>Start Date: </label>
+		<input type ="date" [(ngModel)]="newTrip.start_date"/>
+		
+		<label>End Date: </label>
+		<input type="date" [(ngModel)]="newTrip.end_date"/>
+		
+		<input type="submit" value="Create Trip!" />
+	</form>
+	</div>
+	</div>
+</body>
+</html>
