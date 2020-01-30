@@ -13,7 +13,7 @@ export class HttpService {
   }
 
   loginUser(user){
-    return this._http.get('/login');
+    return this._http.get('/login/user');
   }
 
   logoutUser(user){
