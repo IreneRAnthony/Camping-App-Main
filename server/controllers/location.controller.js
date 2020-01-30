@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-require('../models/trip.location')
+require('../models/location.model')
 const Location = mongoose.model('Location');
 
 module.exports = {

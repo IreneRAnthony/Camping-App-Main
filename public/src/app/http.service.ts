@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+// hardcoded location for dummy data
+var currentLocation = "95389"
 
 @Injectable({
   providedIn: 'root'
@@ -117,6 +118,9 @@ export class HttpService {
 
   deleteReview(id){
     return this._http.delete(`/delete/review/${id}`)
+  }
+  getData(){
+    return this._http.get(`https://api.openweathermap.org/data/2.5/weather?zip=${currentLocation}&units=imperial&appid=6b68f003b8aad17149e7c51b1dbafb86`)
   }
 
   constructor(private _http: HttpClient) { }

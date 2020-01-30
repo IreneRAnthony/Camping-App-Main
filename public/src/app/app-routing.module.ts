@@ -6,10 +6,10 @@ import { AboutLocationComponent } from './about-location/about-location.componen
 import { NewTripComponent } from './new-trip/new-trip.component';
 
 const routes: Routes = [
-  { path: '/new/location', component: NewLocationComponent },
-  { path: '/new/trip', component: NewTripComponent },
-  { path: '/about/location/:id', component: AboutLocationComponent },
-  { path: '/login', component: LoginRegistrationComponent },
+  { path: 'new/location', component: NewLocationComponent },
+  { path: 'new/trip', component: NewTripComponent },
+  { path: 'about/location/:id', component: AboutLocationComponent },
+  { path: 'login', component: LoginRegistrationComponent },
   { path: '', pathMatch: 'full', redirectTo: '/login' }
 ];
 
