@@ -1,0 +1,28 @@
+<h1>All About (Trip Name Here)</h1>
+
+<div class="destination">
+<h2>Destination: {{currentTrip.destination}}</h2>
+</div>
+
+<div class="supplyList">
+<h3>Supply List</h3>
+<table>
+    <thead>
+        <tr>
+        <th>Item</th>
+        <th>Status</th>
+        <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngfor="let supply of currentTrip.supply_list">
+            <td>{{supply.item}}</td>
+            <td>{{supply.status}}</td>
+            <td><button (click)= "completeSupply(supply._id)">Completed?</button> - <button (click)="deleteSupply">Delete</button></td>
+        </tr>
+    </tbody>
+</table>
+</div>
+
+<button (click)="clickToDelete">Delete Trip?</button>
+<button (click)="clickToDelete">Completed?</button>
