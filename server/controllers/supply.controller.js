@@ -25,7 +25,7 @@ module.exports = {
 
     updateSupply: function(req, res){
         console.log('Updating supply...')
-        Supply.findByIdAndUpdate(req.params.id)
+        Supply.findByIdAndUpdate(req.params.id, req.body)
         .then(updatedSupply => {
             res.json(updatedSupply);
         })
