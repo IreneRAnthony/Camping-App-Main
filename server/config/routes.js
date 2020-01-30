@@ -103,6 +103,10 @@ module.exports = function(app, server){
     app.get('/all/location', (req, res) => {
         location.allLocations(req, res);
     })
+    
+    app.get('/searchbar/location/:name', (req, res)=> {
+        location.locationSearchBar(req, res);
+    })
 
     app.get('/search/location/:id', (req, res) => {
         location.searchLocation(req, res);
