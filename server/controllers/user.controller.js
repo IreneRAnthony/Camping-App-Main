@@ -85,6 +85,16 @@ module.exports = {
         })
         .catch(err => res.json(err));
     },
+    
+    findUser: function(req, res){
+        User.findById({
+            _id: req.params.id
+        })
+        .then(user => {
+            res.json(user);
+        })
+        .catch(err => res.json(err));
+    }
 
     deleteUser: function(req, res){
         User.findByIdAndDelete({
