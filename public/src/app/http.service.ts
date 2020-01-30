@@ -138,6 +138,10 @@ export class HttpService {
   getSupply(id){
     return this._http.get(`search/supply/${id}`)
   }
+  
+  findOneSupply(id){
+    return this._http.get(`search/supply/find/${id}`)
+  }
 
   updateSupply(supply){
     return this._http.put(`/update/supply/${supply._id}`, supply)
