@@ -142,6 +142,10 @@ export class HttpService {
   findOneSupply(id){
     return this._http.get(`search/supply/find/${id}`)
   }
+  
+   completeSupply(supply){
+    return this._http.put(`/update/supply/completed/${supply._id}`, supply)
+  }
 
   updateSupply(supply){
     return this._http.put(`/update/supply/${supply._id}`, supply)
