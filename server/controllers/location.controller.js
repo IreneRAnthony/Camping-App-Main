@@ -32,6 +32,17 @@ module.exports = {
         })
         .catch(err => res.json(err));
     },
+    
+    locationSearchBar: function(req, res){
+        console.log('Searching for location...')
+        Location.find({
+            name: req.params.name
+        })
+        .then(location => {
+            res.json(location);
+        })
+        .catch(err => res.json(err));
+    },
 
     updateLocation: function(req, res){
         console.log("Updating Location...")

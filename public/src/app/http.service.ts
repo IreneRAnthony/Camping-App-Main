@@ -96,6 +96,10 @@ export class HttpService {
   getLocation(id){
     return this._http.get(`/search/location/${id}`)
   }
+  
+  searchForLocation(name){
+    return this._http.get(`/searchbar/location/${name}`)
+  }
 
   updateLocation(location){
     return this._http.put(`/update/location/${location._id}`, location);

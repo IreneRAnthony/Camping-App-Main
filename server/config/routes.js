@@ -2,6 +2,8 @@ const user = require("../controllers/user.controller");
 const trip = require('../controllers/trip.controller');
 const task = require('../controllers/task.controller');
 const location = require('../controllers/location.controller');
+const review = require('../controllers/review.controller');
+const supply = require('../controllers/supply.controller');
 
 // added the server argument to the function for the sockets to work 
 module.exports = function(app, server){
@@ -103,6 +105,10 @@ module.exports = function(app, server){
     app.get('/all/location', (req, res) => {
         location.allLocations(req, res);
     })
+    
+    app.get('/searchbar/location/:name', (req, res)=> {
+        location.locationSearchBar(req, res);
+    })
 
     app.get('/search/location/:id', (req, res) => {
         location.searchLocation(req, res);
@@ -134,4 +140,22 @@ module.exports = function(app, server){
         review.deleteReview(req, res);
     })
     
+    
+    //All Supply CRUD
+
+    app.get('/search/supply/:id', (req, res) => {
+        supply.getSupply(req, res);
+    })
+
+    app.post('/new/supply', (req, res) => {
+        supply.createSupply(req, res);
+    })
+
+    app.put('/update/supply/:id', (req, res) => {
+        supply.updateSupply(req, res);
+    })
+
+    app.delete('/delete/supply/:id', (req, res) => {
+        supply.deleteSupply(req, res);
+    })
 }
