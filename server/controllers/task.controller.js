@@ -42,6 +42,8 @@ module.exports = {
     updateTask: function(req, res){
         Task.findByIdAndUpdate({
             _id: req.params.id
+        }, {
+            $set: req.body
         })
         .then(updatedTask => {
             res.json(updatedTask);
@@ -52,6 +54,8 @@ module.exports = {
     deleteTask: function(req, res){
         Task.findByIdAndDelete({
             _id: req.params.id
+        }, { 
+            $set: req.body
         })
         .then(deletedTask => {
             res.send()
