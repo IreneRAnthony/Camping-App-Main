@@ -154,6 +154,10 @@ module.exports = function(app, server){
     app.put('/update/supply/:id', (req, res) => {
         supply.updateSupply(req, res);
     })
+    
+    app.put('/update/supply/completed/:id', (req,res) => {
+        supply.completeSupply(req, res);
+    })
 
     app.delete('/delete/supply/:id', (req, res) => {
         supply.deleteSupply(req, res);
