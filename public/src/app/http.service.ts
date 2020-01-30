@@ -16,7 +16,7 @@ export class HttpService {
   }
 
   logoutUser(user){
-    return this._http.get('/logout');
+    return this._http.get('/logout/user');
   }
 
   getUserId(){
