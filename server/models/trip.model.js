@@ -7,7 +7,7 @@ const TripSchema = new mongoose.Schema({
     end_date: {type: Date},
     going: {type: Array},
     creator: {type: String},
-    supply_list: {type: Array},
+    supply_list: {type: Array, require: false},
     created_at: { type: Date, default: Date.now },
     updated_at: { type: Date, default: Date.now }
 }, {timestamp: true})
