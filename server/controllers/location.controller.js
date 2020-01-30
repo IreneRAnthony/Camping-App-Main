@@ -48,7 +48,7 @@ module.exports = {
         console.log("Updating Location...")
         Location.findByIdAndUpdate({
             _id: req.params.id
-        })
+        }, {$set: req.body })
         .then(updatedLocation => {
             res.json(updatedLocation);
         })
