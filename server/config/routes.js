@@ -108,4 +108,22 @@ module.exports = function(app, server){
         location.deleteLocation(req, res);
     })
     
+    // All Review CRUD
+
+    app.get('/search/reviews', (req, res) => {
+        review.getReview(req, res);
+    })
+
+    app.post('/new/review/:id', (req, res) => {
+        review.createReview(req, res);
+    })
+
+    app.put('/update/review/:id', (req, res) => {
+        review.updateReview(req, res);
+    })
+
+    app.delete('/delete/review/:id', (res, req) => {
+        review.deleteReview(req, res);
+    })
+    
 }
