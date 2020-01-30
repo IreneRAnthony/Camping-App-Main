@@ -32,6 +32,10 @@ module.exports = function(app, server){
     app.get('/search/session/user', (req, res) =>{
         user.getUserInSession(req ,res);
     })
+    
+    app.get('/search/user/:id', (req, res) => {
+        user.findUser(req, res);
+    })
 
     
     
