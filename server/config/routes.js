@@ -53,6 +53,10 @@ module.exports = function(app, server){
     app.get('/trip/search/:id', (req, res) => {
         trip.searchTrip(req, res);
     })
+    
+    app.get('/trip/search/user', (req, res) => {
+        trip.searchTripByUser(req, res);
+    })
 
     app.post('/new/trip', (req, res) => {
         trip.createTrip(req, res);
