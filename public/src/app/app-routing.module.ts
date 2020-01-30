@@ -6,8 +6,10 @@ import { AboutLocationComponent } from './about-location/about-location.componen
 import { NewTripComponent } from './new-trip/new-trip.component';
 import { AboutTripComponent } from './about-trip/about-trip.component';
 import { SearchLocationsComponent } from'./search-locations/search-locations.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 const routes: Routes = [
+  { path: '/home', component: HomePageComponent},
   { path: 'new/location', component: NewLocationComponent },
   { path: 'new/trip', component: NewTripComponent },
   { path: '/show/trip/:id', component: AboutTripComponent },
