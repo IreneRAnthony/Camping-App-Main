@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: 'new/location', component: NewLocationComponent },
   { path: 'new/trip', component: NewTripComponent },
   { path: '/show/trip/:id', component: AboutTripComponent },
-  { path: '/search/location/:name', component: SearchLocationsComponent },
+  { path: '/searchbar/location/:name', component: SearchLocationsComponent },
   { path: 'about/location/:id', component: AboutLocationComponent },
   { path: 'login', component: LoginRegistrationComponent },
   { path: '', pathMatch: 'full', redirectTo: '/login' }
