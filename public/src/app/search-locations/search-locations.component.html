@@ -1,0 +1,24 @@
+<h1>Searching for {{searchedLocation}}</h1>
+
+<div class="main">
+    <ul *ngFor = 'let location of locations'>
+        <li>{{location.name}}</li>
+    </ul>
+</div>
+
+<div class="footer">
+    <p>That it for {{searchedLocation.name}}...</p>
+</div>
+
+<div id="search-bar">
+    <p>Try Another search?</p>
+    <form (submit)="clickToSearch()">
+        <input type="text" name="locationName" [(ngModel)]="searchTerm" />
+        <input type="search" value="Search">
+    </form>
+</div>
+
+<div class="newLocation">
+    <p>Or make the location!</p>
+    <button [routerLink]="['/location/new']">New Location</button>
+</div>
