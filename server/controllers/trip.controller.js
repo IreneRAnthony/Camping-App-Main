@@ -53,5 +53,15 @@ module.exports = {
             res.send();
         })
         .catch(err => res.json(err));
+    },
+    
+     searchTripByUser: function(req, res){
+        Trip.find({
+            user_id: req.session.user_id
+        })
+        .then(foundTrips => {
+            res.json(foundTrips);
+        })
+        .catch(err => res.json(err));
     }
 }
