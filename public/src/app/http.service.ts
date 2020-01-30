@@ -127,6 +127,27 @@ export class HttpService {
   deleteReview(id){
     return this._http.delete(`/delete/review/${id}`)
   }
+  
+  
+  //Supplies
+
+  createSupply(newSupply){
+    return this._http.post('/new/supply', newSupply)
+  }
+
+  getSupply(id){
+    return this._http.get(`search/supply/${id}`)
+  }
+
+  updateSupply(supply){
+    return this._http.put(`/update/supply/${supply._id}`, supply)
+  }
+
+  deleteSupply(id){
+    return this._http.delete(`/delete/supply/${id}`)
+  }
+  
+  //API Data
   getData(){
     return this._http.get(`https://api.openweathermap.org/data/2.5/weather?zip=${currentLocation}&units=imperial&appid=6b68f003b8aad17149e7c51b1dbafb86`)
   }
