@@ -15,7 +15,7 @@ module.exports = function(app, server){
         user.createUser(req, res);
     })
 
-    app.get('/login', (req, res) => {
+    app.get('/login/user', (req, res) => {
         user.login(req, res);
     })
 
