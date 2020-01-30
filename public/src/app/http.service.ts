@@ -22,6 +22,10 @@ export class HttpService {
   getUserId(){
     return this._http.get('/search/session/user')
   }
+  
+  findUser(id){
+    return this._http.get(`/search/user/${id}`)
+  }
 
   updateUser(user){
     return this._http.put(`update/user/${user._id}`, user);
