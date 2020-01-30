@@ -147,6 +147,10 @@ module.exports = function(app, server){
         supply.getSupply(req, res);
     })
 
+    app.get('/search/supply/find/:id', (req, res) => {
+        supply.findSupply(req, res)
+    })
+    
     app.post('/new/supply', (req, res) => {
         supply.createSupply(req, res);
     })
