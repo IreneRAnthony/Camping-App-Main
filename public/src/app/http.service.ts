@@ -43,6 +43,10 @@ export class HttpService {
   getTrip(id){
     return this._http.get(`/trip/search/${id}`, id);
   }
+  
+  getUserTrips(){
+    return this._http.get('trips/search/user');
+  }
 
   updateTrip(trip){
     return this._http.put(`/update/trip/${trip._id}`, trip)
