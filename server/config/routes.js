@@ -7,6 +7,8 @@ const location = require('../controllers/location.controller');
 module.exports = function(app, server){
     // socket import 
     const io = require("socket.io")(server);
+    
+    //All user CRUD
     app.get('/new/user', (req, res) => {
         user.createUser(req, res);
     })
@@ -15,6 +17,24 @@ module.exports = function(app, server){
         user.login(req, res);
     })
 
+    app.post('/logout/user', (req, res) => {
+        user.logout(req, res);
+    })
+    
+    app.put('/update/user/:id', (req, res) => {
+        user.updateUser(req, res);
+    })
+
+    app.delete('/delete/user/:id', (req, res) => {
+        user.deleteUser(req, res);
+    })
+
+    app.get('/search/session/user', (req, res) =>{
+        user.getUserInSession(req ,res);
+    })
+
+    
+    
     app.post('/logout', user.logout)
     // the route for message board 
     app.get("/api/messages", (req, res) => {
@@ -23,4 +43,69 @@ module.exports = function(app, server){
     })
     // socket connection 
     io.on("connection", user.socketConnect);
+    
+    
+    //All Trip CRUD
+    app.get('/all/trip', (req, res) => {
+        trip.allTrips(req, res);
+    })
+
+    app.get('/trip/search/:id', (req, res) => {
+        trip.searchTrip(req, res);
+    })
+
+    app.post('/new/trip', (req, res) => {
+        trip.createTrip(req, res);
+    })
+
+    app.put('/update/trip/:id', (req, res) => {
+        trip.updateTrip(req, res);
+    })
+
+    app.delete('/delete/trip/:id', (req, res) => {
+        trip.deleteTrip(req, res);
+    })
+
+    //All Task CRUD
+    app.post('/new/task', (req, res) => {
+        task.createTask(req, res);
+    })
+
+    app.get('/all/task', (req, res) => {
+        task.allTasks(req, res);
+    })
+
+    app.get('/task/search/:id', (req, res) => {
+        task.searchTasks(req, res);
+    })
+
+    app.put('/update/task/:id', (req, res) => {
+        task.updateTask(req, res);
+    })
+
+    app.delete('/delete/task/:id', (req, res) => {
+        task.deleteTask(req, res);
+    })
+
+    //All Location CRUD
+    app.post('/new/location', (req, res) => {
+        location.createLocation(req ,res);
+    })
+
+    app.get('/all/location', (req, res) => {
+        location.allLocations(req, res);
+    })
+
+    app.get('/search/location/:id', (req, res) => {
+        location.searchLocation(req, res);
+    })
+
+    app.put('/update/location/:id', (req, res) => {
+        location.updateLocation(req, res);
+    })
+
+    app.delete('/delete/location/:id', (req, res) => {
+        location.deleteLocation(req, res);
+    })
+    
 }
