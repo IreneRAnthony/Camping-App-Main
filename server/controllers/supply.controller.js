@@ -40,6 +40,18 @@ module.exports = {
             res.send();
         })
         .catch(err => res.json(err))
+    },
+    
+    completeSupply: function(req, res){
+        console.log('Supply obtained!')
+        Supply.findByIdAndUpdate(req.params.id, {
+            status: true
+        })
+        .then(supply => {
+            console.log('Finished!', supply.status)
+            res.json(supply)
+        })
+        .catch(err => res.json(err))
     }
 
 }
