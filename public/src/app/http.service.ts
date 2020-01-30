@@ -95,6 +95,25 @@ export class HttpService {
   deleteLocation(id){
     return this._http.delete(`/delete/location/${id}`);
   }
+  
+  
+  //Reviews
+
+  createReview(newReview){
+    return this._http.post('/new/review', newReview);
+  }
+
+  getReview(id) {
+    return this._http.get(`/search/review/${id}`)
+  }
+
+  updateReview(review){
+    return this._http.put(`/update/review/${review._id}`, review)
+  }
+
+  deleteReview(id){
+    return this._http.delete(`/delete/review/${id}`)
+  }
 
   constructor(private _http: HttpClient) { }
 }
