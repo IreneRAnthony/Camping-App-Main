@@ -26,6 +26,15 @@ module.exports = {
         })
         .catch(err => res.json(err))
     },
+    
+     findSupply: function(req, res){
+        console.log('Finding supply...')
+        Supply.findById(req.params.id)
+        .then(supply => {
+            res.json(supply)
+        })
+        .catch(err => res.json(err))
+    },
 
     updateSupply: function(req, res){
         console.log('Updating supply...')
