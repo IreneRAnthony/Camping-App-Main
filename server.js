@@ -1,14 +1,19 @@
 const express = require('express');
+
+const path = require ('path');
+
 const cors = require('cors');
-const app = express();app.use(cors());
+const app = express();
+app.use(cors());
+
 
 
 app.use(express.json());
 app.use(express.static( __dirname + '/public/dist/public' ));
-// used for sockets 
-app.use(express.urlencoded({
-    extended: true
-}));
+// get all routes 
+app.all("*", (req,res,next) => {
+    res.sendFile(path.resolve("./public/dist/public/index.html"))
+  });
 
 const session = require('express-session');
 app.use(session({

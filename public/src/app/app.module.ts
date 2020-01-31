@@ -12,8 +12,12 @@ import { MessagingComponent } from './messaging/messaging.component';
 import { RatingsComponent } from './ratings/ratings.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { NewLocationComponent } from './new-location/new-location.component';
-import { AboutLocationComponent } from './about-location/about-location.component';
 import { NewTripComponent } from './new-trip/new-trip.component';
+import { AboutLocationComponent } from './about-location/about-location.component';
+import { DocumentListComponent } from './document-list/document-list.component';
+import { DocumentComponent } from './document/document.component';
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+
 
 @NgModule({
   declarations: [
@@ -24,13 +28,19 @@ import { NewTripComponent } from './new-trip/new-trip.component';
     NewTripComponent,
     MessagingComponent,
     RatingsComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    NewLocationComponent,
+    NewTripComponent,
+    AboutLocationComponent,
+    DocumentListComponent,
+    DocumentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    SocketIoModule.forRoot(config),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyC5vuY2bSP_SK1a4n9lBZCTZC_syn5DmJc'
     })

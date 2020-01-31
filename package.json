@@ -17,5 +17,8 @@
     "express-session": "^1.17.0",
     "mongoose": "^5.8.10",
     "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^0.803.23"
   }
 }

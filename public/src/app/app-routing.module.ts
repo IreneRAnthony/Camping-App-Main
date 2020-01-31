@@ -4,6 +4,7 @@ import { LoginRegistrationComponent } from './login-registration/login-registrat
 import { NewLocationComponent } from './new-location/new-location.component';
 import { AboutLocationComponent } from './about-location/about-location.component';
 import { NewTripComponent } from './new-trip/new-trip.component';
+import { MessagingComponent } from './messaging/messaging.component';
 import { AboutTripComponent } from './about-trip/about-trip.component';
 import { SearchLocationsComponent } from'./search-locations/search-locations.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -16,6 +17,7 @@ const routes: Routes = [
   { path: '/searchbar/location/:name', component: SearchLocationsComponent },
   { path: 'about/location/:id', component: AboutLocationComponent },
   { path: 'login', component: LoginRegistrationComponent },
+  { path: 'chat/room' , component: MessagingComponent},
   { path: '', pathMatch: 'full', redirectTo: '/login' }
 ];
 
