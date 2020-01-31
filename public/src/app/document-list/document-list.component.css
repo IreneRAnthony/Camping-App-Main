@@ -1,0 +1,9 @@
+.sidenav {
+    position: centre;
+    height: 10%;
+    width: 220px;
+    top: 0;
+    left: 0;
+    background-color:#69dddd;
+    overflow-x: hidden;
+    padding-top: 20px;}

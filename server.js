@@ -1,14 +1,14 @@
 const express = require('express');
 const app = express();
-
+const path = require ('path');
 
 
 app.use(express.json());
 app.use(express.static( __dirname + '/public/dist/public' ));
-// used for sockets 
-app.use(express.urlencoded({
-    extended: true
-}));
+// get all routes 
+app.all("*", (req,res,next) => {
+    res.sendFile(path.resolve("./public/dist/public/index.html"))
+  });
 
 require("./server/config/mongoose")
 

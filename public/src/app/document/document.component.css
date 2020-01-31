@@ -1,0 +1,12 @@
+textarea {
+    position: auto;
+    width: 25%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    font-size: 18pt;
+    padding-top: 20px;
+    resize: none;
+    border: blue;
+    padding: 20px 0px 20px 15px;
+}

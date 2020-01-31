@@ -36,65 +36,11 @@ module.exports = {
             }
         })
     },
-
+    // added the session for sockets 
     logout: function(req, res){
-<<<<<<< HEAD
-
-    },
-    // socket controller 
-    socketConnect: function (socket) {
-        console.log("Connected!");
-    
-        socket.on("new_user", function (data) {
-            users[socket.id] = {
-                name: data.name
-            };
-            console.log(users[socket.id]);
-            socket.emit('existing_messages', messages);
-            io.emit("display_new_user", {
-                name: data.name
-            })
-    }),
-    // socket controller 
-    socket.on("new_message", function (data) {
-        messages[id] = {
-            name: data.name,
-            message: data.message
-        };
-        io.emit("update_messages", messages[id]);
-        id++;
-    }),
-    // socket controller 
-    socket.on("disconnect", function () {
-        io.emit("user_disconnect", users[socket.id])
-    })
-=======
         req.session.destroy(function (err) {
             res.send();
         })
     },
-
-    updateUser: function(req, res){
-        User.findByIdAndUpdate({
-            _id: req.params.userId
-        }, {
-            $set: req.body
-        })
-        .then(updatedUser => {
-            res.json(updatedUser);
-        })
-        .catch(err => res.json(err));
-    },
-
-    deleteUser: function(req, res){
-        User.findByIdAndDelete({
-            _id: req.params.userId
-        })
-        .then(deletedUser => {
-            res.send();
-        })
-        .catch(err => res.json(err));
->>>>>>> 43df4024f9284d2f944e85d8cca28643def70327
-    }
 
 }
