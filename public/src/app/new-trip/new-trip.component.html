@@ -1,10 +1,14 @@
 <html>
+
 <head>
-<meta charset="ISO-8859-1">
-<title>Start up a new Trip!</title>
+  <meta charset="ISO-8859-1">
+  <title>Start up a new Trip!</title>
+  <link href="https://fonts.googleapis.com/css?family=Courgette|Ubuntu&display=swap" rel="stylesheet">
 </head>
+
 <body>
-	<div id= "new_trip">
+  <button class="button" [routerLink]="['/home']">Back</button>
+
 	<h1>Are you ready to plan a trip?</h1>
 	<div id="trip_form">
 	<form (submit)="clickCreateTrip()">
@@ -25,4 +29,5 @@
 	</div>
 	</div>
 </body>
+
 </html>

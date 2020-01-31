@@ -8,12 +8,12 @@
 </head>
 <body>
 <button [routerLink] = "['/home']" class="button">Back to HomePage</button>
-<button [routerLink] = "['/logout']" class="button">Logout</button>
+<button [routerLink] = "['/login']" class="button">Logout</button>
 	<h1>What Location would you like to make a page for?</h1>
 	
 	<div id="new_location">
 	<form (submit)="clickCreateLocation()">
-		<div id="locationName">
+		<p>
 		<label>Location name: </label>
 		<input type="text" name="name" [(ngModel)]="newLocation && newLocation.name" >
 		</div>
@@ -21,9 +21,8 @@
 		<div id="address">
 		<label>Address (The entrance of the area is best, make sure it is correct!): </label>
 		<input type="text" name="address" [(ngModel)]="newLocation && newLocation.address"/>
-		</div>
-		
-		<div id="description">
+		</div>		
+		<p>
 		<label>Description: </label><br>
 		<textarea rows="8" cols="30" name="description" [(ngModel)]="newLocation && newLocation.description"></textarea>
 		</div>

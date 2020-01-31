@@ -1,10 +1,14 @@
 * {
     margin: 0px;
-    padding: 0px;
+	padding: 0px;
 }
 
-body {
+.background {
 	background-image: url("FallBackground2.jpeg");
+	background-size: cover;
+}
+
+.body {
 	color: #FEFEDC;
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
@@ -12,7 +16,21 @@ body {
 	font-family: 'Ubuntu', sans-serif;
 }
 
+textarea{
+	border-radius: 8px;
+	font-family: 'Ubuntu', sans-serif;
+	margin: 7px;
+	margin-top: 5px;
+	display: block;
+}
+
+#taskDescription, #taskPriority {
+	margin: 8px;
+	margin-top: 5px;
+}
+
 h1 {
+	color: #FEFEDC;
 	margin: 8px;
 	font-family: 'Courgette', cursive;
 	font-size: 50px;
@@ -33,9 +51,10 @@ h1 {
 #footer {
 	display: inline-block;
 	padding: 10px;
+	vertical-align: middle;
 }
 
-#friend_list, #trip_table, #toDoList, #wishlist, #footer{
+#trip_table, #toDoList, #footer{
 	border: 2px solid #E68A37;
 	padding: 10px;
 	border-radius: 8px;
@@ -43,7 +62,7 @@ h1 {
 	background-color: #B75129;
 }
 
-#new_trip, #new_task, #new_friend{
+#new_trip, #new_task{
 	background-color: #A85B60;
 	border-radius: 8px;
 	padding: 8px;
@@ -92,6 +111,10 @@ li {
 	text-align: center;
 }
 
+#createTrip {
+	border-radius: 8px;
+}
+
 #trips_header {
 	background-color: #8D412A;
 	border-radius: 8px;
@@ -101,20 +124,6 @@ li {
 	width: 185px;
 	margin-left: 50px;
 	text-align: center;
-}
-
-#wishlist_header {
-	background-color: #8D412A;
-	border-radius: 8px;
-	margin: 8px;
-	padding: 5px;
-	border: solid 2px #CC4C31;
-	text-align: center;
-	width: 300px;
-}
-
-#wishlist {
-	width: 300px;
 }
 
 .inline-block {
@@ -129,4 +138,7 @@ li {
 
 #task_wishlist {
 	display: inline-block;
+	vertical-align: top;
+	margin-left: 150px;
+	margin-right: 200px;
 }

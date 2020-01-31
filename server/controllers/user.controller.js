@@ -5,35 +5,43 @@ const User = mongoose.model('User');
 module.exports = {
     createUser: function(req, res){
         console.log("Creating user...");
-        bcrypt.hash(req.body.password)
+        bcryptjs.hash(req.body.password, 10)
         .then(hashedPassword => {
             req.body.password = hashedPassword;
-            User.create(req.body);
+            return User.create({
+                email: req.body.email,
+                name: req.body.name,
+                password: req.body.password
+            }); 
         })
         .then(newUser => {
+            console.log('Hashed Password and created user!')
             console.log(newUser);
             res.json(newUser);
-            req.session.user_id = user._id;
-            req.session.email = user.email;
+            req.session.user_id = newUser._id;
+            req.session.email = newUser.email;
         })
-        .catch(err => res.json(err));
+        .catch(err => {
+            res.json(err);
+            console.log("Error: "+err);
+        
+        });
     },
 
     login: function(req, res){
         console.log('Logging in User...', req.body);
-        User.findOne({ email:req.body.email }, (err, user) => {
-            return bcrypt.compare(req.body.password, user.password)
-        })
-        .then((result) => {
-            if(result){
-                req.session.user_id = user._id;
-                req.session.email = user.email;
-                return true;
-            } if (err){
-                return false; 
-            } else {
-                return false;
+        User.findOne({ email:req.body.email })
+        .then( resp => {
+            if(bcryptjs.compare(req.body.password, user.password)){
+                req.session.user_id = resp.user._id;
+                req.session.email = resp.user.email;
             }
+            else{
+                res.json("PASSWORD DOESNT MATCH")
+            }
+        })
+        .catch( err =>{
+            res.json(err)
         })
     },
 

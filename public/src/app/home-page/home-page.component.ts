@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpService } from '../http.service';
+import { Task } from '../task'
 
 @Component({
   selector: 'app-home-page',
@@ -8,6 +9,7 @@ import { HttpService } from '../http.service';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
+  newTask
   userId;
   trips: any;
   allTasks: any;
@@ -20,6 +22,7 @@ export class HomePageComponent implements OnInit {
     private _router: Router) { }
 
   ngOnInit() {
+    this.newTask = new Task();
     this.getUserId();
     this.getTrips();
     this.getAllLocations();
