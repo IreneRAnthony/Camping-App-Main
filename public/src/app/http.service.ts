@@ -50,7 +50,7 @@ export class HttpService {
   }
   
   getUserTrips(){
-    return this._http.get('trips/search/user');
+    return this._http.get('trip/search/user');
   }
 
   updateTrip(trip){
