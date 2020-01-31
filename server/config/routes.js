@@ -88,6 +88,10 @@ module.exports = function(app, server){
     app.get('/task/search/:id', (req, res) => {
         task.searchTasks(req, res);
     })
+    
+    app.get('/task/search/user', (req, res) => {
+        task.allUserTasks(req.res)
+    })
 
     app.put('/update/task/:id', (req, res) => {
         task.updateTask(req, res);
