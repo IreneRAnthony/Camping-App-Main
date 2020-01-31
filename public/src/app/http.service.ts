@@ -97,6 +97,10 @@ export class HttpService {
     return this._http.get(`/search/location/${id}`)
   }
   
+  getUserTasks(){
+    return this._http.get('/task/search/user');
+  }
+  
   searchForLocation(name){
     return this._http.get(`/searchbar/location/${name}`)
   }
