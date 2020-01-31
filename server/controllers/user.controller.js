@@ -43,4 +43,38 @@ module.exports = {
         })
     },
 
+    updateUser: function(req, res){
+        User.findByIdAndUpdate({
+            _id: req.params.iId
+        }, {
+            $set: req.body
+        })
+        .then(updatedUser => {
+            res.json(updatedUser);
+        })
+        .catch(err => res.json(err));
+    },
+    
+    findUser: function(req, res){
+        User.findById({
+            _id: req.params.id
+        })
+        .then(user => {
+            res.json(user);
+        })
+        .catch(err => res.json(err));
+    }
+
+    deleteUser: function(req, res){
+        User.findByIdAndDelete({
+            _id: req.params.id
+        })
+        .then(deletedUser => {
+            res.send();
+        })
+        .catch(err => res.json(err));
+
+    }
+
+
 }

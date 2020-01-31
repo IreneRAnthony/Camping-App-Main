@@ -6,26 +6,40 @@
 </head>
 <body>
 	<div id = "picture">
-	<img src="" height="400" width="630">
+	<img src="https://www.nps.gov/yose/planyourvisit/images/spring-yosemitefalls.jpg?maxwidth=1200&maxheight=1200&autorotate=false" height="400" width="630">
 	</div>
 	
 	<div id="mainHeader">
-	<h1 id = "locationName">{{currentLocation.locationName}}</h1>
-
+	<h1 id = "locationName">{{currentLocation.name}}</h1>
+	<h6>Temperature: {{data.main && data.main.temp}} degrees Fahrenheit</h6>
+	<h6>Humidity: {{data.main && data.main.humidity}}%</h6>
+	<h6>Cloudiness: {{data.weather && data.weather[0].main}}</h6>
+	<h6>Wind: {{data.wind && data.wind.speed}} mph from the 
+		<p style="display: inline-block" *ngIf="data.wind && data.wind.deg < 90">North</p>
+		<p style="display: inline-block" *ngIf="data.wind && data.wind.deg >= 90 && data.wind.deg <= 179">East</p>
+		<p style="display: inline-block" *ngIf="data.wind && data.wind.deg >= 180 && data.wind.deg <= 269">South</p>
+		<p style="display: inline-block" *ngIf="data.wind && data.wind.deg >= 270">West</p>
+	</h6>
+	<h6>Sunrise: {{sunrise}} AM</h6>
+	<h6>Sunset: {{sunset}} PM</h6>
+	<agm-map [latitude]="lat" [longitude]="lon">
+		<agm-marker [latitude]="lat" [longitude]="lon"></agm-marker>
+	  </agm-map>
 	<div id="information">
 	<h3 id="address">Address</h3>
-	<p>{currentLocation.address}</p>
+	<p>{{currentLocation.address}}</p>
 	<h3 id="desc">Description</h3>
-	<p>{currentLocation.description}</p>
+	<p>{{currentLocation.description}}</p>
 	</div>
 	</div>
 
 	<div id="reviewsAndAdvice">
 	<div id="reviews">
 	<h3>All Reviews so Far</h3>
-	<div id="all_reviews" *ngFor="">
-		<p>{review.rating}/10 - {review.reviewText}</p>
-		<p>{review.reviewAuthor}</p>
+	<!--  took out *ngFor="" below for testing -->
+	<div id="all_reviews">
+		<p>{{review.rating}}/10 - {{review.reviewText}}</p>
+		<p>{{review.reviewAuthor}}</p>
 	</div>
 	
 	<div id="submit_review">
@@ -48,7 +62,7 @@
 	<h3>All Given Tips</h3>
 	<div id="all_advice">
 	<ul ngFor="">
-		<li>{allAdvice.tip}</li>
+		<li>{{allAdvice.tip}}</li>
 	</ul>
 	</div>
 	

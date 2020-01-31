@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-require('../models/trip.location')
+require('../models/location.model')
 const Location = mongoose.model('Location');
 
 module.exports = {
@@ -25,7 +25,18 @@ module.exports = {
     searchLocation: function(req, res){
         console.log("Searching for location...");
         Location.findById({
-            _id: req.params.locationId
+            _id: req.params.id
+        })
+        .then(location => {
+            res.json(location);
+        })
+        .catch(err => res.json(err));
+    },
+    
+    locationSearchBar: function(req, res){
+        console.log('Searching for location...')
+        Location.find({
+            name: req.params.name
         })
         .then(location => {
             res.json(location);
@@ -36,8 +47,8 @@ module.exports = {
     updateLocation: function(req, res){
         console.log("Updating Location...")
         Location.findByIdAndUpdate({
-            _id: req.params.locationId
-        })
+            _id: req.params.id
+        }, {$set: req.body })
         .then(updatedLocation => {
             res.json(updatedLocation);
         })
@@ -47,7 +58,7 @@ module.exports = {
     deleteLocation: function(req, res){
         console.log("Deleting location...")
         Location.findByIdAndDelete({
-            _id: req.params.locationId
+            _id: req.params.id
         })
         .then(deletedLocation => {
             res.send();

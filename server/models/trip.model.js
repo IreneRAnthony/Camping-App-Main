@@ -5,9 +5,9 @@ const TripSchema = new mongoose.Schema({
     destination: { type: String, require: true },
     start_date: {type: Date},
     end_date: {type: Date},
-    going: {type: Array},
+    going: {type: Array, require: false},
     creator: {type: String},
-    supply_list: {type: Array},
+    supply_list: {type: Array, require: false},
     created_at: { type: Date, default: Date.now },
     updated_at: { type: Date, default: Date.now }
 }, {timestamp: true})

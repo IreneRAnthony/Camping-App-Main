@@ -9,7 +9,7 @@
 	<div id="trip_form">
 	<form (submit)="clickCreateTrip()">
 		<label>Name of Trip: </label>
-		<form type="text" [(ngModel)]="newTrip.name">
+		<input type="text" [(ngModel)]="newTrip.name">
 		
 		<label>Where are you going?</label>
 		<input type="text" [(ngModel)]="newTrip.destination"/>

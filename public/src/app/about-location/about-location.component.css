@@ -109,3 +109,6 @@ h1 {
 textarea {
 	border-radius: 8px;
 }
+agm-map {
+	height: 300px;
+  }

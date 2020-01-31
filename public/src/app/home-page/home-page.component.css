@@ -1,0 +1,132 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+	background-image: url("FallBackground2.jpeg");
+	color: #FEFEDC;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	width: 100%;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+h1 {
+	margin: 8px;
+	font-family: 'Courgette', cursive;
+	font-size: 50px;
+	text-align: center;
+	background-color: #D9645A;
+	border-radius: 8px;
+	width: 385px;
+	margin: auto;
+	margin-top: 15px;
+	border: dashed #F2AD72 4px;
+}
+
+.customSelect {
+	border-radius: 8px;
+	padding: 3px;
+}
+
+#footer {
+	display: inline-block;
+	padding: 10px;
+}
+
+#friend_list, #trip_table, #toDoList, #wishlist, #footer{
+	border: 2px solid #E68A37;
+	padding: 10px;
+	border-radius: 8px;
+	margin: 10px;
+	background-color: #B75129;
+}
+
+#new_trip, #new_task, #new_friend{
+	background-color: #A85B60;
+	border-radius: 8px;
+	padding: 8px;
+	border: #DE8275 solid 1px;
+}
+
+.button {
+	padding: 5px;
+	border-radius: 8px;
+	border: none;
+	margin: 5px;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+input {
+	padding: 3px;
+	border-radius: 8px;
+	margin-left: 10px;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+table {
+	padding: 8px;
+}
+
+td, th {
+	padding: 5px;
+}
+
+li {
+	margin: 20px;
+}
+
+#toDoList {
+	width: 300px;
+	display: inline-block;
+}
+
+.header {
+	background-color: #8D412A;
+	border-radius: 8px;
+	margin: 8px;
+	padding: 8px;
+	border: solid 2px #CC4C31;
+	width: 120px;
+	text-align: center;
+}
+
+#trips_header {
+	background-color: #8D412A;
+	border-radius: 8px;
+	margin: 8px;
+	padding: 8px;
+	border: solid 2px #CC4C31;
+	width: 185px;
+	margin-left: 50px;
+	text-align: center;
+}
+
+#wishlist_header {
+	background-color: #8D412A;
+	border-radius: 8px;
+	margin: 8px;
+	padding: 5px;
+	border: solid 2px #CC4C31;
+	text-align: center;
+	width: 300px;
+}
+
+#wishlist {
+	width: 300px;
+}
+
+.inline-block {
+	display: inline-block;
+	vertical-align: top;
+	margin-left: 18px
+}
+
+#toDoList, #wishlist{
+	display: inline-block;
+}
+
+#task_wishlist {
+	display: inline-block;
+}

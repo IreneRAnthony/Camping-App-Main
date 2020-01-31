@@ -23,7 +23,7 @@ module.exports = {
 
     searchTrip: function(req, res){
         Trip.findById({
-            _id: req.params.tripId
+            _id: req.params.id
         })
         .then(trip => {
             console.log('Got a trip!', trip);
@@ -34,7 +34,7 @@ module.exports = {
 
     updateTrip: function(req, res){
         Trip.findByIdAndUpdate({
-            _id: req.params.tripId
+            _id: req.params.id
         }, {
             $set: req.body
         })
@@ -47,10 +47,20 @@ module.exports = {
 
     deleteTrip: function(req, res){
         Trip.findByIdAndDelete({
-            _id: req.params.tripId
+            _id: req.params.id
         })
         .then(deletedTrip => {
             res.send();
+        })
+        .catch(err => res.json(err));
+    },
+    
+     searchTripByUser: function(req, res){
+        Trip.find({
+            user_id: req.session.user_id
+        })
+        .then(foundTrips => {
+            res.json(foundTrips);
         })
         .catch(err => res.json(err));
     }

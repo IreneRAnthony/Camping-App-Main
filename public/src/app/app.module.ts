@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { AgmCoreModule } from '@agm/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,10 +18,14 @@ import { DocumentListComponent } from './document-list/document-list.component';
 import { DocumentComponent } from './document/document.component';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 
+
 @NgModule({
   declarations: [
     AppComponent,
     LoginRegistrationComponent,
+    NewLocationComponent,
+    AboutLocationComponent,
+    NewTripComponent,
     MessagingComponent,
     RatingsComponent,
     ReviewsComponent,
@@ -35,7 +40,10 @@ import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    SocketIoModule.forRoot(config)
+    SocketIoModule.forRoot(config),
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyC5vuY2bSP_SK1a4n9lBZCTZC_syn5DmJc'
+    })
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]
