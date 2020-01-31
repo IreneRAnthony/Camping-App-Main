@@ -12,7 +12,6 @@
           <tr>
             <th>Date</th>
             <th>Where to?</th>
-            <!--<th>Whose Going?</th>-->
             <th>View?</th>
           </tr>
         </thead>
@@ -40,7 +39,7 @@
           </ol>
 
           <div id="new_task">
-            <form (submit)="newTask()">
+            <form (submit)="createTask()">
               <label>Task Title:</label>
               <input type="text" name="title" [(ngModel)]="newTask.title" />
               <label id="taskDescription">Task Description:</label>
