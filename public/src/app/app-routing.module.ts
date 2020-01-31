@@ -11,7 +11,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 const routes: Routes = [
   { path: '/home', component: HomePageComponent},
   { path: 'location/new', component: NewLocationComponent },
-  { path: 'new/trip', component: NewTripComponent },
+  { path: 'trip/new', component: NewTripComponent },
   { path: '/show/trip/:id', component: AboutTripComponent },
   { path: '/searchbar/location/:name', component: SearchLocationsComponent },
   { path: 'about/location/:id', component: AboutLocationComponent },
