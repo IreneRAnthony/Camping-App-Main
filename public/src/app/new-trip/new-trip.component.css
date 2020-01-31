@@ -3,6 +3,41 @@
     padding: 0px;
 }
 
+body{
+    background-color: #99C0BC;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+input {
+    border-radius: 8px;
+    padding: 2px;
+    box-shadow: none;
+    margin: 10px;
+}
+
+p {
+    display: block;
+}
+
+h1 {
+    text-align: center;
+    margin: 8px;
+}
+
+.button{
+    border-radius: 8px;
+    border: none;
+    padding: 8px;
+}
+
+#new_trip {
+    background-color: #68A8AD;
+    border-radius: 8px;
+    padding: 5px;
+    border: 4px solid #737495;
+    width: 40%;
+}
+
 #new_trip, #trip_form {
     text-align: center;
     margin: auto;
