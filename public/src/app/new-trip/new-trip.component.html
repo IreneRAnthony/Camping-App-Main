@@ -1,29 +1,40 @@
 <html>
+
 <head>
-<meta charset="ISO-8859-1">
-<title>Start up a new Trip!</title>
+  <meta charset="ISO-8859-1">
+  <title>Start up a new Trip!</title>
+  <link href="https://fonts.googleapis.com/css?family=Courgette|Ubuntu&display=swap" rel="stylesheet">
 </head>
+
 <body>
-	<button class="button" [routerLink]="['/home']">Back</button>
-	<div id= "new_trip">
+  <button class="button" [routerLink]="['/home']">Back</button>
+
 	<h1>Are you ready to plan a trip?</h1>
-	<div id="trip_form">
-	<form (submit)="clickCreateTrip()">
-		<label>Name of Trip: </label>
-		<input type="text" [(ngModel)]="newTrip.name">
-		
-		<label>Where are you going?</label>
-		<input type="text" [(ngModel)]="newTrip.destination"/>
-		
-		<label>Start Date: </label>
-		<input type ="date" [(ngModel)]="newTrip.start_date"/>
-		
-		<label>End Date: </label>
-		<input type="date" [(ngModel)]="newTrip.end_date"/>
-		
-		<input type="submit" value="Create Trip!" />
-	</form>
-	</div>
-	</div>
+	<div id="new_trip">
+    <form (submit)="clickCreateTrip()">
+      <p>
+        <label>Name of Trip: </label>
+        <input type="text" name="name" [(ngModel)]="newTrip.name">
+      </p>
+
+      <p>
+        <label>Destination: </label>
+        <input type="text" name="destination" [(ngModel)]="newTrip.destination" />
+      </p>
+
+      <p>
+        <label>Start Date: </label>
+        <input type="date" name="start_date" [(ngModel)]="newTrip.start_date" />
+      </p>
+
+      <p>
+        <label>End Date: </label>
+        <input type="date" name="end_date" [(ngModel)]="newTrip.end_date" />
+      </p>
+
+      <input class="button" type="submit" value="Create Trip!" />
+    </form>
+  </div>
 </body>
+
 </html>
