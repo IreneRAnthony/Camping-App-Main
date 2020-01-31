@@ -110,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\r\n<html>\r\n<head>\r\n\t<meta charset=\"ISO-8859-1\">\r\n\t<title>Home Page</title>\r\n\t\r\n\t\r\n</head>\r\n<body>\r\n<button [routerLink] = \"['/home']\" class=\"button\">Back to HomePage</button>\r\n<button [routerLink] = \"['/login']\" class=\"button\">Logout</button>\r\n\t<h1>What Location would you like to make a page for?</h1>\r\n\t\r\n\t<div id=\"new_location\">\r\n\t<form (submit)=\"clickCreateLocation()\">\r\n\t\t<p>\r\n\t\t<label>Location name: </label>\r\n\t\t<input type=\"text\" name=\"name\" [(ngModel)]=\"newLocation && newLocation.name\" >\r\n\t\t</div>\r\n\t\t\r\n\t\t<div id=\"address\">\r\n\t\t<label>Address (The entrance of the area is best, make sure it is correct!): </label>\r\n\t\t<input type=\"text\" name=\"address\" [(ngModel)]=\"newLocation && newLocation.address\"/>\r\n\t\t</div>\t\t\r\n\t\t<p>\r\n\t\t<label>Description: </label><br>\r\n\t\t<textarea rows=\"8\" cols=\"30\" name=\"description\" [(ngModel)]=\"newLocation && newLocation.description\"></textarea>\r\n\t\t</div>\r\n\t\t\r\n\t\t<div id=\"picture\">\r\n\t\t<label>Add a picture link(Make sure your source is valid!): </label>\r\n\t\t<input type=\"text\" name=\"url\" [(ngModel)]=\"newLocation && newLocation.url\" >\r\n\t\t</div>\r\n\t\t\r\n\t\t<input class=\"button\" type=\"submit\" value=\"Create Location!\" >\r\n\t</form>\r\n\t</div>\r\n</body>\r\n</html>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\r\n<html>\r\n<head>\r\n\t<meta charset=\"ISO-8859-1\">\r\n\t<title>Home Page</title>\r\n\t\r\n\t\r\n</head>\r\n<body>\r\n<button [routerLink] = \"['/home']\" class=\"button\">Back to HomePage</button>\r\n<button [routerLink] = \"['/login']\" class=\"button\">Logout</button>\r\n\t<h1>What Location would you like to make a page for?</h1>\r\n\t\r\n\t<div id=\"new_location\">\r\n\t<form (submit)=\"clickCreateLocation()\">\r\n\t\t<p>\r\n\t\t<label>Location name: </label>\r\n<<<<<<< HEAD\r\n\t\t<input type=\"text\" name=\"name\" [(ngModel)]=\"newLocation && newLocation.name\" >\r\n\t\t</div>\r\n=======\r\n\t\t<input type=\"text\" name=\"name\" [(ngModel)]=\"newLocation.name\" >\r\n\t\t</p>\r\n\t\t\r\n\t\t<p>\r\n\t\t<label>Address (The entrance is best): </label>\r\n\t\t<input type=\"text\" name=\"address\" [(ngModel)]=\"newLocation.address\"/>\r\n\t\t</p>\r\n>>>>>>> 6d4570634df7cc01b28da5f96b4cbe9705123a5c\r\n\t\t\r\n\t\t<div id=\"address\">\r\n\t\t<label>Address (The entrance of the area is best, make sure it is correct!): </label>\r\n\t\t<input type=\"text\" name=\"address\" [(ngModel)]=\"newLocation && newLocation.address\"/>\r\n\t\t</div>\t\t\r\n\t\t<p>\r\n\t\t<label>Description: </label><br>\r\n<<<<<<< HEAD\r\n\t\t<textarea rows=\"8\" cols=\"30\" name=\"description\" [(ngModel)]=\"newLocation && newLocation.description\"></textarea>\r\n\t\t</div>\r\n\t\t\r\n\t\t<div id=\"picture\">\r\n\t\t<label>Add a picture link(Make sure your source is valid!): </label>\r\n\t\t<input type=\"text\" name=\"url\" [(ngModel)]=\"newLocation && newLocation.url\" >\r\n\t\t</div>\r\n=======\r\n\t\t<textarea rows=\"5\" cols=\"23\" name=\"description\" [(ngModel)]=\"newLocation.description\"></textarea>\r\n\t\t</p>\r\n\t\t\r\n\t\t<p>\r\n\t\t<label>Add a picture link: </label>\r\n\t\t<input type=\"text\" name=\"url\" [(ngModel)]=\"newLocation.url\" >\r\n\t\t</p>\r\n>>>>>>> 6d4570634df7cc01b28da5f96b4cbe9705123a5c\r\n\t\t\r\n\t\t<input class=\"button\" type=\"submit\" value=\"Create Location!\" >\r\n\t</form>\r\n\t</div>\r\n</body>\r\n</html>\r\n");
 
 /***/ }),
 
@@ -912,7 +912,7 @@ let HttpService = class HttpService {
         return this._http.get(`/trip/search/${id}`, id);
     }
     getUserTrips() {
-        return this._http.get('trips/search/user');
+        return this._http.get('trip/search/user');
     }
     updateTrip(trip) {
         return this._http.put(`/update/trip/${trip._id}`, trip);
@@ -1035,6 +1035,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 /* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
+/* harmony import */ var _models_user__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../models/user */ "./src/app/models/user.ts");
+
 
 
 
@@ -1046,6 +1048,31 @@ let LoginRegistrationComponent = class LoginRegistrationComponent {
         this._router = _router;
     }
     ngOnInit() {
+        this.newUser = new _models_user__WEBPACK_IMPORTED_MODULE_4__["User"]();
+        this.returnUser = new _models_user__WEBPACK_IMPORTED_MODULE_4__["User"]();
+        // this.findAllUsers();
+        this._httpService.logoutUser();
+    }
+    findAllUsers() {
+        this._httpService.findAllUsers().subscribe((allUsers) => {
+            console.log(allUsers);
+        });
+    }
+    clickRegister() {
+        this._httpService.registerUser(this.newUser).subscribe((registeredUser) => {
+            console.log('User registered', registeredUser);
+            this._router.navigate(['/home']);
+        }, error => {
+            this.errors = error;
+        });
+    }
+    clickLogin() {
+        this._httpService.loginUser(this.returnUser).subscribe(loggedUser => {
+            console.log('Logged in', loggedUser);
+            this._router.navigate(['/home']);
+        }, error => {
+            this.errors = error;
+        });
     }
 };
 LoginRegistrationComponent.ctorParameters = () => [
@@ -1122,6 +1149,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 
 class Supply {
+}
+
+
+/***/ }),
+
+/***/ "./src/app/models/user.ts":
+/*!********************************!*\
+  !*** ./src/app/models/user.ts ***!
+  \********************************/
+/*! exports provided: User */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "User", function() { return User; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class User {
 }
 
 
