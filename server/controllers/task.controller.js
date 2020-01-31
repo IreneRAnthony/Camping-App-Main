@@ -38,6 +38,17 @@ module.exports = {
         })
         .catch(err => res.json(err));
     },
+    
+     allUserTasks: function(req, res){
+        console.log('Searching for user tasks...')
+        Task.find({
+            creator: req.session.user_id
+        })
+        .then(tasks => {
+            res.json(tasks)
+        })
+        .catch(err => res.json(err))
+    },
 
     updateTask: function(req, res){
         Task.findByIdAndUpdate({
