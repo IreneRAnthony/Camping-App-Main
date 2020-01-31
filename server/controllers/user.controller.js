@@ -30,19 +30,18 @@ module.exports = {
 
     login: function(req, res){
         console.log('Logging in User...', req.body);
-        User.findOne({ email:req.body.email }, (err, user) => {
-            return bcrypt.compare(req.body.password, user.password)
-        })
-        .then((result) => {
-            if(result){
-                req.session.user_id = user._id;
-                req.session.email = user.email;
-                return true;
-            } if (err){
-                return false; 
-            } else {
-                return false;
+        User.findOne({ email:req.body.email })
+        .then( resp => {
+            if(bcryptjs.compare(req.body.password, user.password)){
+                req.session.user_id = resp.user._id;
+                req.session.email = resp.user.email;
             }
+            else{
+                res.json("PASSWORD DOESNT MATCH")
+            }
+        })
+        .catch( err =>{
+            res.json(err)
         })
     },
 
