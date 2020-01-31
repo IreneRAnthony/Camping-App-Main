@@ -15,22 +15,22 @@
 	<form (submit)="clickCreateLocation()">
 		<div id="locationName">
 		<label>Location name: </label>
-		<input type="text" [(ngModel)]="newLocation.name" >
+		<input type="text" name="name" [(ngModel)]="newLocation && newLocation.name" >
 		</div>
 		
 		<div id="address">
 		<label>Address (The entrance of the area is best, make sure it is correct!): </label>
-		<input type="text" [(ngModel)]="newLocation.address"/>
+		<input type="text" name="address" [(ngModel)]="newLocation && newLocation.address"/>
 		</div>
 		
 		<div id="description">
 		<label>Description: </label><br>
-		<textarea rows="8" cols="30" [(ngModel)]="newLocation.description"></textarea>
+		<textarea rows="8" cols="30" name="description" [(ngModel)]="newLocation && newLocation.description"></textarea>
 		</div>
 		
 		<div id="picture">
 		<label>Add a picture link(Make sure your source is valid!): </label>
-		<input type="text" [(ngModel)]="newLocation.url" >
+		<input type="text" name="url" [(ngModel)]="newLocation && newLocation.url" >
 		</div>
 		
 		<input class="button" type="submit" value="Create Location!" >

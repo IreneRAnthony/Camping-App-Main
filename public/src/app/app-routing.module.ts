@@ -9,14 +9,14 @@ import { SearchLocationsComponent } from'./search-locations/search-locations.com
 import { HomePageComponent } from './home-page/home-page.component';
 
 const routes: Routes = [
-  { path: '/home', component: HomePageComponent},
+  { path: 'home', component: HomePageComponent},
   { path: 'new/location', component: NewLocationComponent },
   { path: 'new/trip', component: NewTripComponent },
-  { path: '/show/trip/:id', component: AboutTripComponent },
-  { path: '/searchbar/location/:name', component: SearchLocationsComponent },
+  { path: 'show/trip/:id', component: AboutTripComponent },
+  { path: 'searchbar/location/:name', component: SearchLocationsComponent },
   { path: 'about/location/:id', component: AboutLocationComponent },
   { path: 'login', component: LoginRegistrationComponent },
-  { path: '', pathMatch: 'full', redirectTo: '/login' }
+  { path: '', pathMatch: 'full', redirectTo: '' }
 ];
 
 @NgModule({

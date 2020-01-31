@@ -15,7 +15,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngfor="let supply of currentTrip.supply_list">
+        <tr *ngFor="let supply of currentTrip.supply_list">
             <td>{{supply.item}}</td>
             <td>{{supply.status}}</td>
             <td><button (click)= "completeSupply(supply._id)">Completed?</button> - <button (click)="deleteSupply">Delete</button></td>

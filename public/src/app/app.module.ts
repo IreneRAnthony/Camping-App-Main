@@ -14,6 +14,9 @@ import { ReviewsComponent } from './reviews/reviews.component';
 import { NewLocationComponent } from './new-location/new-location.component';
 import { AboutLocationComponent } from './about-location/about-location.component';
 import { NewTripComponent } from './new-trip/new-trip.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { AboutTripComponent } from './about-trip/about-trip.component';
+import { SearchLocationsComponent } from './search-locations/search-locations.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { NewTripComponent } from './new-trip/new-trip.component';
     NewTripComponent,
     MessagingComponent,
     RatingsComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    HomePageComponent,
+    AboutTripComponent,
+    SearchLocationsComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +38,7 @@ import { NewTripComponent } from './new-trip/new-trip.component';
     FormsModule,
     HttpClientModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyC5vuY2bSP_SK1a4n9lBZCTZC_syn5DmJc'
+      apiKey: 'AIzaSyC59Aftx3_ANjo5qcDseQCr_BVnzUk_CCY'
     })
   ],
   providers: [HttpService],

@@ -9,16 +9,16 @@
 	<div id="trip_form">
 	<form (submit)="clickCreateTrip()">
 		<label>Name of Trip: </label>
-		<input type="text" [(ngModel)]="newTrip.name">
+		<input type="text" name="name" [(ngModel)]="newTrip.name">
 		
 		<label>Where are you going?</label>
-		<input type="text" [(ngModel)]="newTrip.destination"/>
+		<input type="text" name="destination" [(ngModel)]="newTrip.destination"/>
 		
 		<label>Start Date: </label>
-		<input type ="date" [(ngModel)]="newTrip.start_date"/>
+		<input type ="date" name="start_date" [(ngModel)]="newTrip.start_date"/>
 		
 		<label>End Date: </label>
-		<input type="date" [(ngModel)]="newTrip.end_date"/>
+		<input type="date" name="end_date" [(ngModel)]="newTrip.end_date"/>
 		
 		<input type="submit" value="Create Trip!" />
 	</form>

@@ -42,7 +42,7 @@ export class AboutTripComponent implements OnInit {
   }
 
   addToSupply(){
-    this._httpService.createSupply(this.newSupply, this.currentTrip._id).subscribe((newSupply) => {
+    this._httpService.createSupply(this.newSupply).subscribe((newSupply) => {
       this.currentTrip.supply_list.push(newSupply);
       this.newSupply = new Supply();
       this.getTrip();

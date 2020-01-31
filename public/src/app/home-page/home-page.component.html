@@ -1,4 +1,4 @@
-<html>
+<!-- <html>
 <head>
 	<meta charset="ISO-8859-1">
 	<title>Home Page</title>
@@ -6,76 +6,70 @@
 </head>
 <body>
 	<div id="header">
-	<h1 id="welcome">Welcome {{user.name}}!</h1>
-	<button [routerLink]="['/logout']" class="button">Logout</button>
+		<h1 id="welcome">Welcome {{user.name}}!</h1>
+		<button [routerLink]="['/logout']" class="button">Logout</button>
 	</div>
-	
+
 	<h2 id="trips_header">Upcoming Trips!</h2>
 	<div id="trip_table">
-	<table>
-		<thead>
-			<tr>
-				<th>Date</th>
-				<th>Where to?</th>
-				<!--<th>Whose Going?</th>-->
-				<th>View?</th>
-			</tr>
-		</thead>
+		<table>
+			<thead>
+				<tr>
+					<th>Date</th>
+					<th>Where to?</th>
+					<th>Whose Going?</th>
+					<th>View?</th>
+				</tr>
+			</thead>
 		<tbody>
 			<tr *ngFor="let trip of trips">
 				<td>{{trip.start_date}} to {{trip.end_date}}</td>
 				<td>{{trip.destination}}</td>
-				<!--<td>{{trip.usersGoing}}</td>-->
+				<td>{{trip.usersGoing}}</td>
 				<td><a [routerLink]="['/show/trip/', trip._id]">Show Info</a></td>
 			</tr>
 		</tbody>
-	</table>
-	
-	<div id= "new_trip">
-	
-	</div>
-	</div>
-	
-	<div id="task_wishlist">
-	<div class="inline-block">
-	<h2 class="header">To-Do List!</h2>
-	<div id = "toDoList">
-		<ol>
-				<li> {{allTasks.taskText}} - {{allTasks.priority}} Priority
-				
-				<form (submit)="">
-					<input type="hidden" name="_method" value="delete" />
-					<button class="button">Completed</button>
-				</form>
-		</ol>
+		</table>
 
-	<div id="new_task">
-	<form (submit)="newTask">
-		<label>Task Title:</label>
-        <input type="text" [(ngModel)]="newTask.title"/>
-        <label>Task Description:</label>
-        <textarea name="description" [(ngModel)]="newTask.description">
-		<label>Task Priority: </label>
-		<input type="text" name="priority" [(ngModel)]="newTask.priority">
-		<input type="submit" value="Create Task" class="button"/>
-	</form>
+	<div id= "new_trip"></div>
 	</div>
+
+	<div id="task_wishlist">
+		<div class="inline-block">
+		<h2 class="header">To-Do List!</h2>
+			<div id = "toDoList">
+				<ol>
+					<li> {{allTasks.taskText}} - {{allTasks.priority}} Priority
+
+					<form (submit)="">
+						<input type="hidden" name="_method" value="delete" />
+						<button class="button">Completed</button>
+					</form>
+				</ol>
+
+					<div id="new_task">
+					<form (submit)="newTask">
+						<label>Task Title:</label>
+						<input type="text" [(ngModel)]="newTask.title"/>
+						<label>Task Description:</label>
+						<textarea name="description" [(ngModel)]="newTask.description">
+						<label>Task Priority: </label>
+						<input type="text" name="priority" [(ngModel)]="newTask.priority">
+						<input type="submit" value="Create Task" class="button"/>
+					</form>
+					</div>
+			</div>
+		</div>
 	</div>
-	</div>
-	
+
 	<div class="inline-block">
 	<div id = "wishlist_header">
-	<h3>Camping Wish List</h3>
-	<p>(Places you dream of visiting!)</p>
+		<h3>Camping Wish List</h3>
+		<p>(Places you dream of visiting!)</p>
 	</div>
-	<div id="wishlist">
-        
-			<!--<li>{place.locationName}</li>-->
-		
+	<div id="wishlist"><li>{{place.locationName}}</li></div>
 	</div>
-	</div>
-	</div>
-	
+
 	<div id="footer">
 	<div id="search-bar">
 		<h3>Make a search for a location?</h3>
@@ -84,11 +78,11 @@
 			<input type="search" value="Search">
 		</form>
 	</div>
-	
+
 	<div id="createALocation">
 		<button class="button" [routerLink]="['/location/new']">Want to Create a New Location?</button>
 	</div>
 	</div>
 
 </body>
-</html>
+</html> -->

@@ -161,7 +161,7 @@ export class HttpService {
   
   //API Data
   getData(){
-    return this._http.get(`https://api.openweathermap.org/data/2.5/weather?zip=${currentLocation}&units=imperial&appid=6b68f003b8aad17149e7c51b1dbafb86`)
+    return this._http.get(`https://api.openweathermap.org/data/2.5/weather?zip=${currentLocation}&units=imperial&appid=3c41c77dff28f47ed76644ad09a32429`)
   }
 
   constructor(private _http: HttpClient) { }

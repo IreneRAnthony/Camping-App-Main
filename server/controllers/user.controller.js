@@ -38,7 +38,6 @@ module.exports = {
     },
 
     logout: function(req, res){
-<<<<<<< HEAD
 
     },
     // socket controller 
@@ -68,43 +67,6 @@ module.exports = {
     socket.on("disconnect", function () {
         io.emit("user_disconnect", users[socket.id])
     })
-=======
-        req.session.destroy(function (err) {
-            res.send();
-        })
-    },
-
-    updateUser: function(req, res){
-        User.findByIdAndUpdate({
-            _id: req.params.iId
-        }, {
-            $set: req.body
-        })
-        .then(updatedUser => {
-            res.json(updatedUser);
-        })
-        .catch(err => res.json(err));
-    },
-    
-    findUser: function(req, res){
-        User.findById({
-            _id: req.params.id
-        })
-        .then(user => {
-            res.json(user);
-        })
-        .catch(err => res.json(err));
-    }
-
-    deleteUser: function(req, res){
-        User.findByIdAndDelete({
-            _id: req.params.id
-        })
-        .then(deletedUser => {
-            res.send();
-        })
-        .catch(err => res.json(err));
->>>>>>> 43df4024f9284d2f944e85d8cca28643def70327
     }
 
 }

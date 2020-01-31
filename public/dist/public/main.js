@@ -23,6 +23,32 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/about-location/about-location.component.html":
+/*!****************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/about-location/about-location.component.html ***!
+  \****************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\r\n<html>\r\n<head>\r\n<meta charset=\"ISO-8859-1\">\r\n<link href=\"https://fonts.googleapis.com/css?family=Courgette|Ubuntu&display=swap\" rel=\"stylesheet\">\r\n</head>\r\n<body>\r\n\t<div id = \"picture\">\r\n\t<img src=\"https://www.nps.gov/yose/planyourvisit/images/spring-yosemitefalls.jpg?maxwidth=1200&maxheight=1200&autorotate=false\" height=\"400\" width=\"630\">\r\n\t</div>\r\n\t\r\n\t<div id=\"mainHeader\">\r\n\t<h1 id = \"locationName\">{{currentLocation.name}}</h1>\r\n\t<h6>Temperature: {{data.main && data.main.temp}} degrees Fahrenheit</h6>\r\n\t<h6>Humidity: {{data.main && data.main.humidity}}%</h6>\r\n\t<h6>Cloudiness: {{data.weather && data.weather[0].main}}</h6>\r\n\t<h6>Wind: {{data.wind && data.wind.speed}} mph from the \r\n\t\t<p style=\"display: inline-block\" *ngIf=\"data.wind && data.wind.deg < 90\">North</p>\r\n\t\t<p style=\"display: inline-block\" *ngIf=\"data.wind && data.wind.deg >= 90 && data.wind.deg <= 179\">East</p>\r\n\t\t<p style=\"display: inline-block\" *ngIf=\"data.wind && data.wind.deg >= 180 && data.wind.deg <= 269\">South</p>\r\n\t\t<p style=\"display: inline-block\" *ngIf=\"data.wind && data.wind.deg >= 270\">West</p>\r\n\t</h6>\r\n\t<h6>Sunrise: {{sunrise}} AM</h6>\r\n\t<h6>Sunset: {{sunset}} PM</h6>\r\n\t<agm-map [latitude]=\"lat\" [longitude]=\"lon\">\r\n\t\t<agm-marker [latitude]=\"lat\" [longitude]=\"lon\"></agm-marker>\r\n\t  </agm-map>\r\n\t<div id=\"information\">\r\n\t<h3 id=\"address\">Address</h3>\r\n\t<p>{{currentLocation.address}}</p>\r\n\t<h3 id=\"desc\">Description</h3>\r\n\t<p>{{currentLocation.description}}</p>\r\n\t</div>\r\n\t</div>\r\n\r\n\t<div id=\"reviewsAndAdvice\">\r\n\t<div id=\"reviews\">\r\n\t<h3>All Reviews so Far</h3>\r\n\t<!--  took out *ngFor=\"\" below for testing -->\r\n\t<div id=\"all_reviews\">\r\n\t\t<p>{{review.rating}}/10 - {{review.reviewText}}</p>\r\n\t\t<p>{{review.reviewAuthor}}</p>\r\n\t</div>\r\n\t\r\n\t<div id=\"submit_review\">\r\n\t<h3>Been here before? Want to give your own review?</h3>\r\n\t<form (submit)=\"onClickSubmitReview()\">\r\n\t<p>\r\n\t\t<label>How would you rate this place? (Between 1 and 10)</label>\r\n\t\t<input path=\"rating\" type=\"number\" min=\"1\" max=\"10\"/>\r\n\t</p>\r\n\t<p>\r\n\t\t<label>How would you describe your experience?</label>\r\n\t\t<textarea rows=\"7\" cols=\"30\" path=\"reviewText\"></textarea>\r\n\t</p>\r\n\t\t<input type=\"submit\" value = \"Submit Review!\" />\r\n\t</form>\r\n\t</div>\r\n\t</div>\r\n\r\n\t<div id=\"advice\">\r\n\t<h3>All Given Tips</h3>\r\n\t<div id=\"all_advice\">\r\n\t<ul ngFor=\"\">\r\n\t\t<li>{{allAdvice.tip}}</li>\r\n\t</ul>\r\n\t</div>\r\n\t\r\n\t<div id=\"submit_advice\">\r\n\t<h3>Give Advice!</h3>\r\n\t<form (submit)= \"onClickSubmitAdvice\">\r\n\t\t<textarea rows=\"7\" cols=\"30\" path=\"tip\"></textarea><br>\r\n\t\t<input type=\"submit\" value=\"Submit Advice!\"/>\r\n\t</form>\r\n\t</div>\r\n\t</div>\r\n\t</div>\r\n\t\r\n\t<div id=\"wishlist\">\r\n\t<button (click)=\"onClickAddToWishlist\">Add to Wishlist</button>\r\n\t</div>\r\n\t\r\n\t<button [routerLink]=\"['/logout']\" class=\"button\">Logout</button>\r\n\t<button [routerLink]=\"['/home']\" class=\"button\">Back to HomePage</button>\r\n\t\r\n</body>\r\n</html>\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/about-trip/about-trip.component.html":
+/*!********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/about-trip/about-trip.component.html ***!
+  \********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<h1>All About (Trip Name Here)</h1>\r\n\r\n<div class=\"destination\">\r\n<h2>Destination: {{currentTrip.destination}}</h2>\r\n</div>\r\n\r\n<div class=\"supplyList\">\r\n<h3>Supply List</h3>\r\n<table>\r\n    <thead>\r\n        <tr>\r\n        <th>Item</th>\r\n        <th>Status</th>\r\n        <th>Action</th>\r\n        </tr>\r\n    </thead>\r\n    <tbody>\r\n        <tr *ngFor=\"let supply of currentTrip.supply_list\">\r\n            <td>{{supply.item}}</td>\r\n            <td>{{supply.status}}</td>\r\n            <td><button (click)= \"completeSupply(supply._id)\">Completed?</button> - <button (click)=\"deleteSupply\">Delete</button></td>\r\n        </tr>\r\n    </tbody>\r\n</table>\r\n</div>\r\n\r\n<button (click)=\"clickToDelete\">Delete Trip?</button>\r\n<button (click)=\"clickToDelete\">Completed?</button>\r\n");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html":
 /*!**************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/app.component.html ***!
@@ -32,7 +58,20 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->\n<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->\n<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->\n<!-- * * * * * * * to get started with your project! * * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n\n<style>\n  :host {\n    font-family: -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Helvetica, Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\";\n    font-size: 14px;\n    color: #333;\n    box-sizing: border-box;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n  }\n\n  h1,\n  h2,\n  h3,\n  h4,\n  h5,\n  h6 {\n    margin: 8px 0;\n  }\n\n  p {\n    margin: 0;\n  }\n\n  .spacer {\n    flex: 1;\n  }\n\n  .toolbar {\n    height: 60px;\n    margin: -8px;\n    display: flex;\n    align-items: center;\n    background-color: #1976d2;\n    color: white;\n    font-weight: 600;\n  }\n\n  .toolbar img {\n    margin: 0 16px;\n  }\n\n  .toolbar #twitter-logo {\n    height: 40px;\n    margin: 0 16px;\n  }\n\n  .toolbar #twitter-logo:hover {\n    opacity: 0.8;\n  }\n\n  .content {\n    display: flex;\n    margin: 32px auto;\n    padding: 0 16px;\n    max-width: 960px;\n    flex-direction: column;\n    align-items: center;\n  }\n\n  svg.material-icons {\n    height: 24px;\n    width: auto;\n  }\n\n  svg.material-icons:not(:last-child) {\n    margin-right: 8px;\n  }\n\n  .card svg.material-icons path {\n    fill: #888;\n  }\n\n  .card-container {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center;\n    margin-top: 16px;\n  }\n\n  .card {\n    border-radius: 4px;\n    border: 1px solid #eee;\n    background-color: #fafafa;\n    height: 40px;\n    width: 200px;\n    margin: 0 8px 16px;\n    padding: 16px;\n    display: flex;\n    flex-direction: row;\n    justify-content: center;\n    align-items: center;\n    transition: all 0.2s ease-in-out;\n    line-height: 24px;\n  }\n\n  .card-container .card:not(:last-child) {\n    margin-right: 0;\n  }\n\n  .card.card-small {\n    height: 16px;\n    width: 168px;\n  }\n\n  .card-container .card:not(.highlight-card) {\n    cursor: pointer;\n  }\n\n  .card-container .card:not(.highlight-card):hover {\n    transform: translateY(-3px);\n    box-shadow: 0 4px 17px rgba(black, 0.35);\n  }\n\n  .card-container .card:not(.highlight-card):hover .material-icons path {\n    fill: rgb(105, 103, 103);\n  }\n\n  .card.highlight-card {\n    background-color: #1976d2;\n    color: white;\n    font-weight: 600;\n    border: none;\n    width: auto;\n    min-width: 30%;\n    position: relative;\n  }\n\n  .card.card.highlight-card span {\n    margin-left: 60px;\n  }\n\n  svg#rocket {\n    width: 80px;\n    position: absolute;\n    left: -10px;\n    top: -24px;\n  }\n\n  svg#rocket-smoke {\n    height: 100vh;\n    position: absolute;\n    top: 10px;\n    right: 180px;\n    z-index: -10;\n  }\n\n  a,\n  a:visited,\n  a:hover {\n    color: #1976d2;\n    text-decoration: none;\n  }\n\n  a:hover {\n    color: #125699;\n  }\n\n  .terminal {\n    position: relative;\n    width: 80%;\n    max-width: 600px;\n    border-radius: 6px;\n    padding-top: 45px;\n    margin-top: 8px;\n    overflow: hidden;\n    background-color: rgb(15, 15, 16);\n  }\n\n  .terminal::before {\n    content: \"\\2022 \\2022 \\2022\";\n    position: absolute;\n    top: 0;\n    left: 0;\n    height: 4px;\n    background: rgb(58, 58, 58);\n    color: #c2c3c4;\n    width: 100%;\n    font-size: 2rem;\n    line-height: 0;\n    padding: 14px 0;\n    text-indent: 4px;\n  }\n\n  .terminal pre {\n    font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,monospace;\n    color: white;\n    padding: 0 1rem 1rem;\n    margin: 0;\n  }\n\n  .circle-link {\n    height: 40px;\n    width: 40px;\n    border-radius: 40px;\n    margin: 8px;\n    background-color: white;\n    border: 1px solid #eeeeee;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    cursor: pointer;\n    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);\n    transition: 1s ease-out;\n  }\n\n  .circle-link:hover {\n    transform: translateY(-0.25rem);\n    box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);\n  }\n\n  footer {\n    margin-top: 8px;\n    display: flex;\n    align-items: center;\n    line-height: 20px;\n  }\n\n  footer a {\n    display: flex;\n    align-items: center;\n  }\n\n  .github-star-badge {\n    color: #24292e;\n    display: flex;\n    align-items: center;\n    font-size: 12px;\n    padding: 3px 10px;\n    border: 1px solid rgba(27,31,35,.2);\n    border-radius: 3px;\n    background-image: linear-gradient(-180deg,#fafbfc,#eff3f6 90%);\n    margin-left: 4px;\n    font-weight: 600;\n    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;\n  }\n\n  .github-star-badge:hover {\n    background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);\n    border-color: rgba(27,31,35,.35);\n    background-position: -.5em;\n  }\n\n  .github-star-badge .material-icons {\n    height: 16px;\n    width: 16px;\n    margin-right: 4px;\n  }\n\n  svg#clouds {\n    position: fixed;\n    bottom: -160px;\n    left: -230px;\n    z-index: -10;\n    width: 1920px;\n  }\n\n\n  /* Responsive Styles */\n  @media screen and (max-width: 767px) {\n\n    .card-container > *:not(.circle-link) ,\n    .terminal {\n      width: 100%;\n    }\n\n    .card:not(.highlight-card) {\n      height: 16px;\n      margin: 8px 0;\n    }\n\n    .card.highlight-card span {\n      margin-left: 72px;\n    }\n\n    svg#rocket-smoke {\n      right: 120px;\n      transform: rotate(-5deg);\n    }\n  }\n\n  @media screen and (max-width: 575px) {\n    svg#rocket-smoke {\n      display: none;\n      visibility: hidden;\n    }\n  }\n</style>\n\n<!-- Toolbar -->\n<div class=\"toolbar\" role=\"banner\">\n  <img\n    width=\"40\"\n    alt=\"Angular Logo\"\n    src=\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==\"\n  />\n  <span>Welcome</span>\n    <div class=\"spacer\"></div>\n  <a aria-label=\"Angular on twitter\" target=\"_blank\" rel=\"noopener\" href=\"https://twitter.com/angular\" title=\"Twitter\">\n    \n    <svg id=\"twitter-logo\" height=\"24\" data-name=\"Logo — FIXED\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 400 400\">\n      <defs>\n        <style>\n          .cls-1 {\n            fill: none;\n          }\n\n          .cls-2 {\n            fill: #ffffff;\n          }\n        </style>\n      </defs>\n      <rect class=\"cls-1\" width=\"400\" height=\"400\" />\n      <path class=\"cls-2\" d=\"M153.62,301.59c94.34,0,145.94-78.16,145.94-145.94,0-2.22,0-4.43-.15-6.63A104.36,104.36,0,0,0,325,122.47a102.38,102.38,0,0,1-29.46,8.07,51.47,51.47,0,0,0,22.55-28.37,102.79,102.79,0,0,1-32.57,12.45,51.34,51.34,0,0,0-87.41,46.78A145.62,145.62,0,0,1,92.4,107.81a51.33,51.33,0,0,0,15.88,68.47A50.91,50.91,0,0,1,85,169.86c0,.21,0,.43,0,.65a51.31,51.31,0,0,0,41.15,50.28,51.21,51.21,0,0,1-23.16.88,51.35,51.35,0,0,0,47.92,35.62,102.92,102.92,0,0,1-63.7,22A104.41,104.41,0,0,1,75,278.55a145.21,145.21,0,0,0,78.62,23\"\n      />\n    </svg>\n    \n  </a>\n</div>\n\n<div class=\"content\" role=\"main\">\n\n  <!-- Highlight Card -->\n  <div class=\"card highlight-card card-small\">\n\n    <svg id=\"rocket\" alt=\"Rocket Ship\" xmlns=\"http://www.w3.org/2000/svg\" width=\"101.678\" height=\"101.678\" viewBox=\"0 0 101.678 101.678\">\n      <g id=\"Group_83\" data-name=\"Group 83\" transform=\"translate(-141 -696)\">\n        <circle id=\"Ellipse_8\" data-name=\"Ellipse 8\" cx=\"50.839\" cy=\"50.839\" r=\"50.839\" transform=\"translate(141 696)\" fill=\"#dd0031\"/>\n        <g id=\"Group_47\" data-name=\"Group 47\" transform=\"translate(165.185 720.185)\">\n          <path id=\"Path_33\" data-name=\"Path 33\" d=\"M3.4,42.615a3.084,3.084,0,0,0,3.553,3.553,21.419,21.419,0,0,0,12.215-6.107L9.511,30.4A21.419,21.419,0,0,0,3.4,42.615Z\" transform=\"translate(0.371 3.363)\" fill=\"#fff\"/>\n          <path id=\"Path_34\" data-name=\"Path 34\" d=\"M53.3,3.221A3.09,3.09,0,0,0,50.081,0,48.227,48.227,0,0,0,18.322,13.437c-6-1.666-14.991-1.221-18.322,7.218A33.892,33.892,0,0,1,9.439,25.1l-.333.666a3.013,3.013,0,0,0,.555,3.553L23.985,43.641a2.9,2.9,0,0,0,3.553.555l.666-.333A33.892,33.892,0,0,1,32.647,53.3c8.55-3.664,8.884-12.326,7.218-18.322A48.227,48.227,0,0,0,53.3,3.221ZM34.424,9.772a6.439,6.439,0,1,1,9.106,9.106,6.368,6.368,0,0,1-9.106,0A6.467,6.467,0,0,1,34.424,9.772Z\" transform=\"translate(0 0.005)\" fill=\"#fff\"/>\n        </g>\n      </g>\n    </svg>\n\n    <span>{{ title }} app is running!</span>\n\n    <svg id=\"rocket-smoke\" alt=\"Rocket Ship Smoke\" xmlns=\"http://www.w3.org/2000/svg\" width=\"516.119\" height=\"1083.632\" viewBox=\"0 0 516.119 1083.632\">\n      <path id=\"Path_40\" data-name=\"Path 40\" d=\"M644.6,141S143.02,215.537,147.049,870.207s342.774,201.755,342.774,201.755S404.659,847.213,388.815,762.2c-27.116-145.51-11.551-384.124,271.9-609.1C671.15,139.365,644.6,141,644.6,141Z\" transform=\"translate(-147.025 -140.939)\" fill=\"#f5f5f5\"/>\n    </svg>\n\n  </div>\n\n  <!-- Resources -->\n  <h2>Resources</h2>\n  <p>Here are some links to help you get started:</p>\n\n  <div class=\"card-container\">\n    <a class=\"card\" target=\"_blank\" rel=\"noopener\" href=\"https://angular.io/tutorial\">\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z\"/></svg>\n\n      <span>Learn Angular</span>\n\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\"/></svg>    </a>\n\n    <a class=\"card\" target=\"_blank\" rel=\"noopener\" href=\"https://angular.io/cli\">\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z\"/></svg>\n\n      <span>CLI Documentation</span>\n\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\"/></svg>\n    </a>\n\n    <a class=\"card\" target=\"_blank\" rel=\"noopener\" href=\"https://blog.angular.io/\">\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M13.5.67s.74 2.65.74 4.8c0 2.06-1.35 3.73-3.41 3.73-2.07 0-3.63-1.67-3.63-3.73l.03-.36C5.21 7.51 4 10.62 4 14c0 4.42 3.58 8 8 8s8-3.58 8-8C20 8.61 17.41 3.8 13.5.67zM11.71 19c-1.78 0-3.22-1.4-3.22-3.14 0-1.62 1.05-2.76 2.81-3.12 1.77-.36 3.6-1.21 4.62-2.58.39 1.29.59 2.65.59 4.04 0 2.65-2.15 4.8-4.8 4.8z\"/></svg>\n\n      <span>Angular Blog</span>\n\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\"/></svg>\n    </a>\n\n  </div>\n\n  <!-- Next Steps -->\n  <h2>Next Steps</h2>\n  <p>What do you want to do next with your app?</p>\n\n  <input type=\"hidden\" #selection>\n\n  <div class=\"card-container\">\n    <div class=\"card card-small\" (click)=\"selection.value = 'component'\" tabindex=\"0\">\n        <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></svg>\n\n      <span>New Component</span>\n    </div>\n\n    <div class=\"card card-small\" (click)=\"selection.value = 'material'\" tabindex=\"0\">\n        <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></svg>\n\n      <span>Angular Material</span>\n    </div>\n\n    <div class=\"card card-small\" (click)=\"selection.value = 'dependency'\" tabindex=\"0\">\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></svg>\n\n      <span>Add Dependency</span>\n    </div>\n\n    <div class=\"card card-small\" (click)=\"selection.value = 'test'\" tabindex=\"0\">\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></svg>\n\n      <span>Run and Watch Tests</span>\n    </div>\n\n    <div class=\"card card-small\" (click)=\"selection.value = 'build'\" tabindex=\"0\">\n      <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z\"/></svg>\n\n      <span>Build for Production</span>\n    </div>\n  </div>\n\n  <!-- Terminal -->\n  <div class=\"terminal\" [ngSwitch]=\"selection.value\">\n      <pre *ngSwitchDefault>ng generate component xyz</pre>\n      <pre *ngSwitchCase=\"'material'\">ng add @angular/material</pre>\n      <pre *ngSwitchCase=\"'dependency'\">ng add _____</pre>\n      <pre *ngSwitchCase=\"'test'\">ng test</pre>\n      <pre *ngSwitchCase=\"'build'\">ng build --prod</pre>\n  </div>\n\n  <!-- Links -->\n  <div class=\"card-container\">\n    <a class=\"circle-link\" title=\"Animations\" href=\"https://angular.io/guide/animations\" target=\"_blank\" rel=\"noopener\">\n      <svg id=\"Group_20\" data-name=\"Group 20\" xmlns=\"http://www.w3.org/2000/svg\" width=\"21.813\" height=\"23.453\" viewBox=\"0 0 21.813 23.453\">\n        <path id=\"Path_15\" data-name=\"Path 15\" d=\"M4099.584,972.736h0l-10.882,3.9,1.637,14.4,9.245,5.153,9.245-5.153,1.686-14.4Z\" transform=\"translate(-4088.702 -972.736)\" fill=\"#ffa726\"/>\n        <path id=\"Path_16\" data-name=\"Path 16\" d=\"M4181.516,972.736v23.453l9.245-5.153,1.686-14.4Z\" transform=\"translate(-4170.633 -972.736)\" fill=\"#fb8c00\"/>\n        <path id=\"Path_17\" data-name=\"Path 17\" d=\"M4137.529,1076.127l-7.7-3.723,4.417-2.721,7.753,3.723Z\" transform=\"translate(-4125.003 -1058.315)\" fill=\"#ffe0b2\"/>\n        <path id=\"Path_18\" data-name=\"Path 18\" d=\"M4137.529,1051.705l-7.7-3.723,4.417-2.721,7.753,3.723Z\" transform=\"translate(-4125.003 -1036.757)\" fill=\"#fff3e0\"/>\n        <path id=\"Path_19\" data-name=\"Path 19\" d=\"M4137.529,1027.283l-7.7-3.723,4.417-2.721,7.753,3.723Z\" transform=\"translate(-4125.003 -1015.199)\" fill=\"#fff\"/>\n      </svg>\n    </a>\n\n    <a class=\"circle-link\" title=\"CLI\" href=\"https://cli.angular.io/\" target=\"_blank\" rel=\"noopener\">\n      <svg alt=\"Angular CLI Logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"21.762\" height=\"23.447\" viewBox=\"0 0 21.762 23.447\">\n        <g id=\"Group_21\" data-name=\"Group 21\" transform=\"translate(0)\">\n          <path id=\"Path_20\" data-name=\"Path 20\" d=\"M2660.313,313.618h0l-10.833,3.9,1.637,14.4,9.2,5.152,9.244-5.152,1.685-14.4Z\" transform=\"translate(-2649.48 -313.618)\" fill=\"#37474f\"/>\n          <path id=\"Path_21\" data-name=\"Path 21\" d=\"M2741.883,313.618v23.447l9.244-5.152,1.685-14.4Z\" transform=\"translate(-2731.05 -313.618)\" fill=\"#263238\"/>\n          <path id=\"Path_22\" data-name=\"Path 22\" d=\"M2692.293,379.169h11.724V368.618h-11.724Zm11.159-.6h-10.608v-9.345h10.621v9.345Z\" transform=\"translate(-2687.274 -362.17)\" fill=\"#fff\"/>\n          <path id=\"Path_23\" data-name=\"Path 23\" d=\"M2709.331,393.688l.4.416,2.265-2.28-2.294-2.294-.4.4,1.893,1.893Z\" transform=\"translate(-2702.289 -380.631)\" fill=\"#fff\"/>\n          <rect id=\"Rectangle_12\" data-name=\"Rectangle 12\" width=\"3.517\" height=\"0.469\" transform=\"translate(9.709 13.744)\" fill=\"#fff\"/>\n        </g>\n      </svg>\n    </a>\n\n    <a class=\"circle-link\" title=\"Augury\" href=\"https://augury.rangle.io/\" target=\"_blank\" rel=\"noopener\">\n      <svg alt=\"Angular Augury Logo\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"21.81\" height=\"23.447\" viewBox=\"0 0 21.81 23.447\">\n        <defs>\n          <clipPath id=\"clip-path\">\n            <rect id=\"Rectangle_13\" data-name=\"Rectangle 13\" width=\"10.338\" height=\"10.27\" fill=\"none\"/>\n          </clipPath>\n        </defs>\n        <g id=\"Group_25\" data-name=\"Group 25\" transform=\"translate(0)\">\n          <path id=\"Path_24\" data-name=\"Path 24\" d=\"M3780.155,311.417h0l-10.881,3.9,1.637,14.4,9.244,5.152,9.244-5.152,1.685-14.4Z\" transform=\"translate(-3769.274 -311.417)\" fill=\"#4a3493\"/>\n          <path id=\"Path_25\" data-name=\"Path 25\" d=\"M3862.088,311.417v23.447l9.244-5.152,1.685-14.4Z\" transform=\"translate(-3851.207 -311.417)\" fill=\"#311b92\"/>\n          <g id=\"Group_24\" data-name=\"Group 24\" transform=\"translate(6.194 6.73)\" opacity=\"0.5\">\n            <g id=\"Group_23\" data-name=\"Group 23\" transform=\"translate(0 0)\">\n              <g id=\"Group_22\" data-name=\"Group 22\" clip-path=\"url(#clip-path)\">\n                <path id=\"Path_26\" data-name=\"Path 26\" d=\"M3832.4,373.252a5.168,5.168,0,1,1-5.828-4.383,5.216,5.216,0,0,1,2.574.3,3.017,3.017,0,1,0,3.252,4.086Z\" transform=\"translate(-3822.107 -368.821)\" fill=\"#fff\"/>\n              </g>\n            </g>\n          </g>\n          <path id=\"Path_27\" data-name=\"Path 27\" d=\"M3830.582,370.848a5.162,5.162,0,1,1-3.254-4.086,3.017,3.017,0,1,0,3.252,4.086Z\" transform=\"translate(-3814.311 -359.969)\" fill=\"#fff\"/>\n        </g>\n      </svg>\n    </a>\n\n    <a class=\"circle-link\" title=\"Protractor\" href=\"https://www.protractortest.org/\" target=\"_blank\" rel=\"noopener\">\n      <svg alt=\"Angular Protractor Logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"21.81\" height=\"23.447\" viewBox=\"0 0 21.81 23.447\">\n        <g id=\"Group_26\" data-name=\"Group 26\" transform=\"translate(0)\">\n          <path id=\"Path_28\" data-name=\"Path 28\" d=\"M4620.155,311.417h0l-10.881,3.9,1.637,14.4,9.244,5.152,9.244-5.152,1.685-14.4Z\" transform=\"translate(-4609.274 -311.417)\" fill=\"#e13439\"/>\n          <path id=\"Path_29\" data-name=\"Path 29\" d=\"M4702.088,311.417v23.447l9.244-5.152,1.685-14.4Z\" transform=\"translate(-4691.207 -311.417)\" fill=\"#b52f32\"/>\n          <path id=\"Path_30\" data-name=\"Path 30\" d=\"M4651.044,369.58v-.421h1.483a7.6,7.6,0,0,0-2.106-5.052l-1.123,1.123-.3-.3,1.122-1.121a7.588,7.588,0,0,0-4.946-2.055v1.482h-.421v-1.485a7.589,7.589,0,0,0-5.051,2.058l1.122,1.121-.3.3-1.123-1.123a7.591,7.591,0,0,0-2.106,5.052h1.482v.421h-1.489v1.734h15.241V369.58Zm-10.966-.263a4.835,4.835,0,0,1,9.67,0Z\" transform=\"translate(-4634.008 -355.852)\" fill=\"#fff\"/>\n        </g>\n      </svg>\n    </a>\n\n    <a class=\"circle-link\" title=\"Find a Local Meetup\" href=\"https://www.meetup.com/find/?keywords=angular\" target=\"_blank\" rel=\"noopener\">\n      <svg alt=\"Meetup Logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24.607\" height=\"23.447\" viewBox=\"0 0 24.607 23.447\">\n        <path id=\"logo--mSwarm\" d=\"M21.221,14.95A4.393,4.393,0,0,1,17.6,19.281a4.452,4.452,0,0,1-.8.069c-.09,0-.125.035-.154.117a2.939,2.939,0,0,1-2.506,2.091,2.868,2.868,0,0,1-2.248-.624.168.168,0,0,0-.245-.005,3.926,3.926,0,0,1-2.589.741,4.015,4.015,0,0,1-3.7-3.347,2.7,2.7,0,0,1-.043-.38c0-.106-.042-.146-.143-.166a3.524,3.524,0,0,1-1.516-.69A3.623,3.623,0,0,1,2.23,14.557a3.66,3.66,0,0,1,1.077-3.085.138.138,0,0,0,.026-.2,3.348,3.348,0,0,1-.451-1.821,3.46,3.46,0,0,1,2.749-3.28.44.44,0,0,0,.355-.281,5.072,5.072,0,0,1,3.863-3,5.028,5.028,0,0,1,3.555.666.31.31,0,0,0,.271.03A4.5,4.5,0,0,1,18.3,4.7a4.4,4.4,0,0,1,1.334,2.751,3.658,3.658,0,0,1,.022.706.131.131,0,0,0,.1.157,2.432,2.432,0,0,1,1.574,1.645,2.464,2.464,0,0,1-.7,2.616c-.065.064-.051.1-.014.166A4.321,4.321,0,0,1,21.221,14.95ZM13.4,14.607a2.09,2.09,0,0,0,1.409,1.982,4.7,4.7,0,0,0,1.275.221,1.807,1.807,0,0,0,.9-.151.542.542,0,0,0,.321-.545.558.558,0,0,0-.359-.534,1.2,1.2,0,0,0-.254-.078c-.262-.047-.526-.086-.787-.138a.674.674,0,0,1-.617-.75,3.394,3.394,0,0,1,.218-1.109c.217-.658.509-1.286.79-1.918a15.609,15.609,0,0,0,.745-1.86,1.95,1.95,0,0,0,.06-1.073,1.286,1.286,0,0,0-1.051-1.033,1.977,1.977,0,0,0-1.521.2.339.339,0,0,1-.446-.042c-.1-.092-.2-.189-.307-.284a1.214,1.214,0,0,0-1.643-.061,7.563,7.563,0,0,1-.614.512A.588.588,0,0,1,10.883,8c-.215-.115-.437-.215-.659-.316a2.153,2.153,0,0,0-.695-.248A2.091,2.091,0,0,0,7.541,8.562a9.915,9.915,0,0,0-.405.986c-.559,1.545-1.015,3.123-1.487,4.7a1.528,1.528,0,0,0,.634,1.777,1.755,1.755,0,0,0,1.5.211,1.35,1.35,0,0,0,.824-.858c.543-1.281,1.032-2.584,1.55-3.875.142-.355.28-.712.432-1.064a.548.548,0,0,1,.851-.24.622.622,0,0,1,.185.539,2.161,2.161,0,0,1-.181.621c-.337.852-.68,1.7-1.018,2.552a2.564,2.564,0,0,0-.173.528.624.624,0,0,0,.333.71,1.073,1.073,0,0,0,.814.034,1.22,1.22,0,0,0,.657-.655q.758-1.488,1.511-2.978.35-.687.709-1.37a1.073,1.073,0,0,1,.357-.434.43.43,0,0,1,.463-.016.373.373,0,0,1,.153.387.7.7,0,0,1-.057.236c-.065.157-.127.316-.2.469-.42.883-.846,1.763-1.262,2.648A2.463,2.463,0,0,0,13.4,14.607Zm5.888,6.508a1.09,1.09,0,0,0-2.179.006,1.09,1.09,0,0,0,2.179-.006ZM1.028,12.139a1.038,1.038,0,1,0,.01-2.075,1.038,1.038,0,0,0-.01,2.075ZM13.782.528a1.027,1.027,0,1,0-.011,2.055A1.027,1.027,0,0,0,13.782.528ZM22.21,6.95a.882.882,0,0,0-1.763.011A.882.882,0,0,0,22.21,6.95ZM4.153,4.439a.785.785,0,1,0,.787-.78A.766.766,0,0,0,4.153,4.439Zm8.221,18.22a.676.676,0,1,0-.677.666A.671.671,0,0,0,12.374,22.658ZM22.872,12.2a.674.674,0,0,0-.665.665.656.656,0,0,0,.655.643.634.634,0,0,0,.655-.644A.654.654,0,0,0,22.872,12.2ZM7.171-.123A.546.546,0,0,0,6.613.43a.553.553,0,1,0,1.106,0A.539.539,0,0,0,7.171-.123ZM24.119,9.234a.507.507,0,0,0-.493.488.494.494,0,0,0,.494.494.48.48,0,0,0,.487-.483A.491.491,0,0,0,24.119,9.234Zm-19.454,9.7a.5.5,0,0,0-.488-.488.491.491,0,0,0-.487.5.483.483,0,0,0,.491.479A.49.49,0,0,0,4.665,18.936Z\" transform=\"translate(0 0.123)\" fill=\"#f64060\"/>\n      </svg>\n    </a>\n\n    <a class=\"circle-link\" title=\"Join the Conversation on Gitter\" href=\"https://gitter.im/angular/angular\" target=\"_blank\" rel=\"noopener\">\n      <svg alt=\"Gitter Logo\" xmlns=\"http://www.w3.org/2000/svg\" width=\"19.447\" height=\"19.447\" viewBox=\"0 0 19.447 19.447\">\n        <g id=\"Group_40\" data-name=\"Group 40\" transform=\"translate(-1612 -405)\">\n          <rect id=\"Rectangle_19\" data-name=\"Rectangle 19\" width=\"19.447\" height=\"19.447\" transform=\"translate(1612 405)\" fill=\"#e60257\"/>\n          <g id=\"gitter\" transform=\"translate(1617.795 408.636)\">\n            <g id=\"Group_33\" data-name=\"Group 33\" transform=\"translate(0 0)\">\n              <rect id=\"Rectangle_15\" data-name=\"Rectangle 15\" width=\"1.04\" height=\"9.601\" transform=\"translate(2.304 2.324)\" fill=\"#fff\"/>\n              <rect id=\"Rectangle_16\" data-name=\"Rectangle 16\" width=\"1.04\" height=\"9.601\" transform=\"translate(4.607 2.324)\" fill=\"#fff\"/>\n              <rect id=\"Rectangle_17\" data-name=\"Rectangle 17\" width=\"1.04\" height=\"4.648\" transform=\"translate(6.91 2.324)\" fill=\"#fff\"/>\n              <rect id=\"Rectangle_18\" data-name=\"Rectangle 18\" width=\"1.04\" height=\"6.971\" transform=\"translate(0 0)\" fill=\"#fff\"/>\n            </g>\n          </g>\n        </g>\n      </svg>\n    </a>\n  </div>\n\n  <!-- Footer -->\n  <footer>\n      Love Angular?&nbsp;\n      <a href=\"https://github.com/angular/angular\" target=\"_blank\" rel=\"noopener\"> Give our repo a star.\n        <div class=\"github-star-badge\">\n            <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M0 0h24v24H0z\" fill=\"none\"/><path d=\"M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z\"/></svg>\n          Star\n        </div>\n      </a>\n      <a href=\"https://github.com/angular/angular\" target=\"_blank\" rel=\"noopener\">\n        <svg class=\"material-icons\" xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\"><path d=\"M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z\" fill=\"#1976d2\"/><path d=\"M0 0h24v24H0z\" fill=\"none\"/></svg>\n      </a>\n  </footer>\n\n  <svg id=\"clouds\" alt=\"Gray Clouds Background\" xmlns=\"http://www.w3.org/2000/svg\" width=\"2611.084\" height=\"485.677\" viewBox=\"0 0 2611.084 485.677\">\n    <path id=\"Path_39\" data-name=\"Path 39\" d=\"M2379.709,863.793c10-93-77-171-168-149-52-114-225-105-264,15-75,3-140,59-152,133-30,2.83-66.725,9.829-93.5,26.25-26.771-16.421-63.5-23.42-93.5-26.25-12-74-77-130-152-133-39-120-212-129-264-15-54.084-13.075-106.753,9.173-138.488,48.9-31.734-39.726-84.4-61.974-138.487-48.9-52-114-225-105-264,15a162.027,162.027,0,0,0-103.147,43.044c-30.633-45.365-87.1-72.091-145.206-58.044-52-114-225-105-264,15-75,3-140,59-152,133-53,5-127,23-130,83-2,42,35,72,70,86,49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33,61.112,8.015,113.854-5.72,150.492-29.764a165.62,165.62,0,0,0,110.861-3.236c47,94,178,113,251,33,31.385,4.116,60.563,2.495,86.487-3.311,25.924,5.806,55.1,7.427,86.488,3.311,73,80,204,61,251-33a165.625,165.625,0,0,0,120,0c51,13,108,15,157-5a147.188,147.188,0,0,0,33.5-18.694,147.217,147.217,0,0,0,33.5,18.694c49,20,106,18,157,5a165.625,165.625,0,0,0,120,0c47,94,178,113,251,33C2446.709,1093.793,2554.709,922.793,2379.709,863.793Z\" transform=\"translate(142.69 -634.312)\" fill=\"#eee\"/>\n  </svg>\n\n</div>\n\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * The content above * * * * * * * * * * * -->\n<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->\n<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n<!-- * * * * * * * * * * End of Placeholder * * * * * * * * * * * -->\n<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->\n\n\n\n<router-outlet></router-outlet>");
+/* harmony default export */ __webpack_exports__["default"] = ("<app-login-registration></app-login-registration>\r\n<app-new-location></app-new-location>\r\n<app-new-trip></app-new-trip>\r\n<app-about-location></app-about-location>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/home-page/home-page.component.html":
+/*!******************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/home-page/home-page.component.html ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- <html>\r\n<head>\r\n\t<meta charset=\"ISO-8859-1\">\r\n\t<title>Home Page</title>\r\n\t<link href=\"https://fonts.googleapis.com/css?family=Courgette|Ubuntu&display=swap\" rel=\"stylesheet\">\r\n</head>\r\n<body>\r\n\t<div id=\"header\">\r\n\t\t<h1 id=\"welcome\">Welcome {{user.name}}!</h1>\r\n\t\t<button [routerLink]=\"['/logout']\" class=\"button\">Logout</button>\r\n\t</div>\r\n\r\n\t<h2 id=\"trips_header\">Upcoming Trips!</h2>\r\n\t<div id=\"trip_table\">\r\n\t\t<table>\r\n\t\t\t<thead>\r\n\t\t\t\t<tr>\r\n\t\t\t\t\t<th>Date</th>\r\n\t\t\t\t\t<th>Where to?</th>\r\n\t\t\t\t\t<th>Whose Going?</th>\r\n\t\t\t\t\t<th>View?</th>\r\n\t\t\t\t</tr>\r\n\t\t\t</thead>\r\n\t\t<tbody>\r\n\t\t\t<tr *ngFor=\"let trip of trips\">\r\n\t\t\t\t<td>{{trip.start_date}} to {{trip.end_date}}</td>\r\n\t\t\t\t<td>{{trip.destination}}</td>\r\n\t\t\t\t<td>{{trip.usersGoing}}</td>\r\n\t\t\t\t<td><a [routerLink]=\"['/show/trip/', trip._id]\">Show Info</a></td>\r\n\t\t\t</tr>\r\n\t\t</tbody>\r\n\t\t</table>\r\n\r\n\t<div id= \"new_trip\"></div>\r\n\t</div>\r\n\r\n\t<div id=\"task_wishlist\">\r\n\t\t<div class=\"inline-block\">\r\n\t\t<h2 class=\"header\">To-Do List!</h2>\r\n\t\t\t<div id = \"toDoList\">\r\n\t\t\t\t<ol>\r\n\t\t\t\t\t<li> {{allTasks.taskText}} - {{allTasks.priority}} Priority\r\n\r\n\t\t\t\t\t<form (submit)=\"\">\r\n\t\t\t\t\t\t<input type=\"hidden\" name=\"_method\" value=\"delete\" />\r\n\t\t\t\t\t\t<button class=\"button\">Completed</button>\r\n\t\t\t\t\t</form>\r\n\t\t\t\t</ol>\r\n\r\n\t\t\t\t\t<div id=\"new_task\">\r\n\t\t\t\t\t<form (submit)=\"newTask\">\r\n\t\t\t\t\t\t<label>Task Title:</label>\r\n\t\t\t\t\t\t<input type=\"text\" [(ngModel)]=\"newTask.title\"/>\r\n\t\t\t\t\t\t<label>Task Description:</label>\r\n\t\t\t\t\t\t<textarea name=\"description\" [(ngModel)]=\"newTask.description\">\r\n\t\t\t\t\t\t<label>Task Priority: </label>\r\n\t\t\t\t\t\t<input type=\"text\" name=\"priority\" [(ngModel)]=\"newTask.priority\">\r\n\t\t\t\t\t\t<input type=\"submit\" value=\"Create Task\" class=\"button\"/>\r\n\t\t\t\t\t</form>\r\n\t\t\t\t\t</div>\r\n\t\t\t</div>\r\n\t\t</div>\r\n\t</div>\r\n\r\n\t<div class=\"inline-block\">\r\n\t<div id = \"wishlist_header\">\r\n\t\t<h3>Camping Wish List</h3>\r\n\t\t<p>(Places you dream of visiting!)</p>\r\n\t</div>\r\n\t<div id=\"wishlist\"><li>{{place.locationName}}</li></div>\r\n\t</div>\r\n\r\n\t<div id=\"footer\">\r\n\t<div id=\"search-bar\">\r\n\t\t<h3>Make a search for a location?</h3>\r\n\t\t<form (submit)=\"clickToSearch()\">\r\n\t\t\t<input type=\"text\" name=\"locationName\" [(ngModel)]=\"searchTerm\" />\r\n\t\t\t<input type=\"search\" value=\"Search\">\r\n\t\t</form>\r\n\t</div>\r\n\r\n\t<div id=\"createALocation\">\r\n\t\t<button class=\"button\" [routerLink]=\"['/location/new']\">Want to Create a New Location?</button>\r\n\t</div>\r\n\t</div>\r\n\r\n</body>\r\n</html> -->\r\n");
 
 /***/ }),
 
@@ -45,7 +84,85 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>login-registration works!</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("  \r\n<html>\r\n    <head>\r\n    <meta charset=\"ISO-8859-1\">\r\n    <title>Login and Registration Page</title>\r\n    <link href=\"https://fonts.googleapis.com/css?family=El+Messiri|Tangerine&display=swap\" rel=\"stylesheet\">\r\n    </head>\r\n    <body>\r\n        <h1 id=\"title\">The Traveling Bard</h1>\r\n        \r\n        <p id=\"missionStatement\">For all those with a wandering eye to the distant horizon, a insatiable wanderlust, \r\n        or even just the curiosity to try something different, you have found yourself in the right direction. \r\n        As the purpose of this site is to help make all your camping experiences just a little easier. \r\n        Based on the story of a traveling bard and her journey with her companions, \r\n        this website is designed to help you create task lists, \r\n        plan trips, and make headway into starting your own adventure.</p>\r\n        \r\n        <div id=\"register\">\r\n        <h2>Register</h2>\r\n        <form (submit)=\"register()\">\r\n            <p>\r\n                <label>Name: </label>\r\n                <input id=\"name\" type=\"text\" name=\"name\" [(ngModel)]=\"newUser && newUser.name\"/>\r\n            </p>\r\n            <p>\r\n                <label>Email: </label>\r\n                <input type=\"email\" id=\"email2\" name=\"email\" [(ngModel)]=\"newUser && newUser.email\"/>\r\n            </p>\r\n            <p>\r\n                <label>Password: </label>\r\n                <input type=\"password\" name=\"password\" id=\"password2\" [(ngModel)]=\"newUser && newUser.password\">\r\n            </p>\r\n            <input type=\"submit\" value=\"Register!\" class =\"submitButton\"/>\r\n        </form>\r\n        </div>\r\n        \r\n           \r\n        <div id=\"login\">\r\n        <h2>Login</h2>\r\n        <form (submit)=\"login()\">\r\n            <p>\r\n                <label>Email: </label>\r\n                <input type=\"email\" class=\"email\" name=\"email\" [(ngModel)]=\"returnUser && returnUser.email\"/>\r\n            </p>\r\n            <p>\r\n                <label>Password: </label>\r\n                <input type=\"password\" class=\"password\" name=\"password\" [(ngModel)]=\"returnUser && returnUser.password\"/>\r\n            </p>\r\n            <input type=\"submit\" value=\"Login!\" class =\"submitButton\" />\r\n        </form>\r\n        </div>\r\n        \r\n    </body>\r\n    </html>\r\n\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/messaging/messaging.component.html":
+/*!******************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/messaging/messaging.component.html ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p>messaging works!</p>\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/new-location/new-location.component.html":
+/*!************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/new-location/new-location.component.html ***!
+  \************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\r\n<html>\r\n<head>\r\n\t<meta charset=\"ISO-8859-1\">\r\n\t<title>Home Page</title>\r\n\t\r\n\t\r\n</head>\r\n<body>\r\n<button [routerLink] = \"['/home']\" class=\"button\">Back to HomePage</button>\r\n<button [routerLink] = \"['/logout']\" class=\"button\">Logout</button>\r\n\t<h1>What Location would you like to make a page for?</h1>\r\n\t\r\n\t<div id=\"new_location\">\r\n\t<form (submit)=\"clickCreateLocation()\">\r\n\t\t<div id=\"locationName\">\r\n\t\t<label>Location name: </label>\r\n\t\t<input type=\"text\" name=\"name\" [(ngModel)]=\"newLocation && newLocation.name\" >\r\n\t\t</div>\r\n\t\t\r\n\t\t<div id=\"address\">\r\n\t\t<label>Address (The entrance of the area is best, make sure it is correct!): </label>\r\n\t\t<input type=\"text\" name=\"address\" [(ngModel)]=\"newLocation && newLocation.address\"/>\r\n\t\t</div>\r\n\t\t\r\n\t\t<div id=\"description\">\r\n\t\t<label>Description: </label><br>\r\n\t\t<textarea rows=\"8\" cols=\"30\" name=\"description\" [(ngModel)]=\"newLocation && newLocation.description\"></textarea>\r\n\t\t</div>\r\n\t\t\r\n\t\t<div id=\"picture\">\r\n\t\t<label>Add a picture link(Make sure your source is valid!): </label>\r\n\t\t<input type=\"text\" name=\"url\" [(ngModel)]=\"newLocation && newLocation.url\" >\r\n\t\t</div>\r\n\t\t\r\n\t\t<input class=\"button\" type=\"submit\" value=\"Create Location!\" >\r\n\t</form>\r\n\t</div>\r\n</body>\r\n</html>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/new-trip/new-trip.component.html":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/new-trip/new-trip.component.html ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<html>\r\n<head>\r\n<meta charset=\"ISO-8859-1\">\r\n<title>Start up a new Trip!</title>\r\n</head>\r\n<body>\r\n\t<div id= \"new_trip\">\r\n\t<h1>Are you ready to plan a trip?</h1>\r\n\t<div id=\"trip_form\">\r\n\t<form (submit)=\"clickCreateTrip()\">\r\n\t\t<label>Name of Trip: </label>\r\n\t\t<input type=\"text\" name=\"name\" [(ngModel)]=\"newTrip.name\">\r\n\t\t\r\n\t\t<label>Where are you going?</label>\r\n\t\t<input type=\"text\" name=\"destination\" [(ngModel)]=\"newTrip.destination\"/>\r\n\t\t\r\n\t\t<label>Start Date: </label>\r\n\t\t<input type =\"date\" name=\"start_date\" [(ngModel)]=\"newTrip.start_date\"/>\r\n\t\t\r\n\t\t<label>End Date: </label>\r\n\t\t<input type=\"date\" name=\"end_date\" [(ngModel)]=\"newTrip.end_date\"/>\r\n\t\t\r\n\t\t<input type=\"submit\" value=\"Create Trip!\" />\r\n\t</form>\r\n\t</div>\r\n\t</div>\r\n</body>\r\n</html>\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/ratings/ratings.component.html":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/ratings/ratings.component.html ***!
+  \**************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p>ratings works!</p>\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/reviews/reviews.component.html":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/reviews/reviews.component.html ***!
+  \**************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p>reviews works!</p>\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/search-locations/search-locations.component.html":
+/*!********************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/search-locations/search-locations.component.html ***!
+  \********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<h1>Searching for {{searchedLocation}}</h1>\r\n\r\n<div class=\"main\">\r\n    <ul *ngFor = 'let location of locations'>\r\n        <li>{{location.name}}</li>\r\n    </ul>\r\n</div>\r\n\r\n<div class=\"footer\">\r\n    <p>That it for {{searchedLocation.name}}...</p>\r\n</div>\r\n\r\n<div id=\"search-bar\">\r\n    <p>Try Another search?</p>\r\n    <form (submit)=\"clickToSearch()\">\r\n        <input type=\"text\" name=\"locationName\" [(ngModel)]=\"searchTerm\" />\r\n        <input type=\"search\" value=\"Search\">\r\n    </form>\r\n</div>\r\n\r\n<div class=\"newLocation\">\r\n    <p>Or make the location!</p>\r\n    <button [routerLink]=\"['/location/new']\">New Location</button>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -278,6 +395,191 @@ function __importDefault(mod) {
 
 /***/ }),
 
+/***/ "./src/app/about-location/about-location.component.css":
+/*!*************************************************************!*\
+  !*** ./src/app/about-location/about-location.component.css ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("* {\r\n    margin: 0px;\r\n    padding: 0px;\r\n}\r\n\r\nbody {\r\n\tcolor: black;\r\n\tfont-family: 'Ubuntu', sans-serif;\r\n\tmargin: 10px;\r\n\tbackground-color: #E1D1BA;\r\n}\r\n\r\nimg {\r\n\tborder: white solid 2px;\r\n\tmargin: 15px;\r\n\tdisplay: inline-block;\r\n}\r\n\r\ninput {\r\n\tborder-radius: 8px;\r\n\tpadding: 5px;\r\n\tborder: none;\r\n\tmargin: 5px;\r\n}\r\n\r\nh1 {\r\n\tmargin-top: 20px;\r\n\ttext-align: center;\r\n\tfont-size: 45px;\r\n}\r\n\r\n#picture {\r\n\tdisplay: inline-block;\r\n}\r\n\r\n#mainHeader {\r\n\tdisplay: inline-block;\r\n\tvertical-align: top;\r\n}\r\n\r\n#information {\r\n\tdisplay: inline-block;\r\n\twidth: 500px;\r\n\tvertical-align: top;\r\n\tfont-size: 25px;\r\n\tmargin-left: 15px;\r\n\tmargin-top: 40px;\r\n\tbackground-color: #943F2C;\r\n\tborder: solid 2px #D87743;\r\n\tborder-radius: 8px;\r\n\tpadding: 20px;\r\n\tletter-spacing: 1px;\r\n\tword-spacing: 10px;\r\n}\r\n\r\n#desc {\r\n\tmargin-top: 5px;\r\n\tmargin-bottom: 5px;\r\n}\r\n\r\n#address {\r\n\tmargin: 5px;\r\n}\r\n\r\n#reviews, #advice{\r\n\tdisplay: inline-block;\r\n\twidth: 450px;\r\n\tvertical-align: top;\r\n}\r\n\r\n#advice {\r\n\tmargin-left: 120px;\r\n}\r\n\r\n#submit_review p{\r\n\ttext-align: center;\r\n}\r\n\r\n#reviewsAndAdvice {\r\n\tmargin-left: 85px;\r\n}\r\n\r\n#all_reviews, #all_advice {\r\n\tbackground-color: #D87743;\r\n\tborder: solid 1px #943F2C;\r\n\tborder-radius: 8px;\r\n\tmargin: 10px;\r\n\tpadding: 8px;\r\n\tdisplay: inline-block;\r\n\twidth: 450px;\r\n}\r\n\r\n#wishlist {\r\n\tborder-radius: 8px;\r\n\tbackground-color: #D87743;\r\n\tborder: solid 1px #943F2C;\r\n\tpadding: 8px;\r\n\twidth: 205px;\r\n\tmargin: 20px;\r\n\ttext-align: center;\r\n}\r\n\r\n.button {\r\n\tborder-radius: 8px;\r\n\tpadding: 5px;\r\n\tborder: none;\r\n}\r\n\r\ntextarea {\r\n\tborder-radius: 8px;\r\n}\r\n\r\nagm-map {\r\n\theight: 300px;\r\n  }\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWJvdXQtbG9jYXRpb24vYWJvdXQtbG9jYXRpb24uY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFdBQVc7SUFDWCxZQUFZO0FBQ2hCOztBQUVBO0NBQ0MsWUFBWTtDQUNaLGlDQUFpQztDQUNqQyxZQUFZO0NBQ1oseUJBQXlCO0FBQzFCOztBQUVBO0NBQ0MsdUJBQXVCO0NBQ3ZCLFlBQVk7Q0FDWixxQkFBcUI7QUFDdEI7O0FBRUE7Q0FDQyxrQkFBa0I7Q0FDbEIsWUFBWTtDQUNaLFlBQVk7Q0FDWixXQUFXO0FBQ1o7O0FBRUE7Q0FDQyxnQkFBZ0I7Q0FDaEIsa0JBQWtCO0NBQ2xCLGVBQWU7QUFDaEI7O0FBRUE7Q0FDQyxxQkFBcUI7QUFDdEI7O0FBRUE7Q0FDQyxxQkFBcUI7Q0FDckIsbUJBQW1CO0FBQ3BCOztBQUVBO0NBQ0MscUJBQXFCO0NBQ3JCLFlBQVk7Q0FDWixtQkFBbUI7Q0FDbkIsZUFBZTtDQUNmLGlCQUFpQjtDQUNqQixnQkFBZ0I7Q0FDaEIseUJBQXlCO0NBQ3pCLHlCQUF5QjtDQUN6QixrQkFBa0I7Q0FDbEIsYUFBYTtDQUNiLG1CQUFtQjtDQUNuQixrQkFBa0I7QUFDbkI7O0FBRUE7Q0FDQyxlQUFlO0NBQ2Ysa0JBQWtCO0FBQ25COztBQUVBO0NBQ0MsV0FBVztBQUNaOztBQUVBO0NBQ0MscUJBQXFCO0NBQ3JCLFlBQVk7Q0FDWixtQkFBbUI7QUFDcEI7O0FBRUE7Q0FDQyxrQkFBa0I7QUFDbkI7O0FBRUE7Q0FDQyxrQkFBa0I7QUFDbkI7O0FBRUE7Q0FDQyxpQkFBaUI7QUFDbEI7O0FBRUE7Q0FDQyx5QkFBeUI7Q0FDekIseUJBQXlCO0NBQ3pCLGtCQUFrQjtDQUNsQixZQUFZO0NBQ1osWUFBWTtDQUNaLHFCQUFxQjtDQUNyQixZQUFZO0FBQ2I7O0FBRUE7Q0FDQyxrQkFBa0I7Q0FDbEIseUJBQXlCO0NBQ3pCLHlCQUF5QjtDQUN6QixZQUFZO0NBQ1osWUFBWTtDQUNaLFlBQVk7Q0FDWixrQkFBa0I7QUFDbkI7O0FBRUE7Q0FDQyxrQkFBa0I7Q0FDbEIsWUFBWTtDQUNaLFlBQVk7QUFDYjs7QUFFQTtDQUNDLGtCQUFrQjtBQUNuQjs7QUFDQTtDQUNDLGFBQWE7RUFDWiIsImZpbGUiOiJzcmMvYXBwL2Fib3V0LWxvY2F0aW9uL2Fib3V0LWxvY2F0aW9uLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIqIHtcclxuICAgIG1hcmdpbjogMHB4O1xyXG4gICAgcGFkZGluZzogMHB4O1xyXG59XHJcblxyXG5ib2R5IHtcclxuXHRjb2xvcjogYmxhY2s7XHJcblx0Zm9udC1mYW1pbHk6ICdVYnVudHUnLCBzYW5zLXNlcmlmO1xyXG5cdG1hcmdpbjogMTBweDtcclxuXHRiYWNrZ3JvdW5kLWNvbG9yOiAjRTFEMUJBO1xyXG59XHJcblxyXG5pbWcge1xyXG5cdGJvcmRlcjogd2hpdGUgc29saWQgMnB4O1xyXG5cdG1hcmdpbjogMTVweDtcclxuXHRkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbn1cclxuXHJcbmlucHV0IHtcclxuXHRib3JkZXItcmFkaXVzOiA4cHg7XHJcblx0cGFkZGluZzogNXB4O1xyXG5cdGJvcmRlcjogbm9uZTtcclxuXHRtYXJnaW46IDVweDtcclxufVxyXG5cclxuaDEge1xyXG5cdG1hcmdpbi10b3A6IDIwcHg7XHJcblx0dGV4dC1hbGlnbjogY2VudGVyO1xyXG5cdGZvbnQtc2l6ZTogNDVweDtcclxufVxyXG5cclxuI3BpY3R1cmUge1xyXG5cdGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxufVxyXG5cclxuI21haW5IZWFkZXIge1xyXG5cdGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuXHR2ZXJ0aWNhbC1hbGlnbjogdG9wO1xyXG59XHJcblxyXG4jaW5mb3JtYXRpb24ge1xyXG5cdGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuXHR3aWR0aDogNTAwcHg7XHJcblx0dmVydGljYWwtYWxpZ246IHRvcDtcclxuXHRmb250LXNpemU6IDI1cHg7XHJcblx0bWFyZ2luLWxlZnQ6IDE1cHg7XHJcblx0bWFyZ2luLXRvcDogNDBweDtcclxuXHRiYWNrZ3JvdW5kLWNvbG9yOiAjOTQzRjJDO1xyXG5cdGJvcmRlcjogc29saWQgMnB4ICNEODc3NDM7XHJcblx0Ym9yZGVyLXJhZGl1czogOHB4O1xyXG5cdHBhZGRpbmc6IDIwcHg7XHJcblx0bGV0dGVyLXNwYWNpbmc6IDFweDtcclxuXHR3b3JkLXNwYWNpbmc6IDEwcHg7XHJcbn1cclxuXHJcbiNkZXNjIHtcclxuXHRtYXJnaW4tdG9wOiA1cHg7XHJcblx0bWFyZ2luLWJvdHRvbTogNXB4O1xyXG59XHJcblxyXG4jYWRkcmVzcyB7XHJcblx0bWFyZ2luOiA1cHg7XHJcbn1cclxuXHJcbiNyZXZpZXdzLCAjYWR2aWNle1xyXG5cdGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuXHR3aWR0aDogNDUwcHg7XHJcblx0dmVydGljYWwtYWxpZ246IHRvcDtcclxufVxyXG5cclxuI2FkdmljZSB7XHJcblx0bWFyZ2luLWxlZnQ6IDEyMHB4O1xyXG59XHJcblxyXG4jc3VibWl0X3JldmlldyBwe1xyXG5cdHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG5cclxuI3Jldmlld3NBbmRBZHZpY2Uge1xyXG5cdG1hcmdpbi1sZWZ0OiA4NXB4O1xyXG59XHJcblxyXG4jYWxsX3Jldmlld3MsICNhbGxfYWR2aWNlIHtcclxuXHRiYWNrZ3JvdW5kLWNvbG9yOiAjRDg3NzQzO1xyXG5cdGJvcmRlcjogc29saWQgMXB4ICM5NDNGMkM7XHJcblx0Ym9yZGVyLXJhZGl1czogOHB4O1xyXG5cdG1hcmdpbjogMTBweDtcclxuXHRwYWRkaW5nOiA4cHg7XHJcblx0ZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG5cdHdpZHRoOiA0NTBweDtcclxufVxyXG5cclxuI3dpc2hsaXN0IHtcclxuXHRib3JkZXItcmFkaXVzOiA4cHg7XHJcblx0YmFja2dyb3VuZC1jb2xvcjogI0Q4Nzc0MztcclxuXHRib3JkZXI6IHNvbGlkIDFweCAjOTQzRjJDO1xyXG5cdHBhZGRpbmc6IDhweDtcclxuXHR3aWR0aDogMjA1cHg7XHJcblx0bWFyZ2luOiAyMHB4O1xyXG5cdHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG5cclxuLmJ1dHRvbiB7XHJcblx0Ym9yZGVyLXJhZGl1czogOHB4O1xyXG5cdHBhZGRpbmc6IDVweDtcclxuXHRib3JkZXI6IG5vbmU7XHJcbn1cclxuXHJcbnRleHRhcmVhIHtcclxuXHRib3JkZXItcmFkaXVzOiA4cHg7XHJcbn1cclxuYWdtLW1hcCB7XHJcblx0aGVpZ2h0OiAzMDBweDtcclxuICB9Il19 */");
+
+/***/ }),
+
+/***/ "./src/app/about-location/about-location.component.ts":
+/*!************************************************************!*\
+  !*** ./src/app/about-location/about-location.component.ts ***!
+  \************************************************************/
+/*! exports provided: AboutLocationComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AboutLocationComponent", function() { return AboutLocationComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
+
+
+let AboutLocationComponent = class AboutLocationComponent {
+    constructor(_router, _route, _httpService) {
+        this._router = _router;
+        this._route = _route;
+        this._httpService = _httpService;
+        this.currentLocation = { name: "Yosemite National Park",
+            description: "A nice park",
+            address: "9035 Village Dr Yosemite Valley CA 95389" };
+        this.data = {};
+        this.review = { rating: "8",
+            reviewText: "BROSEMITE AHAHAH",
+            reviewAuthor: "Spooky" };
+        this.allAdvice = { tip: "Don't eat the yellow snow" };
+    }
+    ngOnInit() {
+        this.currentlocation();
+        this.getWeather();
+    }
+    currentlocation() {
+        this.zip = "95389";
+    }
+    getWeather() {
+        this._httpService.getData()
+            .subscribe((data) => {
+            this.lat = data.coord.lat;
+            this.lon = data.coord.lon;
+            this.data = data;
+            var date2 = new Date(data.sys.sunset * 1000);
+            var hours2 = date2.getHours();
+            var minutes2 = "0" + date2.getMinutes();
+            this.sunset = hours2 - 12 + ':' + minutes2.substr(-2);
+            var date = new Date(data.sys.sunrise * 1000);
+            var hours = date.getHours();
+            var minutes = "0" + date.getMinutes();
+            this.sunrise = hours + ':' + minutes.substr(-2);
+            console.log(this.data);
+        });
+    }
+};
+AboutLocationComponent.ctorParameters = () => [
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] },
+    { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] }
+];
+AboutLocationComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-about-location',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./about-location.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/about-location/about-location.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./about-location.component.css */ "./src/app/about-location/about-location.component.css")).default]
+    })
+], AboutLocationComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/about-trip/about-trip.component.css":
+/*!*****************************************************!*\
+  !*** ./src/app/about-trip/about-trip.component.css ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("* {\r\n    margin: 0px;\r\n    padding: 0px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvYWJvdXQtdHJpcC9hYm91dC10cmlwLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxXQUFXO0lBQ1gsWUFBWTtBQUNoQiIsImZpbGUiOiJzcmMvYXBwL2Fib3V0LXRyaXAvYWJvdXQtdHJpcC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiKiB7XHJcbiAgICBtYXJnaW46IDBweDtcclxuICAgIHBhZGRpbmc6IDBweDtcclxufSJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/about-trip/about-trip.component.ts":
+/*!****************************************************!*\
+  !*** ./src/app/about-trip/about-trip.component.ts ***!
+  \****************************************************/
+/*! exports provided: AboutTripComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AboutTripComponent", function() { return AboutTripComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
+/* harmony import */ var _models_supply__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../models/supply */ "./src/app/models/supply.ts");
+
+
+
+
+
+let AboutTripComponent = class AboutTripComponent {
+    constructor(_httpService, _route, _router) {
+        this._httpService = _httpService;
+        this._route = _route;
+        this._router = _router;
+    }
+    ngOnInit() {
+        this.newSupply = new _models_supply__WEBPACK_IMPORTED_MODULE_4__["Supply"]();
+        this.getTrip();
+    }
+    getTrip() {
+        this._route.params.subscribe((params) => {
+            console.log(params.id);
+            this._httpService.getTrip(params.id)
+                .subscribe((data) => {
+                this.currentTrip = data;
+            });
+        });
+    }
+    clickToDelete() {
+        console.log(this.currentTrip, ' is going to be deleted.');
+        this._httpService.deleteTrip(this.currentTrip._id).subscribe((deletedTrip) => {
+            console.log('Trip has been deleted.', deletedTrip);
+        });
+        this._router.navigate(['/home']);
+    }
+    addToSupply() {
+        this._httpService.createSupply(this.newSupply).subscribe((newSupply) => {
+            this.currentTrip.supply_list.push(newSupply);
+            this.newSupply = new _models_supply__WEBPACK_IMPORTED_MODULE_4__["Supply"]();
+            this.getTrip();
+        });
+    }
+    deleteSupply(supplyId) {
+        this._httpService.deleteSupply(supplyId).subscribe((deletedSupply) => {
+            console.log('Deleted,', supplyId);
+            this.getTrip();
+        });
+    }
+    completeSupply(supplyId) {
+        this._httpService.findOneSupply(supplyId).subscribe((supply) => {
+            this._httpService.completeSupply(supply).subscribe((updatedSupply) => {
+                console.log('Completed!', updatedSupply);
+            });
+        });
+        this.getTrip();
+    }
+};
+AboutTripComponent.ctorParameters = () => [
+    { type: _http_service__WEBPACK_IMPORTED_MODULE_3__["HttpService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
+AboutTripComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-about-trip',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./about-trip.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/about-trip/about-trip.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./about-trip.component.css */ "./src/app/about-trip/about-trip.component.css")).default]
+    })
+], AboutTripComponent);
+
+
+
+/***/ }),
+
 /***/ "./src/app/app-routing.module.ts":
 /*!***************************************!*\
   !*** ./src/app/app-routing.module.ts ***!
@@ -291,10 +593,33 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _login_registration_login_registration_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./login-registration/login-registration.component */ "./src/app/login-registration/login-registration.component.ts");
+/* harmony import */ var _new_location_new_location_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./new-location/new-location.component */ "./src/app/new-location/new-location.component.ts");
+/* harmony import */ var _about_location_about_location_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./about-location/about-location.component */ "./src/app/about-location/about-location.component.ts");
+/* harmony import */ var _new_trip_new_trip_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./new-trip/new-trip.component */ "./src/app/new-trip/new-trip.component.ts");
+/* harmony import */ var _about_trip_about_trip_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./about-trip/about-trip.component */ "./src/app/about-trip/about-trip.component.ts");
+/* harmony import */ var _search_locations_search_locations_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./search-locations/search-locations.component */ "./src/app/search-locations/search-locations.component.ts");
+/* harmony import */ var _home_page_home_page_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./home-page/home-page.component */ "./src/app/home-page/home-page.component.ts");
 
 
 
-const routes = [];
+
+
+
+
+
+
+
+const routes = [
+    { path: 'home', component: _home_page_home_page_component__WEBPACK_IMPORTED_MODULE_9__["HomePageComponent"] },
+    { path: 'new/location', component: _new_location_new_location_component__WEBPACK_IMPORTED_MODULE_4__["NewLocationComponent"] },
+    { path: 'new/trip', component: _new_trip_new_trip_component__WEBPACK_IMPORTED_MODULE_6__["NewTripComponent"] },
+    { path: 'show/trip/:id', component: _about_trip_about_trip_component__WEBPACK_IMPORTED_MODULE_7__["AboutTripComponent"] },
+    { path: 'searchbar/location/:name', component: _search_locations_search_locations_component__WEBPACK_IMPORTED_MODULE_8__["SearchLocationsComponent"] },
+    { path: 'about/location/:id', component: _about_location_about_location_component__WEBPACK_IMPORTED_MODULE_5__["AboutLocationComponent"] },
+    { path: 'login', component: _login_registration_login_registration_component__WEBPACK_IMPORTED_MODULE_3__["LoginRegistrationComponent"] },
+    { path: '', pathMatch: 'full', redirectTo: '' }
+];
 let AppRoutingModule = class AppRoutingModule {
 };
 AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -371,12 +696,32 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _login_registration_login_registration_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./login-registration/login-registration.component */ "./src/app/login-registration/login-registration.component.ts");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
-/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./http.service */ "./src/app/http.service.ts");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _agm_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @agm/core */ "./node_modules/@agm/core/fesm2015/agm-core.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _login_registration_login_registration_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./login-registration/login-registration.component */ "./src/app/login-registration/login-registration.component.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./http.service */ "./src/app/http.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
+/* harmony import */ var _messaging_messaging_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./messaging/messaging.component */ "./src/app/messaging/messaging.component.ts");
+/* harmony import */ var _ratings_ratings_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./ratings/ratings.component */ "./src/app/ratings/ratings.component.ts");
+/* harmony import */ var _reviews_reviews_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./reviews/reviews.component */ "./src/app/reviews/reviews.component.ts");
+/* harmony import */ var _new_location_new_location_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./new-location/new-location.component */ "./src/app/new-location/new-location.component.ts");
+/* harmony import */ var _about_location_about_location_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./about-location/about-location.component */ "./src/app/about-location/about-location.component.ts");
+/* harmony import */ var _new_trip_new_trip_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./new-trip/new-trip.component */ "./src/app/new-trip/new-trip.component.ts");
+/* harmony import */ var _home_page_home_page_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./home-page/home-page.component */ "./src/app/home-page/home-page.component.ts");
+/* harmony import */ var _about_trip_about_trip_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./about-trip/about-trip.component */ "./src/app/about-trip/about-trip.component.ts");
+/* harmony import */ var _search_locations_search_locations_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./search-locations/search-locations.component */ "./src/app/search-locations/search-locations.component.ts");
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -391,19 +736,119 @@ let AppModule = class AppModule {
 AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
         declarations: [
-            _app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"],
-            _login_registration_login_registration_component__WEBPACK_IMPORTED_MODULE_5__["LoginRegistrationComponent"]
+            _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
+            _login_registration_login_registration_component__WEBPACK_IMPORTED_MODULE_6__["LoginRegistrationComponent"],
+            _new_location_new_location_component__WEBPACK_IMPORTED_MODULE_13__["NewLocationComponent"],
+            _about_location_about_location_component__WEBPACK_IMPORTED_MODULE_14__["AboutLocationComponent"],
+            _new_trip_new_trip_component__WEBPACK_IMPORTED_MODULE_15__["NewTripComponent"],
+            _messaging_messaging_component__WEBPACK_IMPORTED_MODULE_10__["MessagingComponent"],
+            _ratings_ratings_component__WEBPACK_IMPORTED_MODULE_11__["RatingsComponent"],
+            _reviews_reviews_component__WEBPACK_IMPORTED_MODULE_12__["ReviewsComponent"],
+            _home_page_home_page_component__WEBPACK_IMPORTED_MODULE_16__["HomePageComponent"],
+            _about_trip_about_trip_component__WEBPACK_IMPORTED_MODULE_17__["AboutTripComponent"],
+            _search_locations_search_locations_component__WEBPACK_IMPORTED_MODULE_18__["SearchLocationsComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-            _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_6__["FormsModule"],
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_8__["HttpClientModule"]
+            _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_7__["FormsModule"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_9__["HttpClientModule"],
+            _agm_core__WEBPACK_IMPORTED_MODULE_3__["AgmCoreModule"].forRoot({
+                apiKey: 'AIzaSyC59Aftx3_ANjo5qcDseQCr_BVnzUk_CCY'
+            })
         ],
-        providers: [_http_service__WEBPACK_IMPORTED_MODULE_7__["HttpService"]],
-        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
+        providers: [_http_service__WEBPACK_IMPORTED_MODULE_8__["HttpService"]],
+        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]]
     })
 ], AppModule);
+
+
+
+/***/ }),
+
+/***/ "./src/app/home-page/home-page.component.css":
+/*!***************************************************!*\
+  !*** ./src/app/home-page/home-page.component.css ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("* {\r\n    margin: 0px;\r\n    padding: 0px;\r\n}\r\n\r\nbody {\r\n\tbackground-image: url(\"FallBackground2.jpeg\");\r\n\tcolor: #FEFEDC;\r\n\tbackground-repeat: no-repeat;\r\n\tbackground-size: 100% 100%;\r\n\twidth: 100%;\r\n\tfont-family: 'Ubuntu', sans-serif;\r\n}\r\n\r\nh1 {\r\n\tmargin: 8px;\r\n\tfont-family: 'Courgette', cursive;\r\n\tfont-size: 50px;\r\n\ttext-align: center;\r\n\tbackground-color: #D9645A;\r\n\tborder-radius: 8px;\r\n\twidth: 385px;\r\n\tmargin: auto;\r\n\tmargin-top: 15px;\r\n\tborder: dashed #F2AD72 4px;\r\n}\r\n\r\n.customSelect {\r\n\tborder-radius: 8px;\r\n\tpadding: 3px;\r\n}\r\n\r\n#footer {\r\n\tdisplay: inline-block;\r\n\tpadding: 10px;\r\n}\r\n\r\n#friend_list, #trip_table, #toDoList, #wishlist, #footer{\r\n\tborder: 2px solid #E68A37;\r\n\tpadding: 10px;\r\n\tborder-radius: 8px;\r\n\tmargin: 10px;\r\n\tbackground-color: #B75129;\r\n}\r\n\r\n#new_trip, #new_task, #new_friend{\r\n\tbackground-color: #A85B60;\r\n\tborder-radius: 8px;\r\n\tpadding: 8px;\r\n\tborder: #DE8275 solid 1px;\r\n}\r\n\r\n.button {\r\n\tpadding: 5px;\r\n\tborder-radius: 8px;\r\n\tborder: none;\r\n\tmargin: 5px;\r\n\tfont-family: 'Ubuntu', sans-serif;\r\n}\r\n\r\ninput {\r\n\tpadding: 3px;\r\n\tborder-radius: 8px;\r\n\tmargin-left: 10px;\r\n\tfont-family: 'Ubuntu', sans-serif;\r\n}\r\n\r\ntable {\r\n\tpadding: 8px;\r\n}\r\n\r\ntd, th {\r\n\tpadding: 5px;\r\n}\r\n\r\nli {\r\n\tmargin: 20px;\r\n}\r\n\r\n#toDoList {\r\n\twidth: 300px;\r\n\tdisplay: inline-block;\r\n}\r\n\r\n.header {\r\n\tbackground-color: #8D412A;\r\n\tborder-radius: 8px;\r\n\tmargin: 8px;\r\n\tpadding: 8px;\r\n\tborder: solid 2px #CC4C31;\r\n\twidth: 120px;\r\n\ttext-align: center;\r\n}\r\n\r\n#trips_header {\r\n\tbackground-color: #8D412A;\r\n\tborder-radius: 8px;\r\n\tmargin: 8px;\r\n\tpadding: 8px;\r\n\tborder: solid 2px #CC4C31;\r\n\twidth: 185px;\r\n\tmargin-left: 50px;\r\n\ttext-align: center;\r\n}\r\n\r\n#wishlist_header {\r\n\tbackground-color: #8D412A;\r\n\tborder-radius: 8px;\r\n\tmargin: 8px;\r\n\tpadding: 5px;\r\n\tborder: solid 2px #CC4C31;\r\n\ttext-align: center;\r\n\twidth: 300px;\r\n}\r\n\r\n#wishlist {\r\n\twidth: 300px;\r\n}\r\n\r\n.inline-block {\r\n\tdisplay: inline-block;\r\n\tvertical-align: top;\r\n\tmargin-left: 18px\r\n}\r\n\r\n#toDoList, #wishlist{\r\n\tdisplay: inline-block;\r\n}\r\n\r\n#task_wishlist {\r\n\tdisplay: inline-block;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvaG9tZS1wYWdlL2hvbWUtcGFnZS5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksV0FBVztJQUNYLFlBQVk7QUFDaEI7O0FBRUE7Q0FDQyw2Q0FBNkM7Q0FDN0MsY0FBYztDQUNkLDRCQUE0QjtDQUM1QiwwQkFBMEI7Q0FDMUIsV0FBVztDQUNYLGlDQUFpQztBQUNsQzs7QUFFQTtDQUNDLFdBQVc7Q0FDWCxpQ0FBaUM7Q0FDakMsZUFBZTtDQUNmLGtCQUFrQjtDQUNsQix5QkFBeUI7Q0FDekIsa0JBQWtCO0NBQ2xCLFlBQVk7Q0FDWixZQUFZO0NBQ1osZ0JBQWdCO0NBQ2hCLDBCQUEwQjtBQUMzQjs7QUFFQTtDQUNDLGtCQUFrQjtDQUNsQixZQUFZO0FBQ2I7O0FBRUE7Q0FDQyxxQkFBcUI7Q0FDckIsYUFBYTtBQUNkOztBQUVBO0NBQ0MseUJBQXlCO0NBQ3pCLGFBQWE7Q0FDYixrQkFBa0I7Q0FDbEIsWUFBWTtDQUNaLHlCQUF5QjtBQUMxQjs7QUFFQTtDQUNDLHlCQUF5QjtDQUN6QixrQkFBa0I7Q0FDbEIsWUFBWTtDQUNaLHlCQUF5QjtBQUMxQjs7QUFFQTtDQUNDLFlBQVk7Q0FDWixrQkFBa0I7Q0FDbEIsWUFBWTtDQUNaLFdBQVc7Q0FDWCxpQ0FBaUM7QUFDbEM7O0FBRUE7Q0FDQyxZQUFZO0NBQ1osa0JBQWtCO0NBQ2xCLGlCQUFpQjtDQUNqQixpQ0FBaUM7QUFDbEM7O0FBRUE7Q0FDQyxZQUFZO0FBQ2I7O0FBRUE7Q0FDQyxZQUFZO0FBQ2I7O0FBRUE7Q0FDQyxZQUFZO0FBQ2I7O0FBRUE7Q0FDQyxZQUFZO0NBQ1oscUJBQXFCO0FBQ3RCOztBQUVBO0NBQ0MseUJBQXlCO0NBQ3pCLGtCQUFrQjtDQUNsQixXQUFXO0NBQ1gsWUFBWTtDQUNaLHlCQUF5QjtDQUN6QixZQUFZO0NBQ1osa0JBQWtCO0FBQ25COztBQUVBO0NBQ0MseUJBQXlCO0NBQ3pCLGtCQUFrQjtDQUNsQixXQUFXO0NBQ1gsWUFBWTtDQUNaLHlCQUF5QjtDQUN6QixZQUFZO0NBQ1osaUJBQWlCO0NBQ2pCLGtCQUFrQjtBQUNuQjs7QUFFQTtDQUNDLHlCQUF5QjtDQUN6QixrQkFBa0I7Q0FDbEIsV0FBVztDQUNYLFlBQVk7Q0FDWix5QkFBeUI7Q0FDekIsa0JBQWtCO0NBQ2xCLFlBQVk7QUFDYjs7QUFFQTtDQUNDLFlBQVk7QUFDYjs7QUFFQTtDQUNDLHFCQUFxQjtDQUNyQixtQkFBbUI7Q0FDbkI7QUFDRDs7QUFFQTtDQUNDLHFCQUFxQjtBQUN0Qjs7QUFFQTtDQUNDLHFCQUFxQjtBQUN0QiIsImZpbGUiOiJzcmMvYXBwL2hvbWUtcGFnZS9ob21lLXBhZ2UuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIioge1xyXG4gICAgbWFyZ2luOiAwcHg7XHJcbiAgICBwYWRkaW5nOiAwcHg7XHJcbn1cclxuXHJcbmJvZHkge1xyXG5cdGJhY2tncm91bmQtaW1hZ2U6IHVybChcIkZhbGxCYWNrZ3JvdW5kMi5qcGVnXCIpO1xyXG5cdGNvbG9yOiAjRkVGRURDO1xyXG5cdGJhY2tncm91bmQtcmVwZWF0OiBuby1yZXBlYXQ7XHJcblx0YmFja2dyb3VuZC1zaXplOiAxMDAlIDEwMCU7XHJcblx0d2lkdGg6IDEwMCU7XHJcblx0Zm9udC1mYW1pbHk6ICdVYnVudHUnLCBzYW5zLXNlcmlmO1xyXG59XHJcblxyXG5oMSB7XHJcblx0bWFyZ2luOiA4cHg7XHJcblx0Zm9udC1mYW1pbHk6ICdDb3VyZ2V0dGUnLCBjdXJzaXZlO1xyXG5cdGZvbnQtc2l6ZTogNTBweDtcclxuXHR0ZXh0LWFsaWduOiBjZW50ZXI7XHJcblx0YmFja2dyb3VuZC1jb2xvcjogI0Q5NjQ1QTtcclxuXHRib3JkZXItcmFkaXVzOiA4cHg7XHJcblx0d2lkdGg6IDM4NXB4O1xyXG5cdG1hcmdpbjogYXV0bztcclxuXHRtYXJnaW4tdG9wOiAxNXB4O1xyXG5cdGJvcmRlcjogZGFzaGVkICNGMkFENzIgNHB4O1xyXG59XHJcblxyXG4uY3VzdG9tU2VsZWN0IHtcclxuXHRib3JkZXItcmFkaXVzOiA4cHg7XHJcblx0cGFkZGluZzogM3B4O1xyXG59XHJcblxyXG4jZm9vdGVyIHtcclxuXHRkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcblx0cGFkZGluZzogMTBweDtcclxufVxyXG5cclxuI2ZyaWVuZF9saXN0LCAjdHJpcF90YWJsZSwgI3RvRG9MaXN0LCAjd2lzaGxpc3QsICNmb290ZXJ7XHJcblx0Ym9yZGVyOiAycHggc29saWQgI0U2OEEzNztcclxuXHRwYWRkaW5nOiAxMHB4O1xyXG5cdGJvcmRlci1yYWRpdXM6IDhweDtcclxuXHRtYXJnaW46IDEwcHg7XHJcblx0YmFja2dyb3VuZC1jb2xvcjogI0I3NTEyOTtcclxufVxyXG5cclxuI25ld190cmlwLCAjbmV3X3Rhc2ssICNuZXdfZnJpZW5ke1xyXG5cdGJhY2tncm91bmQtY29sb3I6ICNBODVCNjA7XHJcblx0Ym9yZGVyLXJhZGl1czogOHB4O1xyXG5cdHBhZGRpbmc6IDhweDtcclxuXHRib3JkZXI6ICNERTgyNzUgc29saWQgMXB4O1xyXG59XHJcblxyXG4uYnV0dG9uIHtcclxuXHRwYWRkaW5nOiA1cHg7XHJcblx0Ym9yZGVyLXJhZGl1czogOHB4O1xyXG5cdGJvcmRlcjogbm9uZTtcclxuXHRtYXJnaW46IDVweDtcclxuXHRmb250LWZhbWlseTogJ1VidW50dScsIHNhbnMtc2VyaWY7XHJcbn1cclxuXHJcbmlucHV0IHtcclxuXHRwYWRkaW5nOiAzcHg7XHJcblx0Ym9yZGVyLXJhZGl1czogOHB4O1xyXG5cdG1hcmdpbi1sZWZ0OiAxMHB4O1xyXG5cdGZvbnQtZmFtaWx5OiAnVWJ1bnR1Jywgc2Fucy1zZXJpZjtcclxufVxyXG5cclxudGFibGUge1xyXG5cdHBhZGRpbmc6IDhweDtcclxufVxyXG5cclxudGQsIHRoIHtcclxuXHRwYWRkaW5nOiA1cHg7XHJcbn1cclxuXHJcbmxpIHtcclxuXHRtYXJnaW46IDIwcHg7XHJcbn1cclxuXHJcbiN0b0RvTGlzdCB7XHJcblx0d2lkdGg6IDMwMHB4O1xyXG5cdGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxufVxyXG5cclxuLmhlYWRlciB7XHJcblx0YmFja2dyb3VuZC1jb2xvcjogIzhENDEyQTtcclxuXHRib3JkZXItcmFkaXVzOiA4cHg7XHJcblx0bWFyZ2luOiA4cHg7XHJcblx0cGFkZGluZzogOHB4O1xyXG5cdGJvcmRlcjogc29saWQgMnB4ICNDQzRDMzE7XHJcblx0d2lkdGg6IDEyMHB4O1xyXG5cdHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG5cclxuI3RyaXBzX2hlYWRlciB7XHJcblx0YmFja2dyb3VuZC1jb2xvcjogIzhENDEyQTtcclxuXHRib3JkZXItcmFkaXVzOiA4cHg7XHJcblx0bWFyZ2luOiA4cHg7XHJcblx0cGFkZGluZzogOHB4O1xyXG5cdGJvcmRlcjogc29saWQgMnB4ICNDQzRDMzE7XHJcblx0d2lkdGg6IDE4NXB4O1xyXG5cdG1hcmdpbi1sZWZ0OiA1MHB4O1xyXG5cdHRleHQtYWxpZ246IGNlbnRlcjtcclxufVxyXG5cclxuI3dpc2hsaXN0X2hlYWRlciB7XHJcblx0YmFja2dyb3VuZC1jb2xvcjogIzhENDEyQTtcclxuXHRib3JkZXItcmFkaXVzOiA4cHg7XHJcblx0bWFyZ2luOiA4cHg7XHJcblx0cGFkZGluZzogNXB4O1xyXG5cdGJvcmRlcjogc29saWQgMnB4ICNDQzRDMzE7XHJcblx0dGV4dC1hbGlnbjogY2VudGVyO1xyXG5cdHdpZHRoOiAzMDBweDtcclxufVxyXG5cclxuI3dpc2hsaXN0IHtcclxuXHR3aWR0aDogMzAwcHg7XHJcbn1cclxuXHJcbi5pbmxpbmUtYmxvY2sge1xyXG5cdGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuXHR2ZXJ0aWNhbC1hbGlnbjogdG9wO1xyXG5cdG1hcmdpbi1sZWZ0OiAxOHB4XHJcbn1cclxuXHJcbiN0b0RvTGlzdCwgI3dpc2hsaXN0e1xyXG5cdGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxufVxyXG5cclxuI3Rhc2tfd2lzaGxpc3Qge1xyXG5cdGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxufSJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/home-page/home-page.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/home-page/home-page.component.ts ***!
+  \**************************************************/
+/*! exports provided: HomePageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomePageComponent", function() { return HomePageComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
+
+
+
+
+let HomePageComponent = class HomePageComponent {
+    constructor(_httpService, _route, _router) {
+        this._httpService = _httpService;
+        this._route = _route;
+        this._router = _router;
+    }
+    ngOnInit() {
+        this.getUserId();
+        this.getTrips();
+        this.getAllLocations();
+        this.getUser();
+    }
+    getUserId() {
+        this._httpService.getUserId().subscribe((userId) => {
+            console.log('User id found!', userId);
+            this.userId = userId;
+        });
+    }
+    getUser() {
+        this._httpService.findUser(this.userId).subscribe((user) => {
+            console.log("Found current user!");
+            this.currentUser = user;
+        });
+    }
+    getTrips() {
+        this._httpService.getUserTrips().subscribe((userTrips) => {
+            console.log('Got trips!', userTrips);
+            this.trips = userTrips;
+        });
+    }
+    getAllLocations() {
+        this._httpService.getAllLocations().subscribe((locations) => {
+            console.log('Got all locations!', locations);
+            this.allLocations = locations;
+        });
+    }
+    clickToSearch() {
+        this._router.navigate(['/searchbar/location/' + this.searchTerm]);
+    }
+};
+HomePageComponent.ctorParameters = () => [
+    { type: _http_service__WEBPACK_IMPORTED_MODULE_3__["HttpService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
+HomePageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-home-page',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./home-page.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/home-page/home-page.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./home-page.component.css */ "./src/app/home-page/home-page.component.css")).default]
+    })
+], HomePageComponent);
 
 
 
@@ -425,9 +870,126 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// hardcoded location for dummy data
+var currentLocation = "95389";
 let HttpService = class HttpService {
     constructor(_http) {
         this._http = _http;
+    }
+    //User
+    registerUser(newUser) {
+        return this._http.post('/new/user', newUser);
+    }
+    loginUser(user) {
+        return this._http.get('/login/user');
+    }
+    logoutUser(user) {
+        return this._http.get('/logout/user');
+    }
+    getUserId() {
+        return this._http.get('/search/session/user');
+    }
+    findUser(id) {
+        return this._http.get(`/search/user/${id}`);
+    }
+    updateUser(user) {
+        return this._http.put(`update/user/${user._id}`, user);
+    }
+    deleteUser(id) {
+        return this._http.delete(`/delete/user/${id}`);
+    }
+    //Trip
+    createTrip(newTrip) {
+        return this._http.post('/new/trip', newTrip);
+    }
+    getAllTrips() {
+        return this._http.get('/all/trip');
+    }
+    getTrip(id) {
+        return this._http.get(`/trip/search/${id}`, id);
+    }
+    getUserTrips() {
+        return this._http.get('trips/search/user');
+    }
+    updateTrip(trip) {
+        return this._http.put(`/update/trip/${trip._id}`, trip);
+    }
+    deleteTrip(id) {
+        return this._http.delete(`/delete/trip/${id}`);
+    }
+    //Task
+    getAllTasks() {
+        return this._http.get('/all/trip');
+    }
+    createTask(newTask) {
+        return this._http.post('/new/task', newTask);
+    }
+    getTask(id) {
+        return this._http.get(`/task/search/${id}`);
+    }
+    updateTask(task) {
+        return this._http.put(`/update/trip/${task._id}`, task);
+    }
+    deleteTask(id) {
+        return this._http.delete(`/delete/task/${id}`);
+    }
+    //Location
+    createLocation(newLocation) {
+        return this._http.post('/new/location', newLocation);
+    }
+    getAllLocations() {
+        return this._http.get('/all/location');
+    }
+    getLocation(id) {
+        return this._http.get(`/search/location/${id}`);
+    }
+    getUserTasks() {
+        return this._http.get('/task/search/user');
+    }
+    searchForLocation(name) {
+        return this._http.get(`/searchbar/location/${name}`);
+    }
+    updateLocation(location) {
+        return this._http.put(`/update/location/${location._id}`, location);
+    }
+    deleteLocation(id) {
+        return this._http.delete(`/delete/location/${id}`);
+    }
+    //Reviews
+    createReview(newReview) {
+        return this._http.post('/new/review', newReview);
+    }
+    getReview(id) {
+        return this._http.get(`/search/review/${id}`);
+    }
+    updateReview(review) {
+        return this._http.put(`/update/review/${review._id}`, review);
+    }
+    deleteReview(id) {
+        return this._http.delete(`/delete/review/${id}`);
+    }
+    //Supplies
+    createSupply(newSupply) {
+        return this._http.post('/new/supply', newSupply);
+    }
+    getSupply(id) {
+        return this._http.get(`search/supply/${id}`);
+    }
+    findOneSupply(id) {
+        return this._http.get(`search/supply/find/${id}`);
+    }
+    completeSupply(supply) {
+        return this._http.put(`/update/supply/completed/${supply._id}`, supply);
+    }
+    updateSupply(supply) {
+        return this._http.put(`/update/supply/${supply._id}`, supply);
+    }
+    deleteSupply(id) {
+        return this._http.delete(`/delete/supply/${id}`);
+    }
+    //API Data
+    getData() {
+        return this._http.get(`https://api.openweathermap.org/data/2.5/weather?zip=${currentLocation}&units=imperial&appid=3c41c77dff28f47ed76644ad09a32429`);
     }
 };
 HttpService.ctorParameters = () => [
@@ -452,7 +1014,7 @@ HttpService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xvZ2luLXJlZ2lzdHJhdGlvbi9sb2dpbi1yZWdpc3RyYXRpb24uY29tcG9uZW50LmNzcyJ9 */");
+/* harmony default export */ __webpack_exports__["default"] = ("* {\r\n    padding: 0px;\r\n    margin: 0px;\r\n}\r\n\r\nbody {\r\n    background-image: url('ForestBackground7.jpg');\r\n}\r\n\r\n#title {\r\n    color: wheat;\r\n    border: 1px solid wheat;\r\n    border-radius: 8px;\r\n    background-color: #264d00;\r\n    font-family: 'Tangerine', cursive;\r\n\tfont-weight: lighter;\r\n\tfont-size: 68px;\r\n\tpadding: 10px;\r\n\tmargin: 10px;\r\n}\r\n\r\n#login, #register {\r\n\tcolor: wheat;\r\n    background-color: #264d00;\r\n    padding: 10px;\r\n\tfont-family: 'El Messiri', sans-serif;\r\n\tmargin: 25px;\r\n\tmargin-left: 190px;\r\n}\r\n\r\n#login {\r\n    border: 1px solid wheat;\r\n    border-radius: 8px;\r\n    display: inline-block;\r\n    width: 310px;\r\n    padding: 12px;\r\n}\r\n\r\n#register {\r\n    border: 1px solid wheat;\r\n    border-radius: 8px;\r\n    display: inline-block;\r\n    width: 310px;\r\n    padding: 12px;\r\n}\r\n\r\n.submitButton {\r\n\tbox-shadow: 0px 1px 0px 0px #1c1b18;\r\n\tbackground:-webkit-gradient(linear, left top, left bottom, color-stop(5%, #eae0c2), to(#ccc2a6));\r\n\tbackground:linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);\r\n\tbackground-color:#eae0c2;\r\n\tborder-radius:15px;\r\n\tborder:2px solid #ffffcc;\r\n\tdisplay:inline-block;\r\n\tcursor:pointer;\r\n\tcolor:#505739;\r\n\tfont-family:Arial;\r\n\tfont-size:14px;\r\n\tfont-weight:bold;\r\n\tpadding:7px 12px;\r\n\ttext-decoration:none;\r\n\ttext-shadow:0px 1px 0px #ffffff;\r\n\tmargin: 5px;\r\n\tfont-family: 'El Messiri', sans-serif;\r\n\t\r\n}\r\n\r\n.submitButton:hover {\r\n\tbackground:-webkit-gradient(linear, left top, left bottom, color-stop(5%, #ccc2a6), to(#eae0c2));\r\n\tbackground:linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);\r\n\tbackground-color:#ccc2a6;\r\n}\r\n\r\n.submitButton:active {\r\n\tposition:relative;\r\n\ttop:1px;\r\n}\r\n\r\ninput {\r\n\tborder-radius: 8px;\r\n\tpadding: 2px;\r\n}\r\n\r\n#story {\r\n\tpadding: 5px;\r\n\tdisplay: block;\r\n\tmargin: 10px;\r\n}\r\n\r\n.email {\r\n\tmargin-left: 49px;\r\n\tmargin-bottom: 8px;\r\n}\r\n\r\n.password {\r\n\tmargin-left: 20px;\r\n}\r\n\r\n#email2 {\r\n\tmargin-left: 70px;\r\n\tmargin-top: 3px;\r\n\tmargin-bottom: 5px;\r\n}\r\n\r\n#password2 {\r\n\tmargin-left: 50px;\r\n\tmargin-bottom: 5px;\r\n}\r\n\r\n#name {\r\n\tmargin-left: 55px;\r\n}\r\n\r\n#missionStatement {\r\n\tcolor: wheat;\r\n    background-color: #264d00;\r\n    padding: 5px;\r\n\tfont-family: 'El Messiri', sans-serif;\r\n\tmargin: 20px;\r\n\ttext-align: center;\r\n\tborder: 1px solid wheat;\r\n\tborder-radius: 8px;\r\n\twidth: 65%;\r\n\tmargin-left: 215px;\r\n}\r\n\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbG9naW4tcmVnaXN0cmF0aW9uL2xvZ2luLXJlZ2lzdHJhdGlvbi5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksWUFBWTtJQUNaLFdBQVc7QUFDZjs7QUFFQTtJQUNJLDhDQUFnRDtBQUNwRDs7QUFFQTtJQUNJLFlBQVk7SUFDWix1QkFBdUI7SUFDdkIsa0JBQWtCO0lBQ2xCLHlCQUF5QjtJQUN6QixpQ0FBaUM7Q0FDcEMsb0JBQW9CO0NBQ3BCLGVBQWU7Q0FDZixhQUFhO0NBQ2IsWUFBWTtBQUNiOztBQUVBO0NBQ0MsWUFBWTtJQUNULHlCQUF5QjtJQUN6QixhQUFhO0NBQ2hCLHFDQUFxQztDQUNyQyxZQUFZO0NBQ1osa0JBQWtCO0FBQ25COztBQUVBO0lBQ0ksdUJBQXVCO0lBQ3ZCLGtCQUFrQjtJQUNsQixxQkFBcUI7SUFDckIsWUFBWTtJQUNaLGFBQWE7QUFDakI7O0FBRUE7SUFDSSx1QkFBdUI7SUFDdkIsa0JBQWtCO0lBQ2xCLHFCQUFxQjtJQUNyQixZQUFZO0lBQ1osYUFBYTtBQUNqQjs7QUFFQTtDQUNDLG1DQUFtQztDQUNuQyxnR0FBK0Q7Q0FBL0QsK0RBQStEO0NBQy9ELHdCQUF3QjtDQUN4QixrQkFBa0I7Q0FDbEIsd0JBQXdCO0NBQ3hCLG9CQUFvQjtDQUNwQixjQUFjO0NBQ2QsYUFBYTtDQUNiLGlCQUFpQjtDQUNqQixjQUFjO0NBQ2QsZ0JBQWdCO0NBQ2hCLGdCQUFnQjtDQUNoQixvQkFBb0I7Q0FDcEIsK0JBQStCO0NBQy9CLFdBQVc7Q0FDWCxxQ0FBcUM7O0FBRXRDOztBQUNBO0NBQ0MsZ0dBQStEO0NBQS9ELCtEQUErRDtDQUMvRCx3QkFBd0I7QUFDekI7O0FBQ0E7Q0FDQyxpQkFBaUI7Q0FDakIsT0FBTztBQUNSOztBQUdBO0NBQ0Msa0JBQWtCO0NBQ2xCLFlBQVk7QUFDYjs7QUFFQTtDQUNDLFlBQVk7Q0FDWixjQUFjO0NBQ2QsWUFBWTtBQUNiOztBQUVBO0NBQ0MsaUJBQWlCO0NBQ2pCLGtCQUFrQjtBQUNuQjs7QUFFQTtDQUNDLGlCQUFpQjtBQUNsQjs7QUFFQTtDQUNDLGlCQUFpQjtDQUNqQixlQUFlO0NBQ2Ysa0JBQWtCO0FBQ25COztBQUVBO0NBQ0MsaUJBQWlCO0NBQ2pCLGtCQUFrQjtBQUNuQjs7QUFFQTtDQUNDLGlCQUFpQjtBQUNsQjs7QUFFQTtDQUNDLFlBQVk7SUFDVCx5QkFBeUI7SUFDekIsWUFBWTtDQUNmLHFDQUFxQztDQUNyQyxZQUFZO0NBQ1osa0JBQWtCO0NBQ2xCLHVCQUF1QjtDQUN2QixrQkFBa0I7Q0FDbEIsVUFBVTtDQUNWLGtCQUFrQjtBQUNuQiIsImZpbGUiOiJzcmMvYXBwL2xvZ2luLXJlZ2lzdHJhdGlvbi9sb2dpbi1yZWdpc3RyYXRpb24uY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIioge1xyXG4gICAgcGFkZGluZzogMHB4O1xyXG4gICAgbWFyZ2luOiAwcHg7XHJcbn1cclxuXHJcbmJvZHkge1xyXG4gICAgYmFja2dyb3VuZC1pbWFnZTogdXJsKFwiLi9Gb3Jlc3RCYWNrZ3JvdW5kNy5qcGdcIik7XHJcbn1cclxuXHJcbiN0aXRsZSB7XHJcbiAgICBjb2xvcjogd2hlYXQ7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCB3aGVhdDtcclxuICAgIGJvcmRlci1yYWRpdXM6IDhweDtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICMyNjRkMDA7XHJcbiAgICBmb250LWZhbWlseTogJ1RhbmdlcmluZScsIGN1cnNpdmU7XHJcblx0Zm9udC13ZWlnaHQ6IGxpZ2h0ZXI7XHJcblx0Zm9udC1zaXplOiA2OHB4O1xyXG5cdHBhZGRpbmc6IDEwcHg7XHJcblx0bWFyZ2luOiAxMHB4O1xyXG59XHJcblxyXG4jbG9naW4sICNyZWdpc3RlciB7XHJcblx0Y29sb3I6IHdoZWF0O1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzI2NGQwMDtcclxuICAgIHBhZGRpbmc6IDEwcHg7XHJcblx0Zm9udC1mYW1pbHk6ICdFbCBNZXNzaXJpJywgc2Fucy1zZXJpZjtcclxuXHRtYXJnaW46IDI1cHg7XHJcblx0bWFyZ2luLWxlZnQ6IDE5MHB4O1xyXG59XHJcblxyXG4jbG9naW4ge1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgd2hlYXQ7XHJcbiAgICBib3JkZXItcmFkaXVzOiA4cHg7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICB3aWR0aDogMzEwcHg7XHJcbiAgICBwYWRkaW5nOiAxMnB4O1xyXG59XHJcblxyXG4jcmVnaXN0ZXIge1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgd2hlYXQ7XHJcbiAgICBib3JkZXItcmFkaXVzOiA4cHg7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICB3aWR0aDogMzEwcHg7XHJcbiAgICBwYWRkaW5nOiAxMnB4O1xyXG59XHJcblxyXG4uc3VibWl0QnV0dG9uIHtcclxuXHRib3gtc2hhZG93OiAwcHggMXB4IDBweCAwcHggIzFjMWIxODtcclxuXHRiYWNrZ3JvdW5kOmxpbmVhci1ncmFkaWVudCh0byBib3R0b20sICNlYWUwYzIgNSUsICNjY2MyYTYgMTAwJSk7XHJcblx0YmFja2dyb3VuZC1jb2xvcjojZWFlMGMyO1xyXG5cdGJvcmRlci1yYWRpdXM6MTVweDtcclxuXHRib3JkZXI6MnB4IHNvbGlkICNmZmZmY2M7XHJcblx0ZGlzcGxheTppbmxpbmUtYmxvY2s7XHJcblx0Y3Vyc29yOnBvaW50ZXI7XHJcblx0Y29sb3I6IzUwNTczOTtcclxuXHRmb250LWZhbWlseTpBcmlhbDtcclxuXHRmb250LXNpemU6MTRweDtcclxuXHRmb250LXdlaWdodDpib2xkO1xyXG5cdHBhZGRpbmc6N3B4IDEycHg7XHJcblx0dGV4dC1kZWNvcmF0aW9uOm5vbmU7XHJcblx0dGV4dC1zaGFkb3c6MHB4IDFweCAwcHggI2ZmZmZmZjtcclxuXHRtYXJnaW46IDVweDtcclxuXHRmb250LWZhbWlseTogJ0VsIE1lc3NpcmknLCBzYW5zLXNlcmlmO1xyXG5cdFxyXG59XHJcbi5zdWJtaXRCdXR0b246aG92ZXIge1xyXG5cdGJhY2tncm91bmQ6bGluZWFyLWdyYWRpZW50KHRvIGJvdHRvbSwgI2NjYzJhNiA1JSwgI2VhZTBjMiAxMDAlKTtcclxuXHRiYWNrZ3JvdW5kLWNvbG9yOiNjY2MyYTY7XHJcbn1cclxuLnN1Ym1pdEJ1dHRvbjphY3RpdmUge1xyXG5cdHBvc2l0aW9uOnJlbGF0aXZlO1xyXG5cdHRvcDoxcHg7XHJcbn1cclxuXHJcblxyXG5pbnB1dCB7XHJcblx0Ym9yZGVyLXJhZGl1czogOHB4O1xyXG5cdHBhZGRpbmc6IDJweDtcclxufVxyXG5cclxuI3N0b3J5IHtcclxuXHRwYWRkaW5nOiA1cHg7XHJcblx0ZGlzcGxheTogYmxvY2s7XHJcblx0bWFyZ2luOiAxMHB4O1xyXG59XHJcblxyXG4uZW1haWwge1xyXG5cdG1hcmdpbi1sZWZ0OiA0OXB4O1xyXG5cdG1hcmdpbi1ib3R0b206IDhweDtcclxufVxyXG5cclxuLnBhc3N3b3JkIHtcclxuXHRtYXJnaW4tbGVmdDogMjBweDtcclxufVxyXG5cclxuI2VtYWlsMiB7XHJcblx0bWFyZ2luLWxlZnQ6IDcwcHg7XHJcblx0bWFyZ2luLXRvcDogM3B4O1xyXG5cdG1hcmdpbi1ib3R0b206IDVweDtcclxufVxyXG5cclxuI3Bhc3N3b3JkMiB7XHJcblx0bWFyZ2luLWxlZnQ6IDUwcHg7XHJcblx0bWFyZ2luLWJvdHRvbTogNXB4O1xyXG59XHJcblxyXG4jbmFtZSB7XHJcblx0bWFyZ2luLWxlZnQ6IDU1cHg7XHJcbn1cclxuXHJcbiNtaXNzaW9uU3RhdGVtZW50IHtcclxuXHRjb2xvcjogd2hlYXQ7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjMjY0ZDAwO1xyXG4gICAgcGFkZGluZzogNXB4O1xyXG5cdGZvbnQtZmFtaWx5OiAnRWwgTWVzc2lyaScsIHNhbnMtc2VyaWY7XHJcblx0bWFyZ2luOiAyMHB4O1xyXG5cdHRleHQtYWxpZ246IGNlbnRlcjtcclxuXHRib3JkZXI6IDFweCBzb2xpZCB3aGVhdDtcclxuXHRib3JkZXItcmFkaXVzOiA4cHg7XHJcblx0d2lkdGg6IDY1JTtcclxuXHRtYXJnaW4tbGVmdDogMjE1cHg7XHJcbn1cclxuIl19 */");
 
 /***/ }),
 
@@ -468,13 +1030,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginRegistrationComponent", function() { return LoginRegistrationComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
+
+
 
 
 let LoginRegistrationComponent = class LoginRegistrationComponent {
-    constructor() { }
+    constructor(_httpService, _route, _router) {
+        this._httpService = _httpService;
+        this._route = _route;
+        this._router = _router;
+    }
     ngOnInit() {
     }
 };
+LoginRegistrationComponent.ctorParameters = () => [
+    { type: _http_service__WEBPACK_IMPORTED_MODULE_3__["HttpService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
 LoginRegistrationComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-login-registration',
@@ -483,6 +1058,367 @@ LoginRegistrationComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     })
 ], LoginRegistrationComponent);
 
+
+
+/***/ }),
+
+/***/ "./src/app/messaging/messaging.component.css":
+/*!***************************************************!*\
+  !*** ./src/app/messaging/messaging.component.css ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21lc3NhZ2luZy9tZXNzYWdpbmcuY29tcG9uZW50LmNzcyJ9 */");
+
+/***/ }),
+
+/***/ "./src/app/messaging/messaging.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/messaging/messaging.component.ts ***!
+  \**************************************************/
+/*! exports provided: MessagingComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MessagingComponent", function() { return MessagingComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let MessagingComponent = class MessagingComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+MessagingComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-messaging',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./messaging.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/messaging/messaging.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./messaging.component.css */ "./src/app/messaging/messaging.component.css")).default]
+    })
+], MessagingComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/models/supply.ts":
+/*!**********************************!*\
+  !*** ./src/app/models/supply.ts ***!
+  \**********************************/
+/*! exports provided: Supply */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Supply", function() { return Supply; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class Supply {
+}
+
+
+/***/ }),
+
+/***/ "./src/app/new-location/new-location.component.css":
+/*!*********************************************************!*\
+  !*** ./src/app/new-location/new-location.component.css ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("* {\r\n\tmargin: 0px;\r\n\tpadding: 0px;\r\n}\r\n\r\nbody {\r\n\twidth: 99%;\r\n}\r\n\r\ninput {\r\n\tborder-radius: 8px;\r\n\tpadding: 5px;\r\n}\r\n\r\n.button {\r\n\tborder: none;\r\n\tborder-radius: 8px;\r\n\tpadding: 5px;\r\n\tmargin: 10px;\r\n}\r\n\r\n#new_location {\r\n\tmargin-left: 15px;\r\n\tpadding: 5px;\r\n\tmargin-top: 5px;\r\n}\r\n\r\ntextarea {\r\n\tborder-radius: 8px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbmV3LWxvY2F0aW9uL25ldy1sb2NhdGlvbi5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0NBQ0MsV0FBVztDQUNYLFlBQVk7QUFDYjs7QUFFQTtDQUNDLFVBQVU7QUFDWDs7QUFFQTtDQUNDLGtCQUFrQjtDQUNsQixZQUFZO0FBQ2I7O0FBRUE7Q0FDQyxZQUFZO0NBQ1osa0JBQWtCO0NBQ2xCLFlBQVk7Q0FDWixZQUFZO0FBQ2I7O0FBRUE7Q0FDQyxpQkFBaUI7Q0FDakIsWUFBWTtDQUNaLGVBQWU7QUFDaEI7O0FBRUE7Q0FDQyxrQkFBa0I7QUFDbkIiLCJmaWxlIjoic3JjL2FwcC9uZXctbG9jYXRpb24vbmV3LWxvY2F0aW9uLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIqIHtcclxuXHRtYXJnaW46IDBweDtcclxuXHRwYWRkaW5nOiAwcHg7XHJcbn1cclxuXHJcbmJvZHkge1xyXG5cdHdpZHRoOiA5OSU7XHJcbn1cclxuXHJcbmlucHV0IHtcclxuXHRib3JkZXItcmFkaXVzOiA4cHg7XHJcblx0cGFkZGluZzogNXB4O1xyXG59XHJcblxyXG4uYnV0dG9uIHtcclxuXHRib3JkZXI6IG5vbmU7XHJcblx0Ym9yZGVyLXJhZGl1czogOHB4O1xyXG5cdHBhZGRpbmc6IDVweDtcclxuXHRtYXJnaW46IDEwcHg7XHJcbn1cclxuXHJcbiNuZXdfbG9jYXRpb24ge1xyXG5cdG1hcmdpbi1sZWZ0OiAxNXB4O1xyXG5cdHBhZGRpbmc6IDVweDtcclxuXHRtYXJnaW4tdG9wOiA1cHg7XHJcbn1cclxuXHJcbnRleHRhcmVhIHtcclxuXHRib3JkZXItcmFkaXVzOiA4cHg7XHJcbn0iXX0= */");
+
+/***/ }),
+
+/***/ "./src/app/new-location/new-location.component.ts":
+/*!********************************************************!*\
+  !*** ./src/app/new-location/new-location.component.ts ***!
+  \********************************************************/
+/*! exports provided: NewLocationComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NewLocationComponent", function() { return NewLocationComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let NewLocationComponent = class NewLocationComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+NewLocationComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-new-location',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./new-location.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/new-location/new-location.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./new-location.component.css */ "./src/app/new-location/new-location.component.css")).default]
+    })
+], NewLocationComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/new-trip/new-trip.component.css":
+/*!*************************************************!*\
+  !*** ./src/app/new-trip/new-trip.component.css ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("* {\r\n    margin: 0px;\r\n    padding: 0px;\r\n}\r\n\r\n#new_trip, #trip_form {\r\n    text-align: center;\r\n    margin: auto;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbmV3LXRyaXAvbmV3LXRyaXAuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtJQUNJLFdBQVc7SUFDWCxZQUFZO0FBQ2hCOztBQUVBO0lBQ0ksa0JBQWtCO0lBQ2xCLFlBQVk7QUFDaEIiLCJmaWxlIjoic3JjL2FwcC9uZXctdHJpcC9uZXctdHJpcC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiKiB7XHJcbiAgICBtYXJnaW46IDBweDtcclxuICAgIHBhZGRpbmc6IDBweDtcclxufVxyXG5cclxuI25ld190cmlwLCAjdHJpcF9mb3JtIHtcclxuICAgIHRleHQtYWxpZ246IGNlbnRlcjtcclxuICAgIG1hcmdpbjogYXV0bztcclxufSJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/new-trip/new-trip.component.ts":
+/*!************************************************!*\
+  !*** ./src/app/new-trip/new-trip.component.ts ***!
+  \************************************************/
+/*! exports provided: NewTripComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "NewTripComponent", function() { return NewTripComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
+/* harmony import */ var _trip__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../trip */ "./src/app/trip.ts");
+
+
+
+
+
+let NewTripComponent = class NewTripComponent {
+    constructor(_httpService, _route, _router) {
+        this._httpService = _httpService;
+        this._route = _route;
+        this._router = _router;
+    }
+    ngOnInit() {
+        this.newTrip = new _trip__WEBPACK_IMPORTED_MODULE_4__["Trip"]();
+    }
+    clickCreateTrip() {
+        this._httpService.createTrip(this.newTrip).subscribe((newTrip) => {
+            if (newTrip.errors) {
+                this.errors = newTrip.errors;
+            }
+            else {
+                console.log('Created trip', newTrip);
+                this.newTrip = new _trip__WEBPACK_IMPORTED_MODULE_4__["Trip"]();
+                this._router.navigate(['/home']);
+            }
+        });
+    }
+};
+NewTripComponent.ctorParameters = () => [
+    { type: _http_service__WEBPACK_IMPORTED_MODULE_3__["HttpService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
+NewTripComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-new-trip',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./new-trip.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/new-trip/new-trip.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./new-trip.component.css */ "./src/app/new-trip/new-trip.component.css")).default]
+    })
+], NewTripComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/ratings/ratings.component.css":
+/*!***********************************************!*\
+  !*** ./src/app/ratings/ratings.component.css ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3JhdGluZ3MvcmF0aW5ncy5jb21wb25lbnQuY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/ratings/ratings.component.ts":
+/*!**********************************************!*\
+  !*** ./src/app/ratings/ratings.component.ts ***!
+  \**********************************************/
+/*! exports provided: RatingsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RatingsComponent", function() { return RatingsComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let RatingsComponent = class RatingsComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+RatingsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-ratings',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./ratings.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/ratings/ratings.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./ratings.component.css */ "./src/app/ratings/ratings.component.css")).default]
+    })
+], RatingsComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/reviews/reviews.component.css":
+/*!***********************************************!*\
+  !*** ./src/app/reviews/reviews.component.css ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3Jldmlld3MvcmV2aWV3cy5jb21wb25lbnQuY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/reviews/reviews.component.ts":
+/*!**********************************************!*\
+  !*** ./src/app/reviews/reviews.component.ts ***!
+  \**********************************************/
+/*! exports provided: ReviewsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ReviewsComponent", function() { return ReviewsComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let ReviewsComponent = class ReviewsComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+ReviewsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-reviews',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./reviews.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/reviews/reviews.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./reviews.component.css */ "./src/app/reviews/reviews.component.css")).default]
+    })
+], ReviewsComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/search-locations/search-locations.component.css":
+/*!*****************************************************************!*\
+  !*** ./src/app/search-locations/search-locations.component.css ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("* {\r\n    margin: 0px;\r\n    padding: 0px;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvc2VhcmNoLWxvY2F0aW9ucy9zZWFyY2gtbG9jYXRpb25zLmNvbXBvbmVudC5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7SUFDSSxXQUFXO0lBQ1gsWUFBWTtBQUNoQiIsImZpbGUiOiJzcmMvYXBwL3NlYXJjaC1sb2NhdGlvbnMvc2VhcmNoLWxvY2F0aW9ucy5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiKiB7XHJcbiAgICBtYXJnaW46IDBweDtcclxuICAgIHBhZGRpbmc6IDBweDtcclxufSJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/search-locations/search-locations.component.ts":
+/*!****************************************************************!*\
+  !*** ./src/app/search-locations/search-locations.component.ts ***!
+  \****************************************************************/
+/*! exports provided: SearchLocationsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SearchLocationsComponent", function() { return SearchLocationsComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
+
+
+
+
+let SearchLocationsComponent = class SearchLocationsComponent {
+    constructor(_httpService, _route, _router) {
+        this._httpService = _httpService;
+        this._route = _route;
+        this._router = _router;
+    }
+    ngOnInit() {
+        this.getLocation();
+        this.getAllLocations();
+    }
+    getAllLocations() {
+        this._route.params.subscribe((params) => {
+            console.log(params.name);
+            this._httpService.searchForLocation(params.name)
+                .subscribe((data) => {
+                this.locations = data;
+            });
+        });
+    }
+    getLocation() {
+        this._route.params.subscribe((params) => {
+            console.log(params.name);
+            this.searchedLocation = params;
+        });
+    }
+    clickToSearch() {
+        this._router.navigate(['/searchbar/location/' + this.searchTerm]);
+    }
+};
+SearchLocationsComponent.ctorParameters = () => [
+    { type: _http_service__WEBPACK_IMPORTED_MODULE_3__["HttpService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["ActivatedRoute"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
+];
+SearchLocationsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-search-locations',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./search-locations.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/search-locations/search-locations.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./search-locations.component.css */ "./src/app/search-locations/search-locations.component.css")).default]
+    })
+], SearchLocationsComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/trip.ts":
+/*!*************************!*\
+  !*** ./src/app/trip.ts ***!
+  \*************************/
+/*! exports provided: Trip */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Trip", function() { return Trip; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+
+class Trip {
+}
 
 
 /***/ }),
@@ -552,7 +1488,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\irene\Desktop\dojo-assignments\MeanStackProject\Project\public\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\thehi\Documents\mean_stack\Camping-App-Main\public\src\main.ts */"./src/main.ts");
 
 
 /***/ })
