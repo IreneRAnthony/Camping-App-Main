@@ -1,4 +1,5 @@
-<!-- <html>
+<!DOCTYPE html>
+<html>
 <head>
 	<meta charset="ISO-8859-1">
 	<title>Home Page</title>
@@ -22,7 +23,7 @@
 				</tr>
 			</thead>
 		<tbody>
-			<tr *ngFor="let trip of trips">
+			<tr>
 				<td>{{trip.start_date}} to {{trip.end_date}}</td>
 				<td>{{trip.destination}}</td>
 				<td>{{trip.usersGoing}}</td>
@@ -34,15 +35,14 @@
 	<div id= "new_trip"></div>
 	</div>
 
-	<div id="task_wishlist">
+	<!-- <div id="task_wishlist">
 		<div class="inline-block">
 		<h2 class="header">To-Do List!</h2>
 			<div id = "toDoList">
 				<ol>
-					<li> {{allTasks.taskText}} - {{allTasks.priority}} Priority
-
+					<li> {{allTasks.taskText}} - {{allTasks.priority}} Priority</li>
 					<form (submit)="">
-						<input type="hidden" name="_method" value="delete" />
+						<input type="hidden" name="_method" value="delete">
 						<button class="button">Completed</button>
 					</form>
 				</ol>
@@ -50,17 +50,17 @@
 					<div id="new_task">
 					<form (submit)="newTask">
 						<label>Task Title:</label>
-						<input type="text" [(ngModel)]="newTask.title"/>
+						<input type="text" [(ngModel)]="newTask.title">
 						<label>Task Description:</label>
 						<textarea name="description" [(ngModel)]="newTask.description">
 						<label>Task Priority: </label>
 						<input type="text" name="priority" [(ngModel)]="newTask.priority">
-						<input type="submit" value="Create Task" class="button"/>
+						<input type="submit" value="Create Task" class="button">
 					</form>
 					</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<div class="inline-block">
 	<div id = "wishlist_header">
@@ -74,7 +74,7 @@
 	<div id="search-bar">
 		<h3>Make a search for a location?</h3>
 		<form (submit)="clickToSearch()">
-			<input type="text" name="locationName" [(ngModel)]="searchTerm" />
+			<input type="text" name="locationName" [(ngModel)]="searchTerm">
 			<input type="search" value="Search">
 		</form>
 	</div>
@@ -83,6 +83,5 @@
 		<button class="button" [routerLink]="['/location/new']">Want to Create a New Location?</button>
 	</div>
 	</div>
-
 </body>
-</html> -->
+</html>

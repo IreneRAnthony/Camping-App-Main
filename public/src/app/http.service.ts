@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 // hardcoded location for dummy data
-var currentLocation = "95389"
+var currentLocation = "07001"
 
 @Injectable({
   providedIn: 'root'
