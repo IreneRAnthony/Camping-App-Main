@@ -34,7 +34,7 @@ export class LoginRegistrationComponent implements OnInit {
   clickRegister() {
     this._httpService.registerUser(this.newUser).subscribe((registeredUser: any) => {
       console.log('User registered', registeredUser)
-      this._router.navigate(['/login'])
+      this._router.navigate(['/home'])
     },
     error => {
       this.errors = error;
