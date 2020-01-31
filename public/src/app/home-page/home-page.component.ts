@@ -20,6 +20,7 @@ export class HomePageComponent implements OnInit {
     private _router: Router) { }
 
   ngOnInit() {
+    this.newTask = new Task();
     this.getUserId();
     this.getTrips();
     this.getAllLocations();
